@@ -1,0 +1,4 @@
+# Rearrange the list items below to decide the order of navigation links in the sidebar
+Locked: false # Prevents the file from being edited by the scaffold generator unless the force flag is passed.
+Links:
+  - index
