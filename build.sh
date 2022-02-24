@@ -32,7 +32,7 @@ cp CONTRIBUTING.md resources/docs/contributing.md
 echo "Done"
 
 echo "Modifying Readme"
-sed '/\BMSTX/,/\BMETX/{//!d}' resources/docs/readme.md -i
+sed '/\BMSTX/,/\BMETX/d' resources/docs/readme.md -i
 echo "Done"
 
 echo "Publishing assets"
