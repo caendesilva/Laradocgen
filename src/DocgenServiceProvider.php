@@ -46,7 +46,6 @@ class DocgenServiceProvider extends ServiceProvider
 
             // Registering package commands.
             $this->commands([
-                ScaffoldLinkIndexCommand::class,
                 BuildCommand::class,
             ]);
         }
