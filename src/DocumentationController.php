@@ -39,7 +39,7 @@ class DocumentationController extends Controller
 			// Layout object
 			'links' => (new NavigationLinks())->withoutIndex()->order()->get(),
 			// 'links' => Docgen::getMarkdownFileSlugsArray(),
-			'rootRoute' => '/docs/master/',
+			'rootRoute' => '/docs-master/',
 		]);
     }
 }

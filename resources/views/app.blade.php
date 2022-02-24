@@ -197,6 +197,8 @@
 						</div>
 					</form>
 					
+					<hr class="my-4 md:min-w-full" />
+
 					<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 						@foreach ($links as $link)
 							@if($link == $page->slug)
