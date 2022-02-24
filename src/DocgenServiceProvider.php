@@ -15,9 +15,9 @@ class DocgenServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'docgen');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'docgen');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'docgen');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -29,6 +29,11 @@ class DocgenServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => resource_path('views/vendor/docgen'),
             ], 'views');*/
 
+            // Publishing the markdown files.
+            $this->publishes([
+                __DIR__.'/../resources/docs/src' => resource_path('docs/src'),
+            ], 'docs');
+            
             // Publishing assets.
             /*$this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor/docgen'),
@@ -40,7 +45,9 @@ class DocgenServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                ScaffoldLinkIndexCommand::class,
+            ]);
         }
     }
 
