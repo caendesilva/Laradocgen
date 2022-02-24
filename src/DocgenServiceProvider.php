@@ -80,12 +80,12 @@ class DocgenServiceProvider extends ServiceProvider
         $this->app->singleton('docgen.converter', function ($app) {
             $config = [
                 'table_of_contents' => [
-                    'position' => 'placeholder',
             
-                    'placeholder' => '[[toc]]',
                 ],
             
                 'heading_permalink' => [
+                    'min_heading_level' => 3,
+                    'max_heading_level' => 6,
                     'insert' => 'after',
                     'symbol' => '#',
                     'id_prefix' => '',
