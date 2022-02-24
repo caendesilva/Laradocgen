@@ -31,7 +31,7 @@ class DocgenServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('docgen.php'),
-            ], 'config');
+            ], 'docgen');
 
             // Publishing the views.
             /*$this->publishes([
@@ -41,7 +41,7 @@ class DocgenServiceProvider extends ServiceProvider
             // Publishing the markdown files.
             $this->publishes([
                 __DIR__.'/../resources/docs' => resource_path('docs'),
-            ], 'docs');
+            ], 'docgen');
             
             // Publishing assets.
             /*$this->publishes([
