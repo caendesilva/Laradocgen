@@ -47,12 +47,35 @@ And store your images in `resources/docs/media/`
 ![My Image](media/image.png "Image Title") # Note the relative path
 ```
 
-### Testing and building package
+### Package Development
+#### Testing
 ```bash
 composer test
-
-bash build.sh
 ```
+
+#### Building
+First you need to specify the laravel install directory you are using. You only need to do this once.
+The install directory is specified in `.build/rootdir`
+We can generate it quickly using
+```bash
+bash build.sh "/mnt/d/dev/docgen-demo" # Replace the quoted string with your path
+```
+
+Run the build command to copy the markdown files into the resources directory and publish the assets.
+##### Build command
+###### Unix-like systems
+```bash
+$ bash build.sh
+```
+###### Windows (WSL)
+```powershell
+PS: wsl bash build.sh
+```
+###### Windows (Bash-enabled systems)
+```powershell
+PS: bash build.sh
+```
+
 
 ### Changelog
 
@@ -65,7 +88,7 @@ Right now there are not very many customization options as I wanted to keep thin
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Roadmap
-- [ ] Add versioning support
+[ ] Add versioning support
 
 ### Security
 
