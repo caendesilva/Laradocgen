@@ -1,3 +1,8 @@
 # Rearrange the list items below to decide the order of navigation links in the sidebar
 Links:
   - index
+  - readme
+  - getting-started
+  - contributing
+  - changelog
+  - license

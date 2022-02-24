@@ -4,6 +4,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/caendesilva/docgen.svg?style=flat-square)](https://packagist.org/packages/caendesilva/docgen)
 ![GitHub Actions](https://github.com/caendesilva/docgen/actions/workflows/main.yml/badge.svg)
 
+## About
+
 Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
 
 ## Alpha Stage Software
@@ -61,6 +63,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR as I want to allow for more customization down the line.
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+### Roadmap
+- [ ] Add versioning support
 
 ### Security
 

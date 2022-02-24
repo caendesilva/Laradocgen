@@ -1,6 +1,8 @@
 # Creating a static documentation site blazingly fast and stupidly simple with Caendesilva/Docgen for Laravel
 
-## Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
+<p class="subheading">
+Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
+</p>
 
 ### Installation guide
 

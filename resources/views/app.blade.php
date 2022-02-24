@@ -59,8 +59,18 @@
 		}
 	</style>
 
+	<!-- Tailwind -->
+	<style>
+		.subheading {
+			color: #1a202c; font-weight: 600; font-size: 1.2em; margin-top: 2em; margin-bottom: 1em; line-height: 1.3333333
+		}
+		.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
+			content: none;
+		}
+	</style>
+
 	@if(config('docgen.useTorchlight'))
-		<!-- Torchlight -->
+	<!-- Torchlight -->
 	<style>
 		/* Unset Tailwind Style */
 		.prose pre {
