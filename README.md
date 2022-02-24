@@ -14,7 +14,23 @@ You can install the package via composer:
 composer require caendesilva/docgen
 ```
 
+Make sure to enable the extensions in commonmark
+
+To use images in the realtime compiler, add the following to config/filesystems.php
+// Link images in the documentation
+'links' => [
+	public_path('docs/master/media') => resource_path('docs/src/media'),
+],
+
+and run php artisan storage:link
+
+> If you get the error "The system cannot find the path specified." try creating the public/docs/master directories manually and then try again
+
+**Note that you don't need to do this when you build the assets to the static site which is recommended.**
+
 ## Usage
+
+Markdown files must in lowercase kebab-case and end in .md and must not contain spaces. In essence they must be compatible with Str::slug()
 
 ```php
 // Usage description here
@@ -31,6 +47,8 @@ composer test
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
 ## Contributing
+
+Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR as I want to allow for more customization down the line.
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
@@ -50,3 +68,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 ## Laravel Package Boilerplate
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+
+## Frontend
+
+The frontend is based on https://github.com/creativetimofficial/tailwind-starter-kit (MIT)
