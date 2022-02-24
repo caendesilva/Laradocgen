@@ -16,9 +16,12 @@
 	<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.1.2/dist/typography.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/utilities.min.css">
 
-	<base href="{{ $rootRoute }}">
-
-	<title>{{ $page->title }} | {{ config('app.name') }} Docs</title>
+	<title>
+		@if($page->slug !== "index")
+		{{ $page->title }} | 
+		@endif
+		{{ config('app.name') }} Docs
+	</title>
 
 	<!-- Prevent FOUC -->
 	<style> .prose .table-of-contents { display: none; } </style>
@@ -123,7 +126,7 @@
 					type="button" onclick="toggleNavbar('example-collapse-sidebar')">
 					<i class="fas fa-bars"></i></button>
 				<a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block  text-sm uppercase font-bold p-4 px-0"
-					href="">
+					href="index{{ $realtime == false ? '.html' : '' }}">
 					{{ config('app.name') }} Docs
 				</a>
 				<ul class="md:hidden items-center flex flex-wrap list-none">
@@ -201,17 +204,17 @@
 
 					<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 						@foreach ($links as $link)
-							@if($link == $page->slug)
+							@if($link->slug == $page->slug)
 							<li id="sidebar-active" class="items-center">
 								<a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
-									href="{{ $link->slug }}">
+									href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
 									{{ $link->title }}
 								</a>
 							</li>
 							@else
 							<li class="items-center">
 								<a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-									href="{{ $link->slug }}">
+									href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
 									{{ $link->title }}
 								</a>
 							</li>
@@ -233,7 +236,11 @@
 		</nav>
 		<main class="relative md:ml-64 lg:ml-72 xl:pl-8 bg-blueGray-50">
 			<article class="prose max-w-3xl m-4 mx-6 lg:mx-8 p-6">
-				{!! $page->markdown!!}
+				{!! 
+					$realtime
+						? str_replace('<img src="media/', '<img src="/docs/media/', $page->markdown)
+						: $page->markdown;
+				!!}
 			</article>
 		</main>
 	</div>
