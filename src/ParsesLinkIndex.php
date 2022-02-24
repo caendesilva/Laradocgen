@@ -21,7 +21,7 @@ class ParsesLinkIndex
 	private array $index;
 
     public function __construct() {
-		$this->filePath = resource_path() . '/docs/src/linkIndex.yml';
+		$this->filePath = resource_path() . '/docs/linkIndex.yml';
 
 		if (!file_exists($this->filePath)) {
 			throw new \Exception("Could not find the link index! Did you create one?", 1);

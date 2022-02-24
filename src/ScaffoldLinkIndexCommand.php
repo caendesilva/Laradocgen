@@ -42,7 +42,7 @@ class ScaffoldLinkIndexCommand extends Command
         try {
             (GeneratesLinkIndexScaffold::generate((bool) $this->option('force')));
             
-            $this->info('Done. Created file ' . resource_path() . '/docs/src/linkIndex.yml');
+            $this->info('Done. Created file ' . resource_path() . '/docs/linkIndex.yml');
         } catch (\Throwable $th) {
             $this->error($th->getMessage());
         }

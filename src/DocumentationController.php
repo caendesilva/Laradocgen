@@ -16,9 +16,10 @@ class DocumentationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function realtime()
     {
-      return redirect()->route('docs.show', ['slug' => 'index']);
+      // return redirect()->route('docs.show', ['slug' => 'index']);
+
     }
 
     /**
@@ -26,20 +27,24 @@ class DocumentationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(string $slug = 'index')
+    public function show(string $slug, bool $realtime = false)
     {
-        return view('docgen::app', [
+      // If the request is not from the builder, compare the checksums or file sizes and if realtime is enabled recompile
+
+      // realtime: Is the request from the static page generator or a realtime user
+      return view('docgen::app', [
 			// Page object
 			// 'title' => str_replace('-', ' ', Str::title($slug)),
 			// 'markdown' => Docgen::getMarkdownFromSlugOrFail($slug),
 			// 'slug' => $slug,
 			'page' => (new MarkdownPage($slug)),
 
+      'realtime' => $realtime,
 
 			// Layout object
 			'links' => (new NavigationLinks())->withoutIndex()->order()->get(),
 			// 'links' => Docgen::getMarkdownFileSlugsArray(),
-			'rootRoute' => '/docs-master/',
+			'rootRoute' => $realtime ? '/realtime-docs/' : '/docs/',
 		]);
     }
 }

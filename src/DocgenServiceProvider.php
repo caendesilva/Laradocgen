@@ -31,7 +31,7 @@ class DocgenServiceProvider extends ServiceProvider
 
             // Publishing the markdown files.
             $this->publishes([
-                __DIR__.'/../resources/docs/src' => resource_path('docs/src'),
+                __DIR__.'/../resources/docs' => resource_path('docs'),
             ], 'docs');
             
             // Publishing assets.
@@ -47,6 +47,7 @@ class DocgenServiceProvider extends ServiceProvider
             // Registering package commands.
             $this->commands([
                 ScaffoldLinkIndexCommand::class,
+                BuildCommand::class,
             ]);
         }
     }

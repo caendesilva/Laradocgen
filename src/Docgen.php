@@ -8,7 +8,7 @@ class Docgen
 {
     public static function getMarkdownFromSlug(string $slug): string|bool {
         try {
-            return (string) Markdown::convertToHtml(file_get_contents(resource_path() . '/docs/src/' . $slug . '.md'));
+            return (string) Markdown::convertToHtml(file_get_contents(resource_path() . '/docs/' . $slug . '.md'));
         } catch (\Throwable $th) {
             return false;
         }
@@ -27,7 +27,7 @@ class Docgen
     {
         $files = [];
     
-        foreach (glob(resource_path() . '/docs/src/*.md') as $filepath) {
+        foreach (glob(resource_path() . '/docs/*.md') as $filepath) {
             $slug = basename($filepath, '.md');
             // In future we check if in the index if the slug has an order, and if so we set the order as the array index key
             $files[] = $slug;
@@ -36,4 +36,9 @@ class Docgen
         return $files;
     }
 
+    public static function build()
+    {
+        // Build the static files
+        return new StaticPageBuilder;
+    }
 }

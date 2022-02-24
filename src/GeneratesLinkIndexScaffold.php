@@ -22,7 +22,7 @@ class GeneratesLinkIndexScaffold
     public function __construct(bool $force = false) {
 		$this->force = $force;
 
-		$this->filePath = resource_path() . '/docs/src/linkIndex.yml';
+		$this->filePath = resource_path() . '/docs/linkIndex.yml';
 
 		if ($this->checkIfScaffoldExists()) {
 			echo "\033[33mWarn: Scaffold file already exists. ";
