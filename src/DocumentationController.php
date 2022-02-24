@@ -29,6 +29,8 @@ class DocumentationController extends Controller
      */
     public function show(string $slug, bool $realtime = false)
     {
+      $slug = $this->handle404($slug);
+
       // If the request is not from the builder, compare the checksums or file sizes and if realtime is enabled recompile
 
       // realtime: Is the request from the static page generator or a realtime user
@@ -42,9 +44,16 @@ class DocumentationController extends Controller
       'realtime' => $realtime,
 
 			// Layout object
-			'links' => (new NavigationLinks())->withoutIndex()->order()->get(),
+			'links' => (new NavigationLinks())->withoutRoutes(['index', '404'])->order()->get(),
 			// 'links' => Docgen::getMarkdownFileSlugsArray(),
 			'rootRoute' => $realtime ? '/realtime-docs/' : '/docs/',
 		]);
+    }
+
+    private function handle404(string $slug): string
+    {
+      // Check if file exists, if it does we return the slug back. Otherwise we swap it out for a 404.
+      // This way the user's url is preserved and we don't redirect to a 404 page.
+      return Docgen::validateExistence($slug) ? $slug : '404';
     }
 }

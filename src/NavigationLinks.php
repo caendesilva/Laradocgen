@@ -21,12 +21,12 @@ class NavigationLinks
 		return $this->links;
 	}
 
-	public function withoutIndex(): self
+	public function withoutRoutes(array $routes = ['index', '404']): self
 	{
-		// Remove the index entry from the collection
-		
-		$this->links = $this->links->reject(function ($link) {
-			return $link->slug === 'index';
+		// Remove the specified routes from the collection
+
+		$this->links = $this->links->reject(function ($link) use ($routes) {
+			return in_array($link->slug, $routes);
 		});
 
         return $this;

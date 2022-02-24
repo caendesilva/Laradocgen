@@ -37,6 +37,11 @@ class Docgen
         return $files;
     }
 
+    public static function validateExistence(string $slug): bool
+    {
+        return file_exists(resource_path() . '/docs/' . $slug . '.md');
+    }
+
     public static function build()
     {
         // Build the static files
