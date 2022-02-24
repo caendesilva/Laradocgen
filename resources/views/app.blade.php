@@ -59,7 +59,8 @@
 		}
 	</style>
 
-	<!-- Torchlight -->
+	@if(config('docgen.useTorchlight'))
+		<!-- Torchlight -->
 	<style>
 		/* Unset Tailwind Style */
 		.prose pre {
@@ -110,6 +111,7 @@
 			margin-right: 1rem;
 		}
 	</style>
+	@endif
 </head>
 
 <body class="text-blueGray-700 antialiased">
@@ -198,6 +200,15 @@
 			</article>
 		</main>
 	</div>
+
+
+	<footer>
+	@if(config('docgen.useTorchlight'))
+		<small>
+			Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener noreferrer nofollow">Torchlight.dev</a>
+		</small>
+	@endif
+	</footer>
 
 	<script>
 		let toc = document.querySelector('ul.table-of-contents');

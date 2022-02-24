@@ -2,14 +2,15 @@
 
 namespace Caendesilva\Docgen;
 
-use GrahamCampbell\Markdown\Facades\Markdown;
-
 class Docgen
 {
     public static function getMarkdownFromSlug(string $slug): string|bool {
         try {
-            return (string) Markdown::convertToHtml(file_get_contents(resource_path() . '/docs/' . $slug . '.md'));
+            return (string) (new MarkdownConverter(
+                file_get_contents(resource_path() . '/docs/' . $slug . '.md'))
+            )->parse();
         } catch (\Throwable $th) {
+            throw $th;
             return false;
         }
     }

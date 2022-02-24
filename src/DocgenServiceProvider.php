@@ -4,6 +4,15 @@ namespace Caendesilva\Docgen;
 
 use Illuminate\Support\ServiceProvider;
 
+use League\CommonMark\MarkdownConverter;
+use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
+use League\CommonMark\Extension\TableOfContents\TableOfContentsExtension;
+use League\CommonMark\Extension\Footnote\FootnoteExtension;
+use Torchlight\Commonmark\V2\TorchlightExtension;
+use League\CommonMark\Environment\Environment;
+
 class DocgenServiceProvider extends ServiceProvider
 {
     /**
@@ -49,6 +58,9 @@ class DocgenServiceProvider extends ServiceProvider
                 BuildCommand::class,
             ]);
         }
+
+        
+
     }
 
     /**
@@ -62,6 +74,42 @@ class DocgenServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('docgen', function () {
             return new Docgen;
+        });
+
+        // Register a new Markdown Singleton
+        $this->app->singleton('docgen.converter', function ($app) {
+            $config = [
+                'table_of_contents' => [
+                    'position' => 'placeholder',
+            
+                    'placeholder' => '[[toc]]',
+                ],
+            
+                'heading_permalink' => [
+                    'insert' => 'after',
+                    'symbol' => '#',
+                    'id_prefix' => '',
+                    'fragment_prefix' => '',
+                ],
+            ];
+            
+            $environment = new Environment($config);
+		
+            $environment->addExtension(new GithubFlavoredMarkdownExtension());
+
+            $environment->addExtension(new CommonMarkCoreExtension());
+            
+            $environment->addExtension(new HeadingPermalinkExtension());
+            $environment->addExtension(new TableOfContentsExtension());
+            $environment->addExtension(new FootnoteExtension());
+
+    
+            if (config('docgen.useTorchlight')) {
+                $environment->addExtension(new TorchlightExtension());
+            }
+    
+
+            return new MarkdownConverter($environment);
         });
     }
 }
