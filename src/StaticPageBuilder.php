@@ -55,9 +55,9 @@ class StaticPageBuilder
 
 	private function buildPage(string $slug)
 	{
-		// $html = file_get_contents('http://blogkit.test/documentation-generator/' . $slug);
+		// $html = file_get_contents('http://localhost:8000/documentation-generator/' . $slug);
 
-		$url = 'http://blogkit.test/documentation-generator/' . $slug;
+		$url = 'http://localhost:8000/documentation-generator/' . $slug;
 
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_URL, $url);
