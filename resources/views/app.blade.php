@@ -221,12 +221,14 @@
 	</footer>
 
 	<script>
+		// Move the dynamic table of contents to the sidebar
 		let toc = document.querySelector('ul.table-of-contents');
 		if (toc) {
 			let destination = document.getElementById('sidebar-active');
-			// toc.classList.add('prose');
-			destination.insertAdjacentHTML('beforeend', toc.outerHTML);
-			toc.remove();
+			if (destination) {
+				destination.insertAdjacentHTML('beforeend', toc.outerHTML);
+				toc.remove();
+			}
 		}
 	</script>
 	
