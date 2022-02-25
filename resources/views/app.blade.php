@@ -9,32 +9,46 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
 
 	<!-- Untill we have something stable enough to warrant compiling the tailwind ourselves -->
+	{{--
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/base.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/components.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.1.2/dist/typography.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/utilities.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/utilities.min.css"> --}}
+
+	<link rel="stylesheet" href="{{
+								$realtime
+									? '/vendor/docgen/app.css'
+									: 'media/app.css'
+							}}">
 
 	<title>
 		@if($page->slug !== "index")
-		{{ $page->title }} | 
+		{{ $page->title }} |
 		@endif
 		{{ $siteName }}
 	</title>
 
 	<!-- Prevent FOUC -->
-	<style> .prose .table-of-contents { display: none; } </style>
+	<style>
+		.prose .table-of-contents {
+			display: none;
+		}
+	</style>
 
 	<!-- Table of Contents -->
 	<style>
 		html {
 			scroll-behavior: smooth;
 		}
+
 		.table-of-contents {
 			margin-bottom: 1rem;
 		}
+
 		.table-of-contents ul {
 			margin-left: 1rem;
 		}
+
 		.table-of-contents li::before {
 			content: "# ";
 			color: #6b7280;
@@ -46,14 +60,13 @@
 			color: #6b7280;
 			padding: 1rem 0.75rem;
 		}
-	
+
 		h1:hover .heading-permalink,
 		h2:hover .heading-permalink,
 		h3:hover .heading-permalink,
 		h4:hover .heading-permalink,
 		h5:hover .heading-permalink,
-		h6:hover .heading-permalink
-		{
+		h6:hover .heading-permalink {
 			opacity: 1;
 			color: #6366f1;
 		}
@@ -62,9 +75,16 @@
 	<!-- Tailwind -->
 	<style>
 		.subheading {
-			color: #1a202c; font-weight: 600; font-size: 1.2em; margin-top: 2em; margin-bottom: 1em; line-height: 1.3333333
+			color: #1a202c;
+			font-weight: 600;
+			font-size: 1.2em;
+			margin-top: 2em;
+			margin-bottom: 1em;
+			line-height: 1.3333333
 		}
-		.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
+
+		.prose blockquote p:first-of-type::before,
+		.prose blockquote p:last-of-type::after {
 			content: none;
 		}
 	</style>
@@ -87,7 +107,7 @@
 			margin-bottom: 1rem;
 			overflow-x: auto;
 		}
-		
+
 		/*
 		Add some vertical padding and expand the width
 		to fill its container. The horizontal padding
@@ -102,7 +122,7 @@
 			padding-top: 1rem;
 			padding-bottom: 1rem;
 		}
-		
+
 		/*
 		Horizontal line padding to match the vertical
 		padding from the code block above.
@@ -111,7 +131,7 @@
 			padding-left: 1rem;
 			padding-right: 1rem;
 		}
-		
+
 		/*
 		Push the code away from the line numbers and
 		summary caret indicators.
@@ -132,15 +152,18 @@
 			<div
 				class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
 				<a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block  text-sm uppercase font-bold p-4 px-0"
-				href="index{{ $realtime == false ? '.html' : '' }}">
-				{{ $siteName }}
-			</a>
+					href="index{{ $realtime == false ? '.html' : '' }}">
+					{{ $siteName }}
+				</a>
 				<button
 					class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 					type="button" onclick="toggleNavbar('example-collapse-sidebar')">
-					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
-			
-				<div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
+					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+						<path d="M0 0h24v24H0z" fill="none" />
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+					</svg></button>
+
+				<div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
 					id="example-collapse-sidebar">
 					<div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
 						<div class="flex flex-wrap">
@@ -154,7 +177,11 @@
 								<button type="button"
 									class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 									onclick="toggleNavbar('example-collapse-sidebar')">
-									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+										<path d="M0 0h24v24H0z" fill="none" />
+										<path
+											d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+									</svg>
 								</button>
 							</div>
 						</div>
@@ -165,26 +192,26 @@
 								class="px-3 py-2 h-12 border border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal" />
 						</div>
 					</form>
-					
+
 					<hr class="my-4 md:min-w-full" />
 
 					<ul class="md:flex-col md:min-w-full flex flex-col list-none">
 						@foreach ($links as $link)
-							@if($link->slug == $page->slug)
-							<li id="sidebar-active" class="items-center">
-								<a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
-									href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
-									{{ $link->title }}
-								</a>
-							</li>
-							@else
-							<li class="items-center">
-								<a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-									href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
-									{{ $link->title }}
-								</a>
-							</li>
-							@endif
+						@if($link->slug == $page->slug)
+						<li id="sidebar-active" class="items-center">
+							<a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
+								href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
+								{{ $link->title }}
+							</a>
+						</li>
+						@else
+						<li class="items-center">
+							<a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+								href="{{ $link->slug }}{{ $realtime == false ? '.html' : '' }}">
+								{{ $link->title }}
+							</a>
+						</li>
+						@endif
 						@endforeach
 					</ul>
 
@@ -202,12 +229,12 @@
 		</nav>
 		<main class="relative md:ml-64 lg:ml-72 xl:pl-8 bg-blueGray-50">
 			<article class="prose max-w-3xl m-4 mx-6 lg:mx-8 p-6">
-				{!! 
-					// Print the Markdown HTML from the page object.
-					// If this is a realtime request we replace the media path first.
-					$realtime
-						? str_replace('<img src="media/', '<img src="/docs/media/', $page->markdown)
-						: $page->markdown;
+				{!!
+				// Print the Markdown HTML from the page object.
+				// If this is a realtime request we replace the media path first.
+				$realtime
+				? str_replace('<img src="media/', '<img src=" /docs/media/', $page->markdown)
+				: $page->markdown;
 				!!}
 			</article>
 		</main>
@@ -215,11 +242,12 @@
 
 
 	<footer>
-	@if(config('docgen.useTorchlight'))
+		@if(config('docgen.useTorchlight'))
 		<small>
-			Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener noreferrer nofollow">Torchlight.dev</a>
+			Syntax highlighting by <a href="https://torchlight.dev/"
+				rel="noopener noreferrer nofollow">Torchlight.dev</a>
 		</small>
-	@endif
+		@endif
 	</footer>
 
 	<script>
@@ -233,7 +261,7 @@
 			}
 		}
 	</script>
-	
+
 
 	<script type="text/javascript">
 		/* Sidebar - Side navigation menu on mobile/responsive mode */

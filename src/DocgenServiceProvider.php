@@ -44,9 +44,9 @@ class DocgenServiceProvider extends ServiceProvider
             ], 'docgen');
 
             // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/docgen'),
-            ], 'assets');*/
+            $this->publishes([
+                __DIR__ . '/../resources/assets' => public_path('vendor/docgen'),
+            ], 'docgen');
 
             // Publishing the translation files.
             /*$this->publishes([

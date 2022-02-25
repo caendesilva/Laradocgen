@@ -1,0 +1,19 @@
+{
+  "name": "docgen",
+  "version": "0.1.0",
+  "description": "Docgen Frontend Assets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caen De Silva",
+  "keywords": [
+    "documentation",
+    "laravel",
+    "docgen"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "tailwindcss": "^3.0.23"
+  }
+}
