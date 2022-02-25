@@ -69,6 +69,8 @@ composer test
 ```
 
 ### Building
+I've included a build script to automate the build process. It takes care of copying and modifying the root markdown files into examples shipped in the resources/docs directory. It also compiles the and minifies TailwindCSS and publishes the assets to your development app.
+
 First you need to specify the laravel install directory you are using. You only need to do this once.
 The install directory is specified in `.build/rootdir`
 

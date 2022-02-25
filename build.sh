@@ -44,10 +44,27 @@ sed 's/CONTRIBUTING.md/contributing/g' resources/docs/readme.md -i
 
 echo "Done"
 
+
+printf "Building assets. This may take a few seconds."
+
+while sleep 1; do printf "."; done &
+npx tailwindcss -i ./resources/src/app.css -o ./resources/assets/app.css  --minify
+kill $!
+
+echo "Done"
+
 echo "Publishing assets"
-
+spinner=( '|' '/' '-' '\' );
+while true; do
+for item in ${spinner[*]}
+    do
+        echo -en "\r$item"
+        sleep .1
+        echo -en "\r              \r"
+    done
+done &
 php ${rootdir}/artisan vendor:publish --tag="docgen" --force
-
+kill $!
 echo "Done"
 
 echo "Finished"

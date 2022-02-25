@@ -202,6 +202,8 @@ class StaticPageBuilder
             copy($filepath, $this->buildPath . 'media/' . basename($filepath));
             $count++;
         }
+
+        // Copy CSS from public/vendor to media/app.css
         return $count;
     }
 }
