@@ -8,6 +8,8 @@ then
 	exit 0;
 fi
 
+startTime=$(date +%s);
+
 echo "Building package"
 
 echo "Getting root directory"
@@ -67,4 +69,7 @@ php ${rootdir}/artisan vendor:publish --tag="docgen" --force
 kill $!
 echo "Done"
 
-echo "Finished"
+endTime=$(date +%s);
+totalTime=$(($endTime-$startTime));
+
+echo "Finished in $totalTime seconds"
