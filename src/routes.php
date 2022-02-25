@@ -1,6 +1,6 @@
 <?php
 
-use Caendesilva\Docgen\DocumentationController;
+use DeSilva\Docgen\DocumentationController;
 
 // Register routes only in the local environment
 if (config('app.env') === 'local') {

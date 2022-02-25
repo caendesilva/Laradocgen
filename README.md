@@ -1,9 +1,9 @@
 # Laravel Static Documentation Sites, Blazingly Fast and Stupidly Simple
 
 <!-- \BMSTX BUILDMETA -->
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/caendesilva/docgen.svg?style=flat-square)](https://packagist.org/packages/caendesilva/docgen)
-[![Total Downloads](https://img.shields.io/packagist/dt/caendesilva/docgen.svg?style=flat-square)](https://packagist.org/packages/caendesilva/docgen)
-![GitHub Actions](https://github.com/caendesilva/docgen/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/docgen.svg?style=flat-square)](https://packagist.org/packages/desilva/docgen)
+[![Total Downloads](https://img.shields.io/packagist/dt/desilva/docgen.svg?style=flat-square)](https://packagist.org/packages/desilva/docgen)
+![GitHub Actions](https://github.com/desilva/docgen/actions/workflows/main.yml/badge.svg)
 <!--  BUILDMETA \BMETX -->
 
 ## About
@@ -19,7 +19,7 @@ Please do contribute with PRs and bug reports!
 
 You can install the package via composer:
 ```bash
-composer require caendesilva/docgen --dev
+composer require desilva/docgen --dev
 ```
 
 Publish the assets
@@ -78,7 +78,7 @@ If you discover any security-related issues, please email caen@desilva.se instea
 
 ## Credits
 
--   [Caen De Silva](https://github.com/caendesilva)
+-   [Caen De Silva](https://github.com/desilva)
 -   [All Contributors](../../contributors)
 
 ## License

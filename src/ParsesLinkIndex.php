@@ -1,6 +1,6 @@
 <?php
 
-namespace Caendesilva\Docgen;
+namespace DeSilva\Docgen;
 
 /**
  * Parse the linkIndex.yml file which is used to determine the order the

@@ -1,4 +1,4 @@
-# Creating a static documentation site blazingly fast and stupidly simple with Caendesilva/Docgen for Laravel
+# Creating a static documentation site blazingly fast and stupidly simple with DeSilva/Docgen for Laravel
 
 <p class="subheading">
 Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
@@ -31,7 +31,7 @@ php artisan serve
 Next, we need to install the Composer package. Since this is a static site generator we don't need it in production, thus we are adding the --dev flag.
 
 ```bash
-composer require caendesilva/docgen --dev
+composer require desilva/docgen --dev
 ```
 
 #### Publish the assets

@@ -1,6 +1,6 @@
 <?php
 
-namespace Caendesilva\Docgen;
+namespace DeSilva\Docgen;
 
 use Illuminate\Support\Collection;
 

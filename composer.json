@@ -1,11 +1,11 @@
 {
-    "name": "caendesilva/docgen",
+    "name": "desilva/docgen",
     "description": "Generates documentation based on Markdown on the fly and can compile it to static HTML",
     "keywords": [
-        "caendesilva",
+        "desilva",
         "docgen"
     ],
-    "homepage": "https://github.com/caendesilva/docgen",
+    "homepage": "https://github.com/desilva/docgen",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Caendesilva\\Docgen\\": "src"
+            "DeSilva\\Docgen\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Caendesilva\\Docgen\\Tests\\": "tests"
+            "DeSilva\\Docgen\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Caendesilva\\Docgen\\DocgenServiceProvider"
+                "DeSilva\\Docgen\\DocgenServiceProvider"
             ],
             "aliases": {
-                "Docgen": "Caendesilva\\Docgen\\DocgenFacade"
+                "Docgen": "DeSilva\\Docgen\\DocgenFacade"
             }
         }
     }

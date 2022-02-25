@@ -20,7 +20,7 @@
 			"namespace"
 		],
 		"body": [
-			"namespace Caendesilva\\Docgen;",
+			"namespace DeSilva\\Docgen;",
 		],
 		"description": "Add the namespace"
 	},

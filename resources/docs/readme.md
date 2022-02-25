@@ -14,7 +14,7 @@ Please do contribute with PRs and bug reports!
 
 You can install the package via composer:
 ```bash
-composer require caendesilva/docgen --dev
+composer require desilva/docgen --dev
 ```
 
 Publish the assets
@@ -73,7 +73,7 @@ If you discover any security-related issues, please email caen@desilva.se instea
 
 ## Credits
 
--   [Caen De Silva](https://github.com/caendesilva)
+-   [Caen De Silva](https://github.com/desilva)
 -   [All Contributors](../../contributors)
 
 ## License

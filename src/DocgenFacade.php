@@ -1,11 +1,11 @@
 <?php
 
-namespace Caendesilva\Docgen;
+namespace DeSilva\Docgen;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Caendesilva\Docgen\Skeleton\SkeletonClass
+ * @see \DeSilva\Docgen\Skeleton\SkeletonClass
  */
 class DocgenFacade extends Facade
 {
