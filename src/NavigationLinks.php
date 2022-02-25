@@ -7,7 +7,9 @@ use Illuminate\Support\Collection;
 /**
  * Creates a Collection of NavigationLink objects
  *
- * The Collection is used to create the sidebar.
+ * The Collection is used to create the sidebar
+ * and the Collection of files for the
+ * StaticPageBuilder to generate.
  *
  * @uses NavigationLink
  *
@@ -15,7 +17,6 @@ use Illuminate\Support\Collection;
  * @method $this order() sort the Collection
  *
  * @method \Illuminate\Support\Collection get() returns the Collection
- *
  */
 class NavigationLinks
 {
