@@ -33,7 +33,8 @@ class ParsesLinkIndex
 
     public function parseYamlToArray(): array
     {
-        // Stupidly simple parser, rather inefficient probably but since most files won't have long indexes I think it's okay
+        // Stupidly simple parser
+        // rather inefficient probably but since most files won't have long indexes I think it's okay
 
         $yaml = (file_get_contents($this->filePath));
 

@@ -32,7 +32,6 @@ class Docgen
     
         foreach (glob(resource_path() . '/docs/*.md') as $filepath) {
             $slug = basename($filepath, '.md');
-            // In future we check if in the index if the slug has an order, and if so we set the order as the array index key
             $files[] = $slug;
         }
 
