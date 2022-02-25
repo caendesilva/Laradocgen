@@ -39,9 +39,9 @@ class DocumentationController extends Controller
          * Create the NavigationLinks object which contains the sidebar information
          */
         $links = (new NavigationLinks())
-                    ->withoutRoutes(['index', '404'])
-                    ->order()
-                    ->get();
+            ->withoutRoutes(['index', '404'])
+            ->order()
+            ->get();
 
         // Get the name of the site
         $siteName = DocgenFacade::getSiteName();
@@ -50,8 +50,8 @@ class DocumentationController extends Controller
          * Determine the root path. This is used to prefix the relative URLs.
          */
         $rootRoute =  $realtime ? '/realtime-docs/' : '/docs/';
-        
-        
+
+
         // Return the view
         return view('docgen::app', [
             'page' => $page,

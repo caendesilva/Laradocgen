@@ -18,6 +18,13 @@ class Docgen
             : config('docgen.siteName', 'App Name');
     }
 
+    /**
+     * @deprecated and will be renamed as it does not fetch Markdown, but HTML.
+     *      Thus it should be renamed to be more semantic.
+     * 
+     * @param string $slug
+     * @return string
+     */
     public static function getMarkdownFromSlug(string $slug): string|bool
     {
         try {
@@ -31,6 +38,13 @@ class Docgen
         }
     }
 
+    /**
+     * @deprecated and will be removed as we handle 404s differently,
+     *              and the self::getMarkdownFromSlug() is also deprecated.
+     * 
+     * @param string $slug
+     * @return string
+     */
     public static function getMarkdownFromSlugOrFail(string $slug): string
     {
         $markdown = self::getMarkdownFromSlug($slug);
@@ -57,9 +71,13 @@ class Docgen
         return file_exists(resource_path() . '/docs/' . $slug . '.md');
     }
 
+    /**
+     * Build the static files
+     * 
+     * @return StaticPageBuilder
+     */
     public static function build()
     {
-        // Build the static files
         return new StaticPageBuilder;
     }
 }

@@ -4,6 +4,9 @@ namespace Caendesilva\Docgen;
 
 use Illuminate\Console\Command;
 
+/**
+ * Artisan Command to trigger Static Site Build
+ */
 class BuildCommand extends Command
 {
     /**

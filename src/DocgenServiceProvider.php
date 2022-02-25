@@ -24,13 +24,13 @@ class DocgenServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'docgen');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'docgen');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'docgen');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('docgen.php'),
+                __DIR__ . '/../config/config.php' => config_path('docgen.php'),
             ], 'docgen');
 
             // Publishing the views.
@@ -40,9 +40,9 @@ class DocgenServiceProvider extends ServiceProvider
 
             // Publishing the markdown files.
             $this->publishes([
-                __DIR__.'/../resources/docs' => resource_path('docs'),
+                __DIR__ . '/../resources/docs' => resource_path('docs'),
             ], 'docgen');
-            
+
             // Publishing assets.
             /*$this->publishes([
                 __DIR__.'/../resources/assets' => public_path('vendor/docgen'),
@@ -66,7 +66,7 @@ class DocgenServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'docgen');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'docgen');
 
         // Register the main class to use with the facade
         $this->app->singleton('docgen', function () {
@@ -75,11 +75,10 @@ class DocgenServiceProvider extends ServiceProvider
 
         // Register a new Markdown Singleton
         $this->app->singleton('docgen.converter', function ($app) {
+            // Create the Commonmark Environment Config
             $config = [
-                'table_of_contents' => [
-            
-                ],
-            
+                'table_of_contents' => [],
+
                 'heading_permalink' => [
                     'min_heading_level' => 2,
                     'max_heading_level' => 6,
@@ -89,23 +88,25 @@ class DocgenServiceProvider extends ServiceProvider
                     'fragment_prefix' => '',
                 ],
             ];
-            
+
+            // Create the Environment
             $environment = new Environment($config);
-        
+
+            // Add the Extensions
             $environment->addExtension(new GithubFlavoredMarkdownExtension());
 
             $environment->addExtension(new CommonMarkCoreExtension());
-            
+
             $environment->addExtension(new HeadingPermalinkExtension());
             $environment->addExtension(new TableOfContentsExtension());
             $environment->addExtension(new FootnoteExtension());
 
-    
+
             if (config('docgen.useTorchlight')) {
                 $environment->addExtension(new TorchlightExtension());
             }
-    
 
+            // Return the Converter to the Singleton Registrar
             return new MarkdownConverter($environment);
         });
     }

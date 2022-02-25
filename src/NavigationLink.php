@@ -7,6 +7,11 @@ use Illuminate\Support\Str;
 /**
  * The Navigation Link Object
  *
+ * @todo Refactor to work with the MarkdownPage::class.
+ *       In case we rename NavigationLink::class to MarkdownPageCollection::class
+ *       we may merge this class entirely with the MarkdownPage::class as they
+ *       share similar scopes and functions already.
+ * 
  * Used in generating the sidebar
  *
  * Is part of the NavigationLinks collection
@@ -49,6 +54,8 @@ class NavigationLink
 
     /**
      * Create a pretty title from the slug.
+     * 
+     * @todo should use a method from the MarkdownPage object
      *
      * @example 'hello-world' becomes 'Hello World'
      *

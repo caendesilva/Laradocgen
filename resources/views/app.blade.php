@@ -203,6 +203,8 @@
 		<main class="relative md:ml-64 lg:ml-72 xl:pl-8 bg-blueGray-50">
 			<article class="prose max-w-3xl m-4 mx-6 lg:mx-8 p-6">
 				{!! 
+					// Print the Markdown HTML from the page object.
+					// If this is a realtime request we replace the media path first.
 					$realtime
 						? str_replace('<img src="media/', '<img src="/docs/media/', $page->markdown)
 						: $page->markdown;

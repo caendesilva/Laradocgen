@@ -6,6 +6,8 @@ use Illuminate\Support\Collection;
 
 /**
  * Creates a Collection of NavigationLink objects
+ * 
+ * @todo It may make more sense to rename this to MarkdownPageCollection
  *
  * The Collection is used to create the sidebar
  * and the Collection of files for the
@@ -52,7 +54,7 @@ class NavigationLinks
             // Create a new NavigationLink object and push it to the Collection
             $links->push(new NavigationLink($slug));
         }
-     
+
         // Return the Collection
         return $links;
     }
