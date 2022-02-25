@@ -46,7 +46,8 @@ We try to follow the Laravel standars, https://laravel.com/docs/9.x/contribution
 (https://github.com/squizlabs/PHP_CodeSniffer)
 ```bash
 # Example usage
-phpcs ./ --standard=PSR2
+cd .build
+phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to output to a file instead of your terminal
 ```
 
 **Please add tests!**
