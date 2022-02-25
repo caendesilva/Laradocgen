@@ -15,7 +15,6 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
 	"namespace": {
 		"prefix": [
 			"namespace"
@@ -25,7 +24,6 @@
 		],
 		"description": "Add the namespace"
 	},
-
 	"filename": {
 		"prefix": [
 			"filename"
@@ -35,4 +33,11 @@
 		],
 		"description": "Insert the filename"
 	},
+	"Environment autocomplete": {
+		"prefix": "env",
+		"body": [
+			"environment"
+		],
+		"description": "Environment autocomplete"
+	}
 }

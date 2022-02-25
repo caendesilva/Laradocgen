@@ -5,6 +5,8 @@ namespace Caendesilva\Docgen;
 /**
  * Compile a Laravel route into static HTML
  *
+ * @todo add option to change source and output directories (PRs welcome!)
+ *
  * @author Caen De Silva
  */
 class StaticPageBuilder
