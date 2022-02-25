@@ -8,18 +8,10 @@
 	<link rel="shortcut icon" href="./assets/img/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
 
-	<!-- Untill we have something stable enough to warrant compiling the tailwind ourselves -->
-	{{--
-	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/base.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/components.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.1.2/dist/typography.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/utilities.min.css"> --}}
-
-	<link rel="stylesheet" href="{{
-								$realtime
-									? '/vendor/docgen/app.css'
-									: 'media/app.css'
-							}}">
+	<link rel="stylesheet" href="{{ $realtime
+										? '/vendor/docgen/app.css'
+										: 'media/app.css'
+									}}">
 
 	<title>
 		@if($page->slug !== "index")
@@ -35,60 +27,6 @@
 		}
 	</style>
 
-	<!-- Table of Contents -->
-	<style>
-		html {
-			scroll-behavior: smooth;
-		}
-
-		.table-of-contents {
-			margin-bottom: 1rem;
-		}
-
-		.table-of-contents ul {
-			margin-left: 1rem;
-		}
-
-		.table-of-contents li::before {
-			content: "# ";
-			color: #6b7280;
-			transition: color 0.25s;
-		}
-
-		.heading-permalink {
-			opacity: 0.25;
-			color: #6b7280;
-			padding: 1rem 0.75rem;
-		}
-
-		h1:hover .heading-permalink,
-		h2:hover .heading-permalink,
-		h3:hover .heading-permalink,
-		h4:hover .heading-permalink,
-		h5:hover .heading-permalink,
-		h6:hover .heading-permalink {
-			opacity: 1;
-			color: #6366f1;
-		}
-	</style>
-
-	<!-- Tailwind -->
-	<style>
-		.subheading {
-			color: #1a202c;
-			font-weight: 600;
-			font-size: 1.2em;
-			margin-top: 2em;
-			margin-bottom: 1em;
-			line-height: 1.3333333
-		}
-
-		.prose blockquote p:first-of-type::before,
-		.prose blockquote p:last-of-type::after {
-			content: none;
-		}
-	</style>
-
 	@if(config('docgen.useTorchlight'))
 	<!-- Torchlight -->
 	<style>
@@ -97,10 +35,7 @@
 			padding: unset;
 		}
 
-		/*
-		Margin and rounding are personal preferences,
-		overflow-x-auto is recommended.
-		*/
+		/* Margin and rounding are personal preferences, overflow-x-auto is recommended. */
 		pre {
 			border-radius: 0.25rem;
 			margin-top: 1rem;
@@ -108,12 +43,7 @@
 			overflow-x: auto;
 		}
 
-		/*
-		Add some vertical padding and expand the width
-		to fill its container. The horizontal padding
-		comes at the line level so that background
-		colors extend edge to edge.
-		*/
+		/* Add some vertical padding and expand the width to fill its container. The horizontal padding comes at the line level so that background colors extend edge to edge. */
 		pre code.torchlight {
 			display: block;
 			min-width: -webkit-max-content;
@@ -123,19 +53,13 @@
 			padding-bottom: 1rem;
 		}
 
-		/*
-		Horizontal line padding to match the vertical
-		padding from the code block above.
-		*/
+		/* Horizontal line padding to match the vertical padding from the code block above. */
 		pre code.torchlight .line {
 			padding-left: 1rem;
 			padding-right: 1rem;
 		}
 
-		/*
-		Push the code away from the line numbers and
-		summary caret indicators.
-		*/
+		/* Push the code away from the line numbers and summary caret indicators. */
 		pre code.torchlight .line-number,
 		pre code.torchlight .summary-caret {
 			margin-right: 1rem;

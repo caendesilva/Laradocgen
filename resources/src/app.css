@@ -1,3 +1,58 @@
+/* Docgen Frontend CSS Source File */
+
+/* Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Tailwind */
+.subheading {
+	color: #1a202c;
+	font-weight: 600;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	line-height: 1.3333333
+}
+
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+	content: none;
+}
+
+
+/* Table of Contents */
+html {
+	scroll-behavior: smooth;
+}
+
+.table-of-contents {
+	margin-bottom: 1rem;
+}
+
+.table-of-contents ul {
+	margin-left: 1rem;
+}
+
+.table-of-contents li::before {
+	content: "# ";
+	color: #6b7280;
+	transition: color 0.25s;
+}
+
+.heading-permalink {
+	opacity: 0.25;
+	color: #6b7280;
+	padding: 1rem 0.75rem;
+}
+
+h1:hover .heading-permalink,
+h2:hover .heading-permalink,
+h3:hover .heading-permalink,
+h4:hover .heading-permalink,
+h5:hover .heading-permalink,
+h6:hover .heading-permalink {
+	opacity: 1;
+	color: #6366f1;
+}
