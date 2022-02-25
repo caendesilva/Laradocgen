@@ -13,7 +13,7 @@ class Docgen
      */
     public static function getSiteName(): string
     {
-        return config('docgen.siteName', 'dynamic') === 'dynamic' 
+        return config('docgen.siteName', 'dynamic') === 'dynamic'
             ? config('app.name') . ' Docs'
             : config('docgen.siteName', 'App Name');
     }
@@ -43,7 +43,7 @@ class Docgen
     public static function getMarkdownFileSlugsArray(): array
     {
         $files = [];
-    
+
         foreach (glob(resource_path() . '/docs/*.md') as $filepath) {
             $slug = basename($filepath, '.md');
             $files[] = $slug;

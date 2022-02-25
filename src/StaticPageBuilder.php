@@ -3,10 +3,10 @@
 namespace Caendesilva\Docgen;
 
 /**
- * Compile a Laravel route into static HTML 
+ * Compile a Laravel route into static HTML
  *
  * @todo Add option to determine how verbose the output should be
- *  
+ *
  * @author Caen De Silva
  */
 class StaticPageBuilder
@@ -14,7 +14,7 @@ class StaticPageBuilder
     /**
      * The directory where the source files are stored.
      * Usually <laravel-project>/resources/docs/
-     * 
+     *
      * @var string
      */
     private string $sourcePath;
@@ -23,14 +23,14 @@ class StaticPageBuilder
      * The directory where the compiled static files are stored.
      * Usually <laravel-project>/public/docs/
      * Media files such as images are in <laravel-project>/public/docs/media/
-     * 
+     *
      * @var string
      */
     private string $buildPath;
 
     /**
      * The Collection of Pages to compile.
-     * 
+     *
      * @uses NavigationLinks
      * @var \Illuminate\Support\Collection
      */
@@ -44,7 +44,7 @@ class StaticPageBuilder
         // Start the build
         $time_start = microtime(true);
         echo "Starting build \n";
-        
+
         // Set the source path
         $this->sourcePath = resource_path() . '/docs/';
         // Set the build path
@@ -71,13 +71,13 @@ class StaticPageBuilder
         // Stop the build and format the time
         $time = (float) ((microtime(true) - $time_start));
         echo "\nDone. Generated " . $count .
-            ' pages and copied '. $mediaCount
+            ' pages and copied ' . $mediaCount
             . ' files in ' . sprintf('%f', $time) . ' seconds';
     }
 
     /**
      * Check if the build directories exists, otherwise create them.
-     * 
+     *
      * @return void
      */
     private function ensureDirectoryExists(): void
@@ -90,7 +90,7 @@ class StaticPageBuilder
 
     /**
      * Get the Collection of pages using the NavigationLinks interface.
-     * 
+     *
      * @uses NavigationLinks
      * @return \Illuminate\Support\Collection $pageCollection
      */
@@ -102,7 +102,7 @@ class StaticPageBuilder
     /**
      * Start the Build Loop which iterates through all the pages in the
      * pageCollection and subsequently builds the pages.
-     * 
+     *
      * @return int $count of files built
      */
     private function startBuildLoop(): int
@@ -117,7 +117,7 @@ class StaticPageBuilder
 
     /**
      * Compile the page and store it to file.
-     * 
+     *
      * @param string $slug
      * @return void
      */
@@ -140,7 +140,7 @@ class StaticPageBuilder
                 echo " > Building page {$slug}.html with the Curl Builder \n";
                 $html = $this->curlBuilder($url);
                 break;
-                
+
             default:
                 throw new \Exception("Unknown Builder $builder", 1);
                 break;
@@ -157,10 +157,10 @@ class StaticPageBuilder
 
     /**
      * Get HTML using file_get_contents (Not Recommended)
-     * 
+     *
      * Has issue with JavaScript needed to render the sidebar,
      * and is thus not recommended for use. Use Curl instead.
-     * 
+     *
      * @param string $url
      * @return string $html
      */
@@ -173,7 +173,7 @@ class StaticPageBuilder
 
     /**
      * Get the HTML using Curl. (Recommended)
-     * 
+     *
      * @param string $url
      * @return string $html
      */
@@ -191,19 +191,17 @@ class StaticPageBuilder
 
     /**
      * Copy all the media files from the sourcePath/media directory to the buildPath/media directory.
-     * 
+     *
      * @return int $count of files copied
      */
     private function copyAssets(): int
     {
         $count = 0;
         foreach (glob($this->sourcePath . "media/*.{png,svg,jpg,jpeg,gif}", GLOB_BRACE) as $filepath) {
-            echo " > Copying file ". basename($filepath) ." to the output media directory \n";
+            echo " > Copying file " . basename($filepath) . " to the output media directory \n";
             copy($filepath, $this->buildPath . 'media/' . basename($filepath));
             $count++;
         }
         return $count;
     }
-
-
 }
