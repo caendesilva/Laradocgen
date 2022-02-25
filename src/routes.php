@@ -4,7 +4,6 @@ use Caendesilva\Docgen\DocumentationController;
 
 // Register routes only in the local environment
 if (config('app.env') === 'local') {
-
     // Redirect helpers
     Route::get('realtime-docs/{slug}.html', function ($slug = 'index') {
         # Redirect in case a realtime request has a .html ending

@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 /**
  * Creates a Collection of NavigationLink objects
- * 
+ *
  * @todo It may make more sense to rename this to MarkdownPageCollection
  *
  * The Collection is used to create the sidebar

@@ -10,9 +10,9 @@ class ParsesLinkIndex
 {
     /**
      * Path where the index is stored.
-     * 
+     *
      * Usually <laravel-project>/resources/docs/linkIndex.yml
-     * 
+     *
      * @var string
      */
     private string $filePath;
@@ -21,7 +21,7 @@ class ParsesLinkIndex
     /**
      * The created Index array where the key is the
      * numerical index and the value is the slug.
-     * 
+     *
      * @var array
      */
     private array $index;
@@ -29,10 +29,10 @@ class ParsesLinkIndex
 
     /**
      * Static shorthand to get the index from a slag.
-     * 
+     *
      * @param string $slug to search
      * @param int|bool $default return value if the slug does not exist in the index
-     * 
+     *
      * @return int
      */
     public static function getIndexOfSlug(string $slug, int|bool $default = false): int|false
