@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 use Illuminate\Support\Str;
 

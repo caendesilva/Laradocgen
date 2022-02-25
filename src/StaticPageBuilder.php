@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 /**
  * Compile a Laravel route into static HTML

@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ use League\CommonMark\Extension\Footnote\FootnoteExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 use League\CommonMark\Environment\Environment;
 
-class DocgenServiceProvider extends ServiceProvider
+class LaraDocGenServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -23,34 +23,34 @@ class DocgenServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'docgen');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'docgen');
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laradocgen');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laradocgen');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/config.php' => config_path('docgen.php'),
-            ], 'docgen');
+                __DIR__ . '/../config/config.php' => config_path('laradocgen.php'),
+            ], 'laradocgen');
 
             // Publishing the views.
             /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/docgen'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/laradocgen'),
             ], 'views');*/
 
             // Publishing the markdown files.
             $this->publishes([
                 __DIR__ . '/../resources/docs' => resource_path('docs'),
-            ], 'docgen');
+            ], 'laradocgen');
 
             // Publishing assets.
             $this->publishes([
-                __DIR__ . '/../resources/assets' => public_path('vendor/docgen'),
-            ], 'docgen');
+                __DIR__ . '/../resources/assets' => public_path('vendor/laradocgen'),
+            ], 'laradocgen');
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/docgen'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laradocgen'),
             ], 'lang');*/
 
             // Registering package commands.
@@ -66,15 +66,15 @@ class DocgenServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'docgen');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'laradocgen');
 
         // Register the main class to use with the facade
-        $this->app->singleton('docgen', function () {
-            return new Docgen;
+        $this->app->singleton('laradocgen', function () {
+            return new LaraDocGen;
         });
 
         // Register a new Markdown Singleton
-        $this->app->singleton('docgen.converter', function ($app) {
+        $this->app->singleton('laradocgen.converter', function ($app) {
             // Create the Commonmark Environment Config
             $config = [
                 'table_of_contents' => [],
@@ -102,7 +102,7 @@ class DocgenServiceProvider extends ServiceProvider
             $environment->addExtension(new FootnoteExtension());
 
 
-            if (config('docgen.useTorchlight')) {
+            if (config('laradocgen.useTorchlight')) {
                 $environment->addExtension(new TorchlightExtension());
             }
 

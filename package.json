@@ -1,7 +1,7 @@
 {
-  "name": "docgen",
+  "name": "laradocgen",
   "version": "0.1.0",
-  "description": "Docgen Frontend Assets",
+  "description": "LaraDocGen Frontend Assets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,7 +9,7 @@
   "keywords": [
     "documentation",
     "laravel",
-    "docgen"
+    "laradocgen"
   ],
   "license": "MIT",
   "devDependencies": {

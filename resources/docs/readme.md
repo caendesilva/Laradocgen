@@ -14,17 +14,17 @@ Please do contribute with PRs and bug reports!
 
 You can install the package via composer:
 ```bash
-composer require desilva/docgen --dev
+composer require desilva/laradocgen --dev
 ```
 
 Publish the assets
 ```bash
-php artisan vendor:publish --tag="docgen"
+php artisan vendor:publish --tag="laradocgen"
 ```
 
 Build the static site
 ```bash
-php artisan docgen:build
+php artisan laradocgen:build
 ```
 Your static site will be saved in `public/docs`
 
@@ -46,7 +46,7 @@ And store your images in `resources/docs/media/`
 
 ### Build static site
 ```bash
-php artisan docgen:build
+php artisan laradocgen:build
 ```
 Your static site will be saved in `public/docs`
 

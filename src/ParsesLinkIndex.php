@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 /**
  * Parse the linkIndex.yml file which is used to determine the order the

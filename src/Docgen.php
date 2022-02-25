@@ -1,11 +1,11 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 /**
  * Package Singleton Class
  */
-class Docgen
+class LaraDocGen
 {
     /**
      * Get the name of the documentation site.
@@ -13,9 +13,9 @@ class Docgen
      */
     public static function getSiteName(): string
     {
-        return config('docgen.siteName', 'dynamic') === 'dynamic'
+        return config('laradocgen.siteName', 'dynamic') === 'dynamic'
             ? config('app.name') . ' Docs'
-            : config('docgen.siteName', 'App Name');
+            : config('laradocgen.siteName', 'App Name');
     }
 
     /**

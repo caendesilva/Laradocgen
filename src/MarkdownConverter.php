@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 /**
  * Wrapper for the Commonmark Markdown Converter
@@ -32,6 +32,6 @@ class MarkdownConverter
      */
     public function parse(): string
     {
-        return app('docgen.converter')->convert($this->markdown);
+        return app('laradocgen.converter')->convert($this->markdown);
     }
 }

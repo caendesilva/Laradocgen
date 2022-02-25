@@ -4,7 +4,7 @@
 I designed the process to be as uncomplicated and straight forward as possible. You don't need to do any configuration or follow strict frontmatter rules or mess with routing.
 
 **Refresher on how to use the package** <br>
-You simply place your markdown files in your project's resources/docs/ directory and run the Artisan docgen:build command and the package does the rest.
+You simply place your markdown files in your project's resources/docs/ directory and run the Artisan laradocgen:build command and the package does the rest.
 
 ## The behind the scenes process (the simplified version)
 So what happens under the hood then?

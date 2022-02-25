@@ -9,7 +9,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
 
 	<link rel="stylesheet" href="{{ $realtime
-										? '/vendor/docgen/app.css'
+										? '/vendor/laradocgen/app.css'
 										: 'media/app.css'
 									}}">
 
@@ -27,7 +27,7 @@
 		}
 	</style>
 
-	@if(config('docgen.useTorchlight'))
+	@if(config('laradocgen.useTorchlight'))
 	<!-- Torchlight -->
 	<style>
 		/* Unset Tailwind Style */
@@ -166,7 +166,7 @@
 
 
 	<footer>
-		@if(config('docgen.useTorchlight'))
+		@if(config('laradocgen.useTorchlight'))
 		<small>
 			Syntax highlighting by <a href="https://torchlight.dev/"
 				rel="noopener noreferrer nofollow">Torchlight.dev</a>

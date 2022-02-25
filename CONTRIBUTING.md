@@ -76,7 +76,7 @@ The install directory is specified in `.build/rootdir`
 
 **We can generate the rootdir file quickly using**
 ```bash
-bash build.sh "/mnt/d/dev/docgen-demo" # Replace the quoted string with your path
+bash build.sh "/mnt/d/dev/laradocgen-demo" # Replace the quoted string with your path
 ```
 
 **Run the build command to copy the markdown files into the resources directory and publish the assets.**

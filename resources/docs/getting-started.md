@@ -1,4 +1,4 @@
-# Creating a static documentation site blazingly fast and stupidly simple with DeSilva/Docgen for Laravel
+# Creating a static documentation site blazingly fast and stupidly simple with DeSilva/LaraDocGen for Laravel
 
 <p class="subheading">
 Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
@@ -17,9 +17,9 @@ The guide uses Laravel 9.
 Let's start by creating a new project. I will be using Composer. If you already have a site you can skip this step.
 
 ```bash
-composer create-project laravel/laravel docgen-demo
+composer create-project laravel/laravel laradocgen-demo
  
-cd docgen-demo
+cd laradocgen-demo
  
 php artisan serve
 
@@ -31,14 +31,14 @@ php artisan serve
 Next, we need to install the Composer package. Since this is a static site generator we don't need it in production, thus we are adding the --dev flag.
 
 ```bash
-composer require desilva/docgen --dev
+composer require desilva/laradocgen --dev
 ```
 
 #### Publish the assets
 
 Next, publish the assets using
 ```bash
-php artisan vendor:publish --tag="docgen"
+php artisan vendor:publish --tag="laradocgen"
 ```
 
 Now you can see that some files and folders were created. Here is a quick explanation about what they do
@@ -99,7 +99,7 @@ Compiling the site is a breeze.
 
 Just run
 ```bash
-php artisan docgen:build
+php artisan laradocgen:build
 ```
 and the files will be saved in `public/docs`. You can keep it there to automatically serve them from the /docs route. You can also upload them to your static site host.
 
@@ -114,7 +114,7 @@ Simply put, the steps to create your documentation is as follows
 - You can create a simple YAML list named linkIndex.yml to change the order the files appear in the sidebar.
 - Store images in `resources/docs/media`.
 - You can preview the pages with the route `/realtime-docs`.
-- Compile into static HTML using the artisan command `php artisan docgen:build`. The files are stored in `public/docs`.
+- Compile into static HTML using the artisan command `php artisan laradocgen:build`. The files are stored in `public/docs`.
 - That's it!
 
 ### Next steps
@@ -133,12 +133,12 @@ Next, create an account at Torchlight.dev, generate an API token, and enter the 
 TORCHLIGHT_TOKEN=torch_ # Replace with your token
 ```
 
-And enable the feature in the config/docgen.php
+And enable the feature in the config/laradocgen.php
 ```php
 <?php
 
 /*
- * Docgen Configuration
+ * LaraDocGen Configuration
  */
 return [
     /**

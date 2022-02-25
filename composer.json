@@ -1,11 +1,11 @@
 {
-    "name": "desilva/docgen",
+    "name": "desilva/laradocgen",
     "description": "Generates documentation based on Markdown on the fly and can compile it to static HTML",
     "keywords": [
         "desilva",
-        "docgen"
+        "laradocgen"
     ],
-    "homepage": "https://github.com/desilva/docgen",
+    "homepage": "https://github.com/desilva/laradocgen",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DeSilva\\Docgen\\": "src"
+            "DeSilva\\LaraDocGen\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DeSilva\\Docgen\\Tests\\": "tests"
+            "DeSilva\\LaraDocGen\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DeSilva\\Docgen\\DocgenServiceProvider"
+                "DeSilva\\LaraDocGen\\LaraDocGenServiceProvider"
             ],
             "aliases": {
-                "Docgen": "DeSilva\\Docgen\\DocgenFacade"
+                "LaraDocGen": "DeSilva\\LaraDocGen\\LaraDocGenFacade"
             }
         }
     }

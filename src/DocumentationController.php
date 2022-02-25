@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 use App\Http\Controllers\Controller;
 
@@ -44,7 +44,7 @@ class DocumentationController extends Controller
             ->get();
 
         // Get the name of the site
-        $siteName = DocgenFacade::getSiteName();
+        $siteName = LaraDocGenFacade::getSiteName();
 
         /**
          * Determine the root path. This is used to prefix the relative URLs.
@@ -53,7 +53,7 @@ class DocumentationController extends Controller
 
 
         // Return the view
-        return view('docgen::app', [
+        return view('laradocgen::app', [
             'page' => $page,
             'links' => $links,
             'siteName' => $siteName,
@@ -71,6 +71,6 @@ class DocumentationController extends Controller
      */
     private function handle404(string $slug): string
     {
-        return Docgen::validateExistence($slug) ? $slug : '404';
+        return LaraDocGen::validateExistence($slug) ? $slug : '404';
     }
 }

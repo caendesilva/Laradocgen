@@ -65,7 +65,7 @@ for item in ${spinner[*]}
         echo -en "\r              \r"
     done
 done &
-php ${rootdir}/artisan vendor:publish --tag="docgen" --force
+php ${rootdir}/artisan vendor:publish --tag="laradocgen" --force
 kill $!
 echo "Done"
 

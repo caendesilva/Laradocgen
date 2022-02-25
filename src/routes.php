@@ -1,6 +1,6 @@
 <?php
 
-use DeSilva\Docgen\DocumentationController;
+use DeSilva\LaraDocGen\DocumentationController;
 
 // Register routes only in the local environment
 if (config('app.env') === 'local') {

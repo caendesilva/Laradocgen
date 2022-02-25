@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\Docgen;
+namespace DeSilva\LaraDocGen;
 
 use Illuminate\Console\Command;
 
@@ -14,7 +14,7 @@ class BuildCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'docgen:build';
+    protected $signature = 'laradocgen:build';
 
     /**
      * The console command description.
@@ -40,6 +40,6 @@ class BuildCommand extends Command
      */
     public function handle()
     {
-        Docgen::build();
+        LaraDocGen::build();
     }
 }

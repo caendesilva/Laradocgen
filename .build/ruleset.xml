@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Code Standard" namespace="DeSilva\Docgen\Standard">
+<ruleset name="Code Standard" namespace="DeSilva\LaraDocGen\Standard">
 
     <rule ref="PSR2"/>
 

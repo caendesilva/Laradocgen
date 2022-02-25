@@ -1,9 +1,9 @@
 # Laravel Static Documentation Sites, Blazingly Fast and Stupidly Simple
 
 <!-- \BMSTX BUILDMETA -->
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/docgen.svg?style=flat-square)](https://packagist.org/packages/desilva/docgen)
-[![Total Downloads](https://img.shields.io/packagist/dt/desilva/docgen.svg?style=flat-square)](https://packagist.org/packages/desilva/docgen)
-![GitHub Actions](https://github.com/desilva/docgen/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
+[![Total Downloads](https://img.shields.io/packagist/dt/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
+![GitHub Actions](https://github.com/desilva/laradocgen/actions/workflows/main.yml/badge.svg)
 <!--  BUILDMETA \BMETX -->
 
 ## About
@@ -19,17 +19,17 @@ Please do contribute with PRs and bug reports!
 
 You can install the package via composer:
 ```bash
-composer require desilva/docgen --dev
+composer require desilva/laradocgen --dev
 ```
 
 Publish the assets
 ```bash
-php artisan vendor:publish --tag="docgen"
+php artisan vendor:publish --tag="laradocgen"
 ```
 
 Build the static site
 ```bash
-php artisan docgen:build
+php artisan laradocgen:build
 ```
 Your static site will be saved in `public/docs`
 
@@ -51,7 +51,7 @@ And store your images in `resources/docs/media/`
 
 ### Build static site
 ```bash
-php artisan docgen:build
+php artisan laradocgen:build
 ```
 Your static site will be saved in `public/docs`
 
