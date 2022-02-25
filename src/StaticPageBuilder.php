@@ -70,7 +70,7 @@ class StaticPageBuilder
 
         // Stop the build and format the time
         $time = (float) ((microtime(true) - $time_start));
-        echo 'Generated in ' . $count .
+        echo "\nDone. Generated " . $count .
             ' pages and copied '. $mediaCount
             . ' files in ' . sprintf('%f', $time) . ' seconds';
     }
