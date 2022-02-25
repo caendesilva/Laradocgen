@@ -51,34 +51,18 @@ php artisan docgen:build
 Your static site will be saved in `public/docs`
 
 ## Package Development
-### Testing
-```bash
-composer test
-```
 
-### Building
-First you need to specify the laravel install directory you are using. You only need to do this once.
-The install directory is specified in `.build/rootdir`
-
-**We can generate the rootdir file quickly using**
-```bash
-bash build.sh "/mnt/d/dev/docgen-demo" # Replace the quoted string with your path
-```
-
-**Run the build command to copy the markdown files into the resources directory and publish the assets.**
-```bash
-bash build.sh
-```
+Please see [CONTRIBUTING](contributing) for details.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](changelog) for more information on what has changed recently.
 
 ## Contributing
 
 Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR as I want to allow for more customization down the line.
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](contributing) for details.
 
 ### Roadmap
 [ ] Add versioning support
@@ -94,7 +78,7 @@ If you discover any security-related issues, please email caen@desilva.se instea
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](license) for more information.
 
 ## Attributions
 > Please see the respective authors' repositories for their license files

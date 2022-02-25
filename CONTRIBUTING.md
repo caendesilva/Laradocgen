@@ -40,7 +40,7 @@ Before submitting a pull request:
 
 If the project maintainer has any additional requirements, you will find them listed here.
 
-We try to follow the Laravel standars, https://laravel.com/docs/9.x/contributions#coding-style
+We try to follow the Laravel standards, https://laravel.com/docs/9.x/contributions#coding-style
 
 - **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](https://pear.php.net/package/PHP_CodeSniffer).
 (https://github.com/squizlabs/PHP_CodeSniffer)
@@ -61,5 +61,25 @@ phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to outp
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
 
 - **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+
+## Package Development
+### Testing
+```bash
+composer test
+```
+
+### Building
+First you need to specify the laravel install directory you are using. You only need to do this once.
+The install directory is specified in `.build/rootdir`
+
+**We can generate the rootdir file quickly using**
+```bash
+bash build.sh "/mnt/d/dev/docgen-demo" # Replace the quoted string with your path
+```
+
+**Run the build command to copy the markdown files into the resources directory and publish the assets.**
+```bash
+bash build.sh
+```
 
 **Happy coding**!

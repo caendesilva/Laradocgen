@@ -40,16 +40,46 @@ Before submitting a pull request:
 
 If the project maintainer has any additional requirements, you will find them listed here.
 
-- **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](https://pear.php.net/package/PHP_CodeSniffer).
+We try to follow the Laravel standards, https://laravel.com/docs/9.x/contributions#coding-style
 
-- **Add tests!** - Your patch won't be accepted if it doesn't have tests.
+- **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](https://pear.php.net/package/PHP_CodeSniffer).
+(https://github.com/squizlabs/PHP_CodeSniffer)
+```bash
+# Example usage
+cd .build
+phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to output to a file instead of your terminal
+```
+
+**Please add tests!**
+<!-- - **Add tests!** - Your patch won't be accepted if it doesn't have tests. -->
 
 - **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
 
-- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option.
+<!-- Will be enabled once we enter GA 
+- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option. -->
 
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
 
 - **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+
+## Package Development
+### Testing
+```bash
+composer test
+```
+
+### Building
+First you need to specify the laravel install directory you are using. You only need to do this once.
+The install directory is specified in `.build/rootdir`
+
+**We can generate the rootdir file quickly using**
+```bash
+bash build.sh "/mnt/d/dev/docgen-demo" # Replace the quoted string with your path
+```
+
+**Run the build command to copy the markdown files into the resources directory and publish the assets.**
+```bash
+bash build.sh
+```
 
 **Happy coding**!

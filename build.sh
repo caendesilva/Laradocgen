@@ -32,7 +32,16 @@ cp CONTRIBUTING.md resources/docs/contributing.md
 echo "Done"
 
 echo "Modifying Readme"
+
+# Remove badges
 sed '/\BMSTX/,/\BMETX/d' resources/docs/readme.md -i
+
+# Replace links
+sed 's/README.md/readme/g' resources/docs/readme.md -i
+sed 's/LICENSE.md/license/g' resources/docs/readme.md -i
+sed 's/CHANGELOG.md/changelog/g' resources/docs/readme.md -i
+sed 's/CONTRIBUTING.md/contributing/g' resources/docs/readme.md -i
+
 echo "Done"
 
 echo "Publishing assets"
