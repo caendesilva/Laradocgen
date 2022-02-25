@@ -18,7 +18,7 @@
 		@if($page->slug !== "index")
 		{{ $page->title }} | 
 		@endif
-		{{ config('app.name') }} Docs
+		{{ $siteName }}
 	</title>
 
 	<!-- Prevent FOUC -->
@@ -133,7 +133,7 @@
 				class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
 				<a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block  text-sm uppercase font-bold p-4 px-0"
 				href="index{{ $realtime == false ? '.html' : '' }}">
-				{{ config('app.name') }} Docs
+				{{ $siteName }}
 			</a>
 				<button
 					class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
@@ -147,7 +147,7 @@
 							<div class="w-9/12">
 								<a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
 									href="index{{ $realtime == false ? '.html' : '' }}">
-									{{ config('app.name') }} Docs
+									{{ $siteName }}
 								</a>
 							</div>
 							<div class="w-3/12 flex justify-end">

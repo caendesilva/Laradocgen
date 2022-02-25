@@ -2,8 +2,22 @@
 
 namespace Caendesilva\Docgen;
 
+/**
+ * Package Singleton Class
+ */
 class Docgen
 {
+    /**
+     * Get the name of the documentation site.
+     * @return string
+     */
+    public static function getSiteName(): string
+    {
+        return config('docgen.siteName', 'dynamic') === 'dynamic' 
+            ? config('app.name') . ' Docs'
+            : config('docgen.siteName', 'App Name');
+    }
+
     public static function getMarkdownFromSlug(string $slug): string|bool
     {
         try {

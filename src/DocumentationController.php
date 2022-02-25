@@ -43,6 +43,9 @@ class DocumentationController extends Controller
                     ->order()
                     ->get();
 
+        // Get the name of the site
+        $siteName = DocgenFacade::getSiteName();
+
         /**
          * Determine the root path. This is used to prefix the relative URLs.
          */
@@ -53,6 +56,7 @@ class DocumentationController extends Controller
         return view('docgen::app', [
             'page' => $page,
             'links' => $links,
+            'siteName' => $siteName,
             'realtime' => $realtime,
             'rootRoute' => $rootRoute,
         ]);
