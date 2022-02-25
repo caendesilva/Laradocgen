@@ -9,23 +9,24 @@ use Illuminate\Support\Str;
  */
 class NavigationLink
 {
-	public int $order;
-	public string $slug;
-	public string $title;
+    public int $order;
+    public string $slug;
+    public string $title;
 
-	public function __construct(string $slug = 'index') {
-		$this->slug = $slug;
-		$this->title = $this->getTitle();
-		$this->order = $this->getOrder();
-	}
+    public function __construct(string $slug = 'index')
+    {
+        $this->slug = $slug;
+        $this->title = $this->getTitle();
+        $this->order = $this->getOrder();
+    }
 
-	private function getTitle(): string
-	{
-		return str_replace('-', ' ', Str::title($this->slug));
-	}
+    private function getTitle(): string
+    {
+        return str_replace('-', ' ', Str::title($this->slug));
+    }
 
-	private function getOrder(): int
-	{
-		return ParsesLinkIndex::getIndexOfSlug($this->slug, 999);
-	}
+    private function getOrder(): int
+    {
+        return ParsesLinkIndex::getIndexOfSlug($this->slug, 999);
+    }
 }

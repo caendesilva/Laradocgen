@@ -58,9 +58,6 @@ class DocgenServiceProvider extends ServiceProvider
                 BuildCommand::class,
             ]);
         }
-
-        
-
     }
 
     /**
@@ -94,7 +91,7 @@ class DocgenServiceProvider extends ServiceProvider
             ];
             
             $environment = new Environment($config);
-		
+        
             $environment->addExtension(new GithubFlavoredMarkdownExtension());
 
             $environment->addExtension(new CommonMarkCoreExtension());

@@ -4,10 +4,12 @@ namespace Caendesilva\Docgen;
 
 class Docgen
 {
-    public static function getMarkdownFromSlug(string $slug): string|bool {
+    public static function getMarkdownFromSlug(string $slug): string|bool
+    {
         try {
             return (string) (new MarkdownConverter(
-                file_get_contents(resource_path() . '/docs/' . $slug . '.md'))
+                file_get_contents(resource_path() . '/docs/' . $slug . '.md')
+            )
             )->parse();
         } catch (\Throwable $th) {
             throw $th;
