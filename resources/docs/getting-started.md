@@ -4,11 +4,11 @@
 Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
 </p>
 
-### Quickstart
+## Quickstart
 > Want to get started fast? Follow this Quickstart guide. <br>
 > Need more detail? Follow the step-by-step guide below.
 
-#### Installation
+### Installation
 ```bash
 # Include the package as a dev dependency
 composer require desilva/laradocgen --dev
@@ -18,11 +18,11 @@ php artisan vendor:publish --tag="laradocgen"
 ```
 Publishing the assets is required as it creates the necessary directories and scaffolds the files. It also publishes the stylesheet.
 
-#### Creating documentation pages
+### Creating documentation pages
 Save your documentation as Markdown files resources/docs directory.
 Example: `<laravel-project>/resources/docs/<your-markdown-file>.md` 
 
-#### Building the static site
+### Building the static site
 Building the site is a breeze. Simply start your development server and run the Artisan build command
 ```bash
 # Ensure your site is accessible at http://localhost:8000/
@@ -36,19 +36,19 @@ The generated static site saved in `<laravel-project>/public/docs`. You can keep
 
 **That's it! Have fun building your documentation!**
 
-#### What's next?
+### What's next?
 I recommend that you read the rest of the article to learn more about how the package works.
 
 
-### Step by Step Installation Guide
+## Step by Step Installation Guide
 
-#### Speedrun
+### Speedrun
 If you know your way around Laravel you can skip to the [summary](#summary) 
 
 This guide assumes you are familiar with the basics of Laravel and will not go into detail on the installation.
 The guide uses Laravel 9.
 
-#### Install Laravel
+### Install Laravel
 
 Let's start by creating a new project. I will be using Composer. If you already have a site you can skip this step.
 
@@ -62,7 +62,7 @@ php artisan serve
 # Now you can visit http://localhost:8000/ in your browser to verify the install.
 ```
 
-#### Install the package
+### Install the package
 
 Next, we need to install the Composer package. Since this is a static site generator we don't need it in production, thus we are adding the --dev flag.
 
@@ -70,17 +70,18 @@ Next, we need to install the Composer package. Since this is a static site gener
 composer require desilva/laradocgen --dev
 ```
 
-#### Publish the assets
+### Publish the assets
 
 Next, you need to publish the assets using
 ```bash
 php artisan vendor:publish --tag="laradocgen"
 ```
 This publishes the stylesheet, config, and also creates some sample files for you to get started quickly with.
-Here is a quick explanation about what they do
 
-##### About the assets
-![Image](media/gssh1.png)
+![Screenshot of the files created](media/gssh1.png)
+
+#### About the assets
+Here is a quick explanation about what they do
 
 The main folder is in `resources/docs`. This is where we store all the markdown files. As you can see there is currently an `index.md` file. This will be converted into the `index.html`.
 
@@ -90,7 +91,9 @@ We also have a media directory that stores images and the default stylesheet.
 Next, we have the `linkIndex.yml` which contains a simple list of the markdown filenames (without the extension). The order of these files determine the order they appear in the sidebar.
 
 ```yaml
-# Rearrange the list items below to decide the order of navigation links in the sidebar. Indentation matters. Each entry must start with 2 spaces, followed by a dash, and then another space, then the slug.
+# The sidebar will be arranged according to the order of the slugs in the list.
+# Indentation matters. Each entry must start with 2 spaces,
+# followed by a dash, and then another space, then the slug.
 Links:
   - index            # this gets index 0 
   - getting-started  # this gets index 1
@@ -99,12 +102,10 @@ Links:
 Note that the index file is normally hidden from the sidebar as it is accessed by the brand name. The 404 page is also hidden.
 Files that don't have an entry in the index gets the order 999.
 
-#### Visiting the preview
+### Visiting the preview
 The package comes with a real-time viewer of the pages. You can see it at `http://localhost:8000/realtime-docs/`.
-> If you add new images you still need to run the build command so they get copied to the public directory.
-![Image](media/gssh2.png)
 
-#### Creating new pages
+### Creating new pages
 Creating new pages is dead simple. You simply create a markdown file in the resources/docs directory.
 There are some conventions you must follow though. All files should be in lowercase kebab-case and end in .md.
 
@@ -119,17 +120,17 @@ nano resources/docs/getting-started.md
 ```
 
 After you've written down some markdown, save the file `Ctrl+O`, `enter`, `Ctrl+X` (if using Nano) and hit refresh on the webpage. You should now see that a new entry has been created in the sidebar
-![Image](media/gssh3.png)
 Click on the link, and you should now see your beautifully formatted Markdown!
+![Screenshot of the rendered Markdown page](media/gssh2.png)
 
-#### Adding images
+### Adding images
 Adding images is easy, just put them in the resources/docs/media directory, reference them using the following code
 ```markdown
 ![Example Image](media/example-image.jpg "Image by Picjumbo.com")
 ```
 And run the build command
 
-#### Generating the static site
+### Generating the static site
 This package is intended to be used to generate static HTML so it can be hosted on services such as GitHub pages.
 
 Compiling the site is a breeze.
@@ -144,7 +145,7 @@ If you feel done with the documentation package you can safely remove it.
 
 
 
-### Summary
+## Summary
 Simply put, the steps to create your documentation is as follows
 - Install the composer package as a dev dependency and publish the assets.
 - Create your markdown files in `resources/docs`. The files must be in kebab-case and end in .md.
@@ -154,9 +155,9 @@ Simply put, the steps to create your documentation is as follows
 - Compile into static HTML using the artisan command `php artisan laradocgen:build`. The files are stored in `public/docs`.
 - That's it!
 
-### Next steps
+## Next steps
 
-#### Torchlight
+### Torchlight
 The package comes with out of the box support for Torchlight. To get started run
 ```bash
 #
