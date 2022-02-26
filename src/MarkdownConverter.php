@@ -7,6 +7,8 @@ namespace DeSilva\Laradocgen;
  * Singleton registered in the Service Provider
  *
  * Converts CommonMark-compatible Markdown to HTML.
+ * 
+ * @uses MarkdownPreProcessor
  */
 class MarkdownConverter
 {
@@ -24,7 +26,8 @@ class MarkdownConverter
      */
     public function __construct(string $markdown)
     {
-        $this->markdown = $markdown;
+        // Run the Markdown PreProcessor
+        $this->markdown = (new MarkdownPreProcessor($markdown))->get();
     }
 
     /**
