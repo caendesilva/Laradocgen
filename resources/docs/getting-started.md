@@ -48,7 +48,8 @@ Here is a quick explanation about what they do
 
 The main folder is in `resources/docs`. This is where we store all the markdown files. As you can see there is currently an `index.md` file. This will be converted into the `index.html`.
 
-We also have a media directory that stores images and the stylesheet. You can add custom styles here, but you may need to merge them manually when updating the package.
+We also have a media directory that stores images and the default stylesheet. 
+> If you want to add custom styles, create a file called `custom.css` inside the media directory. The compiler will automatically merge and include it.
 
 Next, we have the `linkIndex.yml` which contains a simple list of the markdown filenames (without the extension). The order of these files determine the order they appear in the sidebar.
 
