@@ -59,8 +59,6 @@ h6:hover .heading-permalink {
 
 /* Inline Code Style */
 
-/* Inline Code Style */
-
 :not(pre)>code {
 	/* Unset the font as we don't need monospace */
 	font: inherit;

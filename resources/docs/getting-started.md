@@ -162,7 +162,6 @@ Simply put, the steps to create your documentation is as follows
 ### Torchlight
 The package comes with out of the box support for Torchlight. To get started run
 ```bash
-#
 php artisan torchlight:install # Run the installation command
 
 php artisan vendor:publish --tag="config" # Publish the configs
@@ -173,23 +172,14 @@ Next, create an account at Torchlight.dev, generate an API token, and enter the 
 TORCHLIGHT_TOKEN=torch_ # Replace with your token
 ```
 
-And enable the feature in the config/laradocgen.php
+And enable the feature in the `config/laradocgen.php`
+
+<small class="filepath" title="Filepath relative to your Laravel installation">config/laradocgen.php</small>
+
 ```php
 <?php
-
-/*
- * Laradocgen Configuration
- */
 return [
-    /**
-     * Should Torchlight be used?
-     * 
-     * Default: false
-     * 
-     * @see https://torchlight.dev/docs
-     * 
-     * Remember to add your API token in your .env file
-     */
-    'useTorchlight' => true, # Set this to true // [tl! **]
+    /** Should Torchlight be used? Default: false */
+    'useTorchlight' => true, # Set this to true // [tl! highlight]
 ];
 ```

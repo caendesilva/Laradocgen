@@ -68,6 +68,38 @@
 		pre code.torchlight .summary-caret {
 			margin-right: 1rem;
 		}
+
+		/*
+			Blur and dim the lines that don't have the `.line-focus` class,
+			but are within a code block that contains any focus lines.
+		*/
+		.torchlight.has-focus-lines .line:not(.line-focus) {
+			transition: filter 0.35s, opacity 0.35s;
+			filter: blur(.095rem);
+			opacity: .65;
+		}
+
+		/* When the code block is hovered, bring all the lines into focus. */
+		.torchlight.has-focus-lines:hover .line:not(.line-focus) {
+			filter: blur(0px);
+			opacity: 1;
+		}
+
+		/* Style the filepath */
+		:not(code)>.filepath {
+			display: none;
+		}
+		pre>code>.filepath {
+			position: relative;
+			top: -.25rem;
+			right: 1rem;
+			float: right;
+			opacity: .5;
+			transition: opacity 0.25s;
+		}
+		pre>code>.filepath:hover {
+			opacity: 1;
+		}
 	</style>
 	@endif
 </head>
@@ -179,7 +211,7 @@
 	</footer>
 
 	<script>
-		// Move the dynamic table of contents to the sidebar
+		// Move the dynamic table of contents to the sidebar // @todo this should be done in the Markdown parser/static page builder instead.
 		let toc = document.querySelector('ul.table-of-contents');
 		if (toc) {
 			let destination = document.getElementById('sidebar-active');
@@ -190,6 +222,21 @@
 		}
 	</script>
 
+	<script>
+		// Move the filepath in code blocks // @todo this should be done in the Markdown parser/static page builder instead.
+		const filepaths = document.querySelectorAll(":not(pre)>.filepath");
+		// console.log(filepaths);
+		if (filepaths) {
+			filepaths.forEach(filepath => {
+				// console.log('filepath: ', filepath);
+				var parent = filepath.parentNode;
+				// console.log(parent);
+				const codeblock = parent.nextElementSibling;
+				// console.log(codeblock);
+				codeblock.firstChild.insertAdjacentHTML('afterBegin', filepath.outerHTML);
+			});
+		}
+	</script>
 
 	<script type="text/javascript">
 		/* Sidebar - Side navigation menu on mobile/responsive mode */
