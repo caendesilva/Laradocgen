@@ -197,7 +197,7 @@ class StaticPageBuilder
     private function copyAssets(): int
     {
         $count = 0;
-        foreach (glob($this->sourcePath . "media/*.{png,svg,jpg,jpeg,gif}", GLOB_BRACE) as $filepath) {
+        foreach (glob($this->sourcePath . "media/*.{png,svg,jpg,jpeg,gif,ico}", GLOB_BRACE) as $filepath) {
             echo " > Copying media file " . basename($filepath) . " to the output media directory \n";
             copy($filepath, $this->buildPath . 'media/' . basename($filepath));
             $count++;
@@ -211,7 +211,6 @@ class StaticPageBuilder
             $this->mergeStylesheets();
         }
 
-        // Copy CSS from public/vendor to media/app.css
         return $count;
     }
 

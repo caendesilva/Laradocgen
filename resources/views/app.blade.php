@@ -5,15 +5,17 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#000000" />
-	<link rel="shortcut icon" href="./assets/img/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
 
 	@if($realtime)
+	<link rel="shortcut icon" href="/realtime-docs-compiler/media/favicon.ico" />
+
 	<link rel="stylesheet" href="/realtime-docs-compiler/media/app.css">
 	@if($appmeta->customStylesheet)
 	<link rel="stylesheet" href="/realtime-docs-compiler/media/custom.css">
 	@endif
 	@else
+	<link rel="shortcut icon" href="media/favicon.ico" />
+
 	<link rel="stylesheet" href="media/app.css">
 	@endif
 

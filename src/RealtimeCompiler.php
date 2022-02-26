@@ -98,7 +98,7 @@ to the "public\.gitignore" file.');
             file_put_contents($buildPath . '.gitignore', '*' . PHP_EOL . '*/' . PHP_EOL . '!.gitignore');
         }
 
-        foreach (glob($sourcePath . "media/*.{png,svg,jpg,jpeg,gif,css}", GLOB_BRACE) as $sourceFilepath) {
+        foreach (glob($sourcePath . "media/*.{png,svg,jpg,jpeg,gif,ico,css}", GLOB_BRACE) as $sourceFilepath) {
             $outputFilepath = $buildPath . 'media/' . basename($sourceFilepath);
             // Check if file exist and if the filesize is changed to prevent unnecessary overwrites.
             if (file_exists($outputFilepath) && filesize($sourceFilepath) == filesize($outputFilepath)) {
