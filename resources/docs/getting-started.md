@@ -36,19 +36,19 @@ composer require desilva/laradocgen --dev
 
 #### Publish the assets
 
-Next, publish the assets using
+Next, you need to publish the assets using
 ```bash
 php artisan vendor:publish --tag="laradocgen"
 ```
-
-Now you can see that some files and folders were created. Here is a quick explanation about what they do
+This publishes the stylesheet, config, and also creates some sample files for you to get started quickly with.
+Here is a quick explanation about what they do
 
 ##### About the assets
 ![Image](media/gssh1.png)
 
 The main folder is in `resources/docs`. This is where we store all the markdown files. As you can see there is currently an `index.md` file. This will be converted into the `index.html`.
 
-We also have a media directory that stores images.
+We also have a media directory that stores images and the stylesheet. You can add custom styles here, but you may need to merge them manually when updating the package.
 
 Next, we have the `linkIndex.yml` which contains a simple list of the markdown filenames (without the extension). The order of these files determine the order they appear in the sidebar.
 
@@ -59,7 +59,7 @@ Links:
   - getting-started  # this gets index 1
   - digging-deeper   # this gets index 2
 ```
-Note that the index file is normally hidden from the sidebar as it is accessed by the brand name
+Note that the index file is normally hidden from the sidebar as it is accessed by the brand name. The 404 page is also hidden.
 Files that don't have an entry in the index gets the order 999.
 
 #### Visiting the preview
