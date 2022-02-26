@@ -91,5 +91,5 @@ This package's scaffolding was generated using the [Laravel Package Boilerplate]
 
 ### Frontend
 
-The frontend is based on https://github.com/creativetimofficial/tailwind-starter-kit (MIT)
-The darkmode switch is based on a component from Flowbite https://flowbite.com/docs/customize/dark-mode/ (MIT)
+- The frontend is based on https://github.com/creativetimofficial/tailwind-starter-kit (MIT)
+- The darkmode switch is based on a component from Flowbite https://flowbite.com/docs/customize/dark-mode/ (MIT)
