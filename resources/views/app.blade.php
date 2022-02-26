@@ -161,7 +161,7 @@
 				// Print the Markdown HTML from the page object.
 				// If this is a realtime request we replace the media path first.
 				$realtime
-				? str_replace('<img src="media/', '<img src=" /docs/media/', $page->markdown)
+				? str_replace('<img src="media/', '<img src="/realtime-docs-compiler/media/', $page->markdown)
 				: $page->markdown;
 				!!}
 			</article>
