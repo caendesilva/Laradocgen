@@ -118,9 +118,9 @@
 {{-- Uncomment the following line to enable the TailwindCSS CDN (for development only) --}}
 {{-- <script src="https://cdn.tailwindcss.com"></script> <script> tailwind.config = { darkMode: 'class', } </script> --}}
 
-<body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-slate-900 min-h-screen flex flex-col">
+<body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-gray-900 min-h-screen flex flex-col">
 	<nav
-		class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-slate-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
+		class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
 		<div
 			class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
 			<div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
@@ -221,14 +221,14 @@
 	</main>
 
 
-	<footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-200">
+	<footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-100 dark:bg-slate-900 dark:text-gray-100">
 		<div class="max-w-3xl mx-6 lg:mx-8 p-2">
 			@if(config('laradocgen.useTorchlight'))
 			<small>
-				This site was generated using the free and open source <a class="text-indigo-700 dark:text-indigo-300" href="https://github.com/desilva/laradocgen/">Laradocgen</a> package. License MIT.
+				This site was generated using the free and open source <a class="text-indigo-700 dark:text-indigo-400" href="https://github.com/desilva/laradocgen/">Laradocgen</a> package. License MIT.
 			</small>
 			<small class="ml-3">
-				Syntax highlighting by <a class="text-indigo-700 dark:text-indigo-300" href="https://torchlight.dev/"
+				Syntax highlighting by <a class="text-indigo-700 dark:text-indigo-400" href="https://torchlight.dev/"
 					rel="noopener noreferrer nofollow">Torchlight.dev</a>
 			</small>
 			@endif
@@ -311,7 +311,7 @@
 		/* Sidebar - Side navigation menu on mobile/responsive mode */
 	function toggleNavbar(collapseID) {
 		document.getElementById(collapseID).classList.toggle("hidden");
-		document.getElementById(collapseID).classList.toggle("bg-white dark:bg-slate-900");
+		document.getElementById(collapseID).classList.toggle("bg-white dark:bg-gray-900");
 		document.getElementById(collapseID).classList.toggle("m-2");
 		document.getElementById(collapseID).classList.toggle("py-3");
 		document.getElementById(collapseID).classList.toggle("px-6");
