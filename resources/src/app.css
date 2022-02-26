@@ -56,3 +56,29 @@ h6:hover .heading-permalink {
 	opacity: 1;
 	color: #6366f1;
 }
+
+/* Inline Code Style */
+
+/* Inline Code Style */
+
+:not(pre)>code {
+	/* Unset the font as we don't need monospace */
+	font: inherit;
+
+	/* Set the background */
+	background-color: rgba(128, 128, 128, 0.2);
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-left: -2px;
+	margin-right: 1px;
+	border-radius: 4px;
+
+	/* Set the white-space to pre. (Opinionated setting) */
+	white-space: pre;
+}
+
+/* Remove the Tailwind prose backtick */
+.prose :where(code):not(:where([class~=not-prose] *)):before,
+.prose :where(code):not(:where([class~=not-prose] *)):after {
+	content: unset;
+}

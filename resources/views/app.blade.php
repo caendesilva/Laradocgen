@@ -17,9 +17,6 @@
 	<link rel="stylesheet" href="media/app.css">
 	@endif
 
-
-
-
 	<title>
 		@if($page->slug !== "index")
 		{{ $page->title }} |
