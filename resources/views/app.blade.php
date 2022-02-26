@@ -116,7 +116,7 @@
 {{-- Uncomment the following line to enable the TailwindCSS CDN (for development only) --}}
 {{-- <script src="https://cdn.tailwindcss.com"></script> <script> tailwind.config = { darkMode: 'class', } </script> --}}
 
-<body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-slate-900">
+<body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-slate-900 min-h-screen flex flex-col">
 	<nav
 		class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-slate-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
 		<div
@@ -193,22 +193,21 @@
 					@endforeach
 				</ul>
 
-				<hr class="my-3 md:min-w-full" />
-
-				<h6
-					class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-					<a href="/">
-						Back to App
-					</a>
-				</h6>
-
+				<div class="mt-auto">
+					<hr class="my-3 md:min-w-full" />
+					<h6
+						class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block py-1 no-underline">
+						<a href="/">
+							Back to App
+						</a>
+					</h6>
+				</div>
 			</div>
 		</div>
 	</nav>
 	
-	<main class="relative md:ml-64 lg:ml-72 xl:pl-8">
-
-		<article class="prose dark:prose-invert max-w-3xl m-4 mx-6 lg:mx-8 p-6">
+	<main class="md:ml-64 lg:ml-72 xl:pl-8 mb-auto">
+		<article class="prose dark:prose-invert max-w-3xl p-6 lg:p-8">
 			{!!
 			// Print the Markdown HTML from the page object.
 			// If this is a realtime request we replace the media path first.
@@ -220,11 +219,11 @@
 	</main>
 
 
-	<footer class="relative md:ml-64 lg:ml-72 xl:pl-8 py-4 bg-slate-200">
+	<footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-200">
 		<div class="max-w-3xl mx-6 lg:mx-8 p-2">
 			@if(config('laradocgen.useTorchlight'))
 			<small>
-				This site was generated using the <a class="text-indigo-700 dark:text-indigo-300" href="https://github.com/desilva/laradocgen/">Laradocgen</a> package. License MIT.
+				This site was generated using the free and open source <a class="text-indigo-700 dark:text-indigo-300" href="https://github.com/desilva/laradocgen/">Laradocgen</a> package. License MIT.
 			</small>
 			<small class="ml-3">
 				Syntax highlighting by <a class="text-indigo-700 dark:text-indigo-300" href="https://torchlight.dev/"
