@@ -198,12 +198,36 @@ class StaticPageBuilder
     {
         $count = 0;
         foreach (glob($this->sourcePath . "media/*.{png,svg,jpg,jpeg,gif}", GLOB_BRACE) as $filepath) {
-            echo " > Copying file " . basename($filepath) . " to the output media directory \n";
+            echo " > Copying media file " . basename($filepath) . " to the output media directory \n";
             copy($filepath, $this->buildPath . 'media/' . basename($filepath));
             $count++;
         }
 
+        echo " > Copying app.css stylesheet file to the output media directory \n";
+        copy($this->sourcePath . "media/app.css", $this->buildPath . "media/app.css");
+        $count++;
+        if (file_exists($this->sourcePath . "media/custom.css")) {
+            echo " > Found custom.css stylesheet. Merging it with app.css \n";
+            $this->mergeStylesheets();
+        }
+
         // Copy CSS from public/vendor to media/app.css
         return $count;
+    }
+
+    /**
+     * Merge the app.css and custom.css
+     * 
+     * @return void
+     */
+    private function mergeStylesheets(): void
+    {
+        echo "Merging stylesheets \n";
+
+        $customStyles = file_get_contents($this->sourcePath . "media/custom.css");
+        file_put_contents($this->buildPath . "media/app.css", PHP_EOL . PHP_EOL . "/* Custom styles */" . PHP_EOL . PHP_EOL, FILE_APPEND);
+        file_put_contents($this->buildPath . "media/app.css", $customStyles, FILE_APPEND);
+
+        echo "Finished merging stylesheets. \n";
     }
 }
