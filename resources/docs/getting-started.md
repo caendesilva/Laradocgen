@@ -1,10 +1,46 @@
 # Creating a static documentation site blazingly fast and stupidly simple with DeSilva/Laradocgen for Laravel
 
 <p class="subheading">
-Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
+Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
 </p>
 
-### Installation guide
+### Quickstart
+> Want to get started fast? Follow this Quickstart guide. <br>
+> Need more detail? Follow the step-by-step guide below.
+
+#### Installation
+```bash
+# Include the package as a dev dependency
+composer require desilva/laradocgen --dev
+
+# Publish the assets. 
+php artisan vendor:publish --tag="laradocgen"
+```
+Publishing the assets is required as it creates the necessary directories and scaffolds the files. It also publishes the stylesheet.
+
+#### Creating documentation pages
+Save your documentation as Markdown files resources/docs directory.
+Example: `<laravel-project>/resources/docs/<your-markdown-file>.md` 
+
+#### Building the static site
+Building the site is a breeze. Simply start your development server and run the Artisan build command
+```bash
+# Ensure your site is accessible at http://localhost:8000/
+php artisan serve
+
+# Run the static site builder
+php artisan laradocgen:build
+```
+
+The generated static site saved in `<laravel-project>/public/docs`. You can keep it there to automatically serve them from the /docs URI path. Or, you can also upload them to your static site host.
+
+**That's it! Have fun building your documentation!**
+
+#### What's next?
+I recommend that you read the rest of the article to learn more about how the package works.
+
+
+### Step by Step Installation Guide
 
 #### Speedrun
 If you know your way around Laravel you can skip to the [summary](#summary) 
