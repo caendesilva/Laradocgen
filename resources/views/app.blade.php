@@ -8,10 +8,17 @@
 	<link rel="shortcut icon" href="./assets/img/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
 
-	<link rel="stylesheet" href="{{ $realtime
-										? '/vendor/laradocgen/app.css'
-										: 'media/app.css'
-									}}">
+	@if($realtime)
+	<link rel="stylesheet" href="/realtime-docs-compiler/media/app.css">
+	@if($appmeta->customStylesheet)
+	<link rel="stylesheet" href="/realtime-docs-compiler/media/custom.css">
+	@endif
+	@else
+	<link rel="stylesheet" href="media/app.css">
+	@endif
+
+
+
 
 	<title>
 		@if($page->slug !== "index")

@@ -29,6 +29,11 @@ class DocumentationController extends Controller
         // Validate the slug
         $slug = $this->handle404($slug);
 
+        // Run the realtime compiler
+        if ($realtime) {
+            $appmeta = (new RealtimeCompiler)->getAppmeta();
+        }
+
         /**
          * Create a MarkdownPage object from the slug.
          * The object contains the page content.
@@ -51,7 +56,6 @@ class DocumentationController extends Controller
          */
         $rootRoute =  $realtime ? '/realtime-docs/' : '/docs/';
 
-
         // Return the view
         return view('laradocgen::app', [
             'page' => $page,
@@ -59,6 +63,7 @@ class DocumentationController extends Controller
             'siteName' => $siteName,
             'realtime' => $realtime,
             'rootRoute' => $rootRoute,
+            'appmeta' => $appmeta ?? new \stdClass(),
         ]);
     }
 
