@@ -78,7 +78,7 @@ php artisan vendor:publish --tag="laradocgen"
 ```
 This publishes the stylesheet, config, and also creates some sample files for you to get started quickly with.
 
-![Screenshot of the files created](media/gssh1.png)
+![Screenshot of the files created](https://cdn.desilva.se/static/media/screenshots/gssh1.png)
 
 #### About the assets
 Here is a quick explanation about what they do
@@ -121,7 +121,7 @@ nano resources/docs/getting-started.md
 
 After you've written down some markdown, save the file `Ctrl+O`, `enter`, `Ctrl+X` (if using Nano) and hit refresh on the webpage. You should now see that a new entry has been created in the sidebar
 Click on the link, and you should now see your beautifully formatted Markdown!
-![Screenshot of the rendered Markdown page](media/gssh2.png)
+![Screenshot of the rendered Markdown page](https://cdn.desilva.se/static/media/screenshots/gssh2.png)
 
 ### Adding images
 Adding images is easy, just put them in the resources/docs/media directory, reference them using the following code
@@ -129,6 +129,8 @@ Adding images is easy, just put them in the resources/docs/media directory, refe
 ![Example Image](media/example-image.jpg "Image by Picjumbo.com")
 ```
 And run the build command
+
+> You can of course also use an external CDN to host the images by entering the full URI instead of the relative filepath. The screenshot above uses this method.
 
 ### Generating the static site
 This package is intended to be used to generate static HTML so it can be hosted on services such as GitHub pages.
