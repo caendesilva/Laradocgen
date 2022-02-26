@@ -73,6 +73,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [ ] Add (automatic) versioning support
 - [ ] Allow the specification of source/build directories. This can also be used for versioning.
 - [ ] Allow the package to run standalone from Laravel
+- [ ] Add Blade view customization
+- [ ] Add Search feature 
 
 Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a Ticket as I want to allow for more customization down the line.
 

@@ -12,6 +12,7 @@ This package is still in the alpha stage. Once it becomes stable and tested enou
 Please do contribute with PRs and bug reports!
 
 ## Installation
+> The package has so far only been tested with Laravel 9
 
 You can install the package via composer:
 ```bash
@@ -61,18 +62,22 @@ Please see [CHANGELOG](changelog) for more information on what has changed recen
 
 ## Contributing
 
-Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR as I want to allow for more customization down the line.
-
 Please see [CONTRIBUTING](contributing) for details.
 
 ### Roadmap
 - [ ] Add (automatic) versioning support
 - [ ] Allow the specification of source/build directories. This can also be used for versioning.
 - [ ] Allow the package to run standalone from Laravel
+- [ ] Add Blade view customization
+- [ ] Add Search feature 
+
+Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a Ticket as I want to allow for more customization down the line.
+
 
 ## Security
 
 If you discover any security-related issues, please email caen@desilva.se instead of using the issue tracker.
+All vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -93,4 +98,9 @@ This package's scaffolding was generated using the [Laravel Package Boilerplate]
 ### Frontend
 
 - The frontend is based on https://github.com/creativetimofficial/tailwind-starter-kit (MIT)
-- The darkmode switch is based on a component from Flowbite https://flowbite.com/docs/customize/dark-mode/ (MIT)
+- The dark-mode switch is based on a component from Flowbite https://flowbite.com/docs/customize/dark-mode/ (MIT)
+
+### Packages used and special mentions
+- Frontend is built with [TailwindCSS](https://tailwindcss.com/)
+- Syntax highlighting by [Torchlight](https://torchlight.dev/)
+- Markdown is parsed with [League/Commonmark](https://github.com/thephpleague/commonmark)
