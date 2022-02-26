@@ -46,8 +46,13 @@ class LaradocgenServiceProvider extends ServiceProvider
             ], 'laradocgen');
 
             // Publishing assets.
+            // $this->publishes([
+            //     __DIR__ . '/../resources/assets' => public_path('vendor/laradocgen'),
+            // ], 'laradocgen');
+
+            // Publishing the stylesheet
             $this->publishes([
-                __DIR__ . '/../resources/assets' => public_path('vendor/laradocgen'),
+                __DIR__ . '/../resources/assets' => resource_path('docs/media'),
             ], 'laradocgen');
 
             // Publishing the translation files.
