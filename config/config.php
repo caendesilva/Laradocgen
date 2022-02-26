@@ -1,7 +1,7 @@
 <?php
 
 /*
- * LaraDocGen Configuration
+ * Laradocgen Configuration
  */
 return [
     /**

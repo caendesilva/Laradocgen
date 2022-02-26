@@ -5,7 +5,7 @@
         "desilva",
         "laradocgen"
     ],
-    "homepage": "https://github.com/desilva/laradocgen",
+    "homepage": "https://github.com/caendesilva/docgen",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DeSilva\\LaraDocGen\\": "src"
+            "DeSilva\\Laradocgen\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DeSilva\\LaraDocGen\\Tests\\": "tests"
+            "DeSilva\\Laradocgen\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DeSilva\\LaraDocGen\\LaraDocGenServiceProvider"
+                "DeSilva\\Laradocgen\\LaradocgenServiceProvider"
             ],
             "aliases": {
-                "LaraDocGen": "DeSilva\\LaraDocGen\\LaraDocGenFacade"
+                "Laradocgen": "DeSilva\\Laradocgen\\LaradocgenFacade"
             }
         }
     }

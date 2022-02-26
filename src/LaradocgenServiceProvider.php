@@ -1,6 +1,8 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
+
+use DeSilva\Laradocgen\BuildCommand;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +15,7 @@ use League\CommonMark\Extension\Footnote\FootnoteExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 use League\CommonMark\Environment\Environment;
 
-class LaraDocGenServiceProvider extends ServiceProvider
+class LaradocgenServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -70,7 +72,7 @@ class LaraDocGenServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('laradocgen', function () {
-            return new LaraDocGen;
+            return new Laradocgen;
         });
 
         // Register a new Markdown Singleton

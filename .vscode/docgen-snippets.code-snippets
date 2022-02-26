@@ -20,7 +20,7 @@
 			"namespace"
 		],
 		"body": [
-			"namespace DeSilva\\LaraDocGen;",
+			"namespace DeSilva\\Laradocgen;",
 		],
 		"description": "Add the namespace"
 	},

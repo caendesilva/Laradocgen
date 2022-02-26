@@ -1,4 +1,4 @@
-# Creating a static documentation site blazingly fast and stupidly simple with DeSilva/LaraDocGen for Laravel
+# Creating a static documentation site blazingly fast and stupidly simple with DeSilva/Laradocgen for Laravel
 
 <p class="subheading">
 Hey! I'm Caen! I created this package to practise package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
@@ -138,7 +138,7 @@ And enable the feature in the config/laradocgen.php
 <?php
 
 /*
- * LaraDocGen Configuration
+ * Laradocgen Configuration
  */
 return [
     /**

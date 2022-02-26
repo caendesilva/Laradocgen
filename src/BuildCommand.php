@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 use Illuminate\Console\Command;
 
@@ -40,6 +40,6 @@ class BuildCommand extends Command
      */
     public function handle()
     {
-        LaraDocGen::build();
+        Laradocgen::build();
     }
 }

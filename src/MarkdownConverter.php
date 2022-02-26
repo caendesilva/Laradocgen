@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 /**
  * Wrapper for the Commonmark Markdown Converter

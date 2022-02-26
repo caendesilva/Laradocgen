@@ -1,13 +1,13 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \DeSilva\LaraDocGen\Skeleton\SkeletonClass
+ * @see \DeSilva\Laradocgen\Skeleton\SkeletonClass
  */
-class LaraDocGenFacade extends Facade
+class LaradocgenFacade extends Facade
 {
     /**
      * Get the registered name of the component.

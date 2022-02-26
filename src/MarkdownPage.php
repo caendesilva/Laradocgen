@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 use Illuminate\Support\Str;
 
@@ -70,6 +70,6 @@ class MarkdownPage
      */
     private function getMarkdown(): string
     {
-        return LaraDocGen::getMarkdownFromSlugOrFail($this->slug);
+        return Laradocgen::getMarkdownFromSlugOrFail($this->slug);
     }
 }

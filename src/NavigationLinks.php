@@ -1,6 +1,6 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 use Illuminate\Support\Collection;
 
@@ -40,7 +40,7 @@ class NavigationLinks
     /**
      * Create a new Collection
      *
-     * @uses LaraDocGen::getMarkdownFileSlugsArray()
+     * @uses Laradocgen::getMarkdownFileSlugsArray()
      * @uses NavigationLink
      *
      * @return Collection $links
@@ -50,7 +50,7 @@ class NavigationLinks
         $links = new Collection;
 
         // Get the array of Markdown files and loop through it
-        foreach (LaraDocGen::getMarkdownFileSlugsArray() as $slug) {
+        foreach (Laradocgen::getMarkdownFileSlugsArray() as $slug) {
             // Create a new NavigationLink object and push it to the Collection
             $links->push(new NavigationLink($slug));
         }

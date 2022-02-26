@@ -1,11 +1,11 @@
 <?php
 
-namespace DeSilva\LaraDocGen;
+namespace DeSilva\Laradocgen;
 
 /**
  * Package Singleton Class
  */
-class LaraDocGen
+class Laradocgen
 {
     /**
      * Get the name of the documentation site.
