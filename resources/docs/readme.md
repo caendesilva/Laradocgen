@@ -1,4 +1,5 @@
 # Laravel Static Documentation Sites, Blazingly Fast and Stupidly Simple
+> Now with Dark Mode Support!
 
 
 ## About
