@@ -16,6 +16,10 @@
 	line-height: 1.3333333
 }
 
+.dark .subheading {
+	color: #f3f4f6;
+}
+
 .prose blockquote p:first-of-type::before,
 .prose blockquote p:last-of-type::after {
 	content: none;
@@ -41,11 +45,25 @@ html {
 	transition: color 0.25s;
 }
 
+.dark .table-of-contents li {
+    color: #f3f4f6;
+}
+
 .heading-permalink {
 	opacity: 0.25;
 	color: #6b7280;
 	padding: 1rem 0.75rem;
 }
+
+
+.dark .table-of-contents li::before {
+	color: #d1d5db;
+}
+
+.dark .heading-permalink {
+	color: #d1d5db;
+}
+
 
 h1:hover .heading-permalink,
 h2:hover .heading-permalink,
@@ -56,6 +74,10 @@ h6:hover .heading-permalink {
 	opacity: 1;
 	color: #6366f1;
 }
+
+h1, h2, h3, h4, h5, h6 {
+	width: fit-content;
+} 
 
 /* Inline Code Style */
 
