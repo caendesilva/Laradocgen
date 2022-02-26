@@ -102,7 +102,20 @@
 		}
 	</style>
 	@endif
+
+	<script>
+		// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+	</script>
 </head>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+
 
 <body class="text-blueGray-700 antialiased">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
@@ -111,11 +124,17 @@
 			class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
 			<div
 				class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
-				<a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block  text-sm uppercase font-bold p-4 px-0"
-					href="index{{ $realtime == false ? '.html' : '' }}">
-					{{ $siteName }}
-				</a>
-				<button
+				<div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
+					<a class="md:block text-left text-blueGray-600 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit"
+						href="index{{ $realtime == false ? '.html' : '' }}">
+						{{ $siteName }}
+					</a>
+					<!-- Dark mode switch -->
+					<button id="theme-toggle" type="button" class="ml-auto md:ml-0 text-gray-500 dark:text-gray-400 hover:text-gray-100 dark:hover:text-gray-700 " title="Toggle Dark Mode">
+						<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+						<svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+					</button>
+					<button
 					class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
 					type="button" onclick="toggleNavbar('example-collapse-sidebar')">
 					<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -123,6 +142,8 @@
 						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
 					</svg></button>
 
+				</div>
+				
 				<div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
 					id="example-collapse-sidebar">
 					<div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
@@ -175,7 +196,7 @@
 						@endforeach
 					</ul>
 
-					<hr class="my-4 md:min-w-full" />
+					<hr class="my-3 md:min-w-full" />
 
 					<h6
 						class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
@@ -236,6 +257,50 @@
 				codeblock.firstChild.insertAdjacentHTML('afterBegin', filepath.outerHTML);
 			});
 		}
+	</script>
+
+	<script>
+		// Toggle darkmode
+		var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+		var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+		// Change the icons inside the button based on previous settings
+		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			themeToggleLightIcon.classList.remove('hidden');
+		} else {
+			themeToggleDarkIcon.classList.remove('hidden');
+		}
+
+		var themeToggleBtn = document.getElementById('theme-toggle');
+
+		themeToggleBtn.addEventListener('click', function() {
+
+			// toggle icons inside button
+			themeToggleDarkIcon.classList.toggle('hidden');
+			themeToggleLightIcon.classList.toggle('hidden');
+
+			// if set via local storage previously
+			if (localStorage.getItem('color-theme')) {
+				if (localStorage.getItem('color-theme') === 'light') {
+					document.documentElement.classList.add('dark');
+					localStorage.setItem('color-theme', 'dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+					localStorage.setItem('color-theme', 'light');
+				}
+
+			// if NOT set via local storage previously
+			} else {
+				if (document.documentElement.classList.contains('dark')) {
+					document.documentElement.classList.remove('dark');
+					localStorage.setItem('color-theme', 'light');
+				} else {
+					document.documentElement.classList.add('dark');
+					localStorage.setItem('color-theme', 'dark');
+				}
+			}
+			
+		});
 	</script>
 
 	<script type="text/javascript">
