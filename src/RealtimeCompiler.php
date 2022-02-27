@@ -6,18 +6,18 @@ use App\Http\Controllers\Controller;
 
 /**
  * RealtimeCompiler Class
- * 
+ *
  * The realtime compiler runs on each request to the live preview.
  * Its most important job is to inject the stylesheets and scripts.
  *
  * Usage
  * ```php
  * $compiler = new RealtimeCompiler; // Create the compiler object
- * 
- * $compiler->getStyles(); // Compile and get the styles as an inline string 
- * $compiler->getScripts(); // Get the scripts as an inline string 
+ *
+ * $compiler->getStyles(); // Compile and get the styles as an inline string
+ * $compiler->getScripts(); // Get the scripts as an inline string
  * ```
- * 
+ *
  * @uses Laradocgen
  */
 class RealtimeCompiler extends Controller

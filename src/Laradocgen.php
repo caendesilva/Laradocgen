@@ -9,7 +9,7 @@ class Laradocgen
 {
     /**
      * Get the name of the documentation site.
-     * 
+     *
      * Is dynamically generated from the App name unless
      * overridden in the config.
      *
@@ -30,7 +30,7 @@ class Laradocgen
      * With media in <laravel-project>/resources/docs/media/
      *
      * @example StaticPageBuilder::__construct()
-     * 
+     *
      * @return string $sourcePath
      **/
     public static function getSourcePath()
@@ -121,6 +121,12 @@ class Laradocgen
         return $files;
     }
 
+    /**
+     * @deprecated
+     *
+     * @param string $slug
+     * @return bool
+     */
     public static function validateExistence(string $slug): bool
     {
         return file_exists(resource_path() . '/docs/' . $slug . '.md');

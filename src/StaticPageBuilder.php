@@ -13,7 +13,8 @@ class StaticPageBuilder
 {
     /**
      * The directory where the source files are stored.
-     * Usually <laravel-project>/resources/docs/
+     *
+     * Usually [laravel-project]/resources/docs/
      *
      * @var string
      */
@@ -21,8 +22,9 @@ class StaticPageBuilder
 
     /**
      * The directory where the compiled static files are stored.
-     * Usually <laravel-project>/public/docs/
-     * Media files such as images are in <laravel-project>/public/docs/media/
+     *
+     * Usually [laravel-project]/public/docs/
+     * Media files such as images are in [laravel-project]/public/docs/media/
      *
      * @var string
      */
@@ -46,9 +48,9 @@ class StaticPageBuilder
         echo "Starting build \n";
 
         // Set the source path
-        $this->sourcePath = resource_path() . '/docs/';
+        $this->sourcePath = Laradocgen::getSourcePath();
         // Set the build path
-        $this->buildPath = public_path() . '/docs/';
+        $this->buildPath = Laradocgen::getBuildPath();
 
         // Check if the directories exists, otherwise create them
         $this->ensureDirectoryExists();
@@ -146,13 +148,15 @@ class StaticPageBuilder
                 break;
         }
 
-        // Construct the filename
-        $filename = $this->buildPath . $slug . '.html';
+        // Validate the HTML (Check if it is empty, and send warning that webserver may be down)
+
+        // Construct the outputFilepath
+        $outputFilepath = $this->buildPath . $slug . '.html';
 
         // Save the HTML to the file
-        file_put_contents($filename, $html);
+        file_put_contents($outputFilepath, $html);
 
-        // Add file checksum to checksums.json
+        // @todo Add file checksum to checksums.json?
     }
 
     /**
@@ -197,22 +201,29 @@ class StaticPageBuilder
     private function copyAssets(): int
     {
         $count = 0;
-        foreach (glob($this->sourcePath . "media/*.{png,svg,jpg,jpeg,gif,ico}", GLOB_BRACE) as $filepath) {
+        $files = Laradocgen::getSourceFilepath("*.{png,svg,jpg,jpeg,gif,ico}", 'media');
+        foreach (glob($files, GLOB_BRACE) as $filepath) {
             echo " > Copying media file " . basename($filepath) . " to the output media directory \n";
-            copy($filepath, $this->buildPath . 'media/' . basename($filepath));
+            copy($filepath, Laradocgen::getBuildFilepath(basename($filepath), 'media'));
             $count++;
         }
 
         echo " > Copying app.css stylesheet file to the output media directory \n";
-        copy($this->sourcePath . "media/app.css", $this->buildPath . "media/app.css");
+        copy(
+            Laradocgen::getSourceFilepath('app.css', 'media'),
+            Laradocgen::getBuildFilepath('app.css', 'media')
+        );
         $count++;
-        if (file_exists($this->sourcePath . "media/custom.css")) {
+        if (file_exists(Laradocgen::getSourceFilepath('custom.css', 'media'))) {
             echo " > Found custom.css stylesheet. Merging it with app.css \n";
             $this->mergeStylesheets();
         }
 
         echo " > Copying app.js file to the output media directory \n";
-        copy($this->sourcePath . "media/app.js", $this->buildPath . "media/app.js");
+        copy(
+            Laradocgen::getSourceFilepath('app.js', 'media'),
+            Laradocgen::getBuildFilepath('app.js', 'media')
+        );
         $count++;
 
         return $count;
@@ -227,15 +238,19 @@ class StaticPageBuilder
     {
         echo "Merging stylesheets \n";
 
-        $customStyles = file_get_contents($this->sourcePath . "media/custom.css");
+        $customStyles = Laradocgen::getSourceFileContents('media/custom.css');
         file_put_contents(
             $this->buildPath .
-            "media/app.css",
+                "media/app.css",
             PHP_EOL . PHP_EOL .
-            "/* Custom styles */" . PHP_EOL . PHP_EOL,
+                "/* Custom styles */" . PHP_EOL . PHP_EOL,
             FILE_APPEND
         );
-        file_put_contents($this->buildPath . "media/app.css", $customStyles, FILE_APPEND);
+        file_put_contents(
+            Laradocgen::getBuildFilepath('app.css', 'media'),
+            $customStyles,
+            FILE_APPEND
+        );
 
         echo "Finished merging stylesheets. \n";
     }
