@@ -25,7 +25,7 @@ Example: `<laravel-project>/resources/docs/<your-markdown-file>.md`
 ### Building the static site
 Building the site is a breeze. Simply start your development server and run the Artisan build command
 ```bash
-# Ensure your site is accessible at http://localhost:8000/
+# Ensure your site is accessible at http://localhost:8000/ [tl! autolink]
 php artisan serve
 
 # Run the static site builder
@@ -59,7 +59,7 @@ cd laradocgen-demo
  
 php artisan serve
 
-# Now you can visit http://localhost:8000/ in your browser to verify the install.
+# Now you can visit http://localhost:8000/ in your browser to verify the install. [tl! autolink]
 ```
 
 ### Install the package
@@ -128,7 +128,7 @@ Adding images is easy, just put them in the resources/docs/media directory, refe
 ```markdown
 ![Example Image](media/example-image.jpg "Image by Picjumbo.com")
 ```
-And run the build command
+When the static site is built the images will be copied automatically. When using the realtime viewer, the image markdown is intercepted by the preprocessor and changes the path to a resource route. 
 
 > You can of course also use an external CDN to host the images by entering the full URI instead of the relative filepath. The screenshot above uses this method.
 
@@ -175,6 +175,8 @@ TORCHLIGHT_TOKEN=torch_ # Replace with your token
 And enable the feature in the `config/laradocgen.php`
 
 <small class="filepath" title="Filepath relative to your Laravel installation">config/laradocgen.php</small>
+
+[!!filepath]::config/laradocgen.php
 
 ```php
 <?php

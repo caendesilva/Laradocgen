@@ -45,12 +45,18 @@ class MarkdownPage
      * Construct the page object
      *
      * @param string $slug of the page. Defaults to 'index'
+     * @param bool $isRealtimeRequest for on-the-fly generation?
      */
-    public function __construct(string $slug = 'index')
+    public function __construct(string $slug = 'index', bool $isRealtimeRequest = false)
     {
         $this->slug = $slug;
         $this->title = $this->getTitle();
         $this->markdown = $this->getMarkdown();
+
+        // Temporary as it will be done in the preprocessor (or postprocessor) after I restructure and remove the deprecated method.
+        if ($isRealtimeRequest) {
+            $this->markdown = str_replace('<img src="media/', '<img src="/api/laradocgen/realtime-media-asset/', $this->markdown);
+        }
     }
 
     /**

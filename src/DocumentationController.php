@@ -72,6 +72,27 @@ class DocumentationController extends Controller
     }
 
     /**
+     * Return a file from the resources/docs/media for the realtime viewer
+     * 
+     * @param string $file
+     * @return 
+     */
+    public function realtimeAsset(string $file)
+    {
+        try {
+            $filepath = resource_path('docs/media/' . $file);
+            if (!str_contains(mime_content_type($filepath), 'image')) {
+                abort(401);
+            }
+
+            header('Content-Type: image');
+            return readfile($filepath);
+        } catch (\Throwable $th) {
+            return abort(404);
+        }
+    }
+
+    /**
      * Check if the specified slug exists as a page. Else swap the slug out for a 404.
      * This way the user's url is preserved and we don't redirect to a 404 page.
      *
