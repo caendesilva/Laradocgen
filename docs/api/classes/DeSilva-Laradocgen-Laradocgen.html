@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-            <title>Documentation</title>
+            <title>Source Code Docs</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
@@ -24,7 +24,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Source Code Docs</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -111,14 +111,31 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Package Singleton Class</p>
+            <p class="phpdocumentor-summary">Package Singleton Class.</p>
+
+    <section class="phpdocumentor-description"><p>Bootstraps the application services and serves as an interface to the configuration</p>
+<p>Accessible through the facade</p>
+</section>
 
 
-
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-LaradocgenFacade.html"><abbr title="\DeSilva\Laradocgen\LaradocgenFacade">LaradocgenFacade</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 
 
@@ -136,7 +153,14 @@
     <span>
                                 &nbsp;: <a href="classes/DeSilva-Laradocgen-StaticPageBuilder.html"><abbr title="\DeSilva\Laradocgen\StaticPageBuilder">StaticPageBuilder</abbr></a>    </span>
 </dt>
-<dd>Build the static files</dd>
+<dd>Build the static website files.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getBuildFilepath">getBuildFilepath()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Get the path of a file in the build directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getBuildPath">getBuildPath()</a>
@@ -150,7 +174,7 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get an array of all the markdown files</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSiteName">getSiteName()</a>
@@ -164,14 +188,14 @@
     <span>
                                 &nbsp;: string|false    </span>
 </dt>
-<dd>Get the contents of a file in the source directory</dd>
+<dd>Get the contents of a file in the source directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFilePath">getSourceFilePath()</a>
+    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFilepath">getSourceFilepath()</a>
     <span>
-                                &nbsp;: string|false    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd>Get the path of a file in the source directory</dd>
+<dd>Get the path of a file in the source directory.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourcePath">getSourcePath()</a>
@@ -181,11 +205,18 @@
 <dd>Get the Source Path</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistence">validateExistence()</a>
+    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistenceOfSlug">validateExistenceOfSlug()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateSourceFiles">validateSourceFiles()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Check if the necessary files to build the site exists.</dd>
 
         </dl>
 
@@ -213,17 +244,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Build the static files</p>
+        <p class="phpdocumentor-summary">Build the static website files.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">build</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/DeSilva-Laradocgen-StaticPageBuilder.html"><abbr title="\DeSilva\Laradocgen\StaticPageBuilder">StaticPageBuilder</abbr></a></span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Start the build process by invoking the page builder class</p>
+</section>
+
     
     
 
@@ -239,6 +272,78 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getBuildFilepath">
+        getBuildFilepath()
+        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getBuildFilepath" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">91</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the path of a file in the build directory.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getBuildFilepath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$directory</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filename</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>to retrieve</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$directory</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optionally specify a subdirectory of the file</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">example</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Laradocgen::getBuildFilepath('index.md')
+returns /home/user/laravel-project/public/docs/index.md</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$filepath full path to the file</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_getBuildPath">
         getBuildPath()
         <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getBuildPath" class="headerlink"><i class="fas fa-link"></i></a>
@@ -246,7 +351,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -285,16 +390,18 @@ With media in <laravel-project>/public/docs/media/</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get an array of all the markdown files</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getMarkdownFileSlugsArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Returns the markdown files in the source directory as slugs (without the extension)</p>
+</section>
 
     
     
@@ -318,7 +425,7 @@ With media in <laravel-project>/public/docs/media/</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -328,8 +435,8 @@ With media in <laravel-project>/public/docs/media/</p>
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getSiteName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>Is dynamically generated from the App name unless
-overridden in the config.</p>
+        <section class="phpdocumentor-description"><p>Is dynamically generated from the App name
+unless overridden in the config.</p>
 </section>
 
     
@@ -356,11 +463,11 @@ overridden in the config.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the contents of a file in the source directory</p>
+        <p class="phpdocumentor-summary">Get the contents of a file in the source directory.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -393,8 +500,7 @@ overridden in the config.</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p><code class="prettyprint">Laradocgen::getSourceFileContents('index.md');</code>
-returns <code class="prettyprint">/home/&lt;user&gt;/&lt;laravel-project&gt;/resources/docs/index.md</code></p>
+                                                 <section class="phpdocumentor-description"><p>RealtimeCompiler::getStyles()</p>
 </section>
 
                                     </dd>
@@ -414,26 +520,24 @@ returns <code class="prettyprint">/home/&lt;user&gt;/&lt;laravel-project&gt;/res
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSourceFilePath">
-        getSourceFilePath()
-        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFilePath" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getSourceFilepath">
+        getSourceFilepath()
+        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFilepath" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the path of a file in the source directory</p>
+        <p class="phpdocumentor-summary">Get the path of a file in the source directory.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getSourceFilePath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|false</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getSourceFilepath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$directory</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>Note that the path will be returned regardless if the file exists or not.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -441,7 +545,16 @@ returns <code class="prettyprint">/home/&lt;user&gt;/&lt;laravel-project&gt;/res
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>to search for</p>
+                    <section class="phpdocumentor-description"><p>to retrieve</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$directory</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optionally specify a subdirectory of the file</p>
 </section>
 
             </dd>
@@ -458,16 +571,17 @@ returns <code class="prettyprint">/home/&lt;user&gt;/&lt;laravel-project&gt;/res
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Laradocgen::getSourceFilePath('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md</p>
+                                                 <section class="phpdocumentor-description"><p>Laradocgen::getSourceFilepath('index.md')
+returns /home/user/laravel-project/resources/docs/index.md</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|false</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>$filepath the full path</p>
+            <section class="phpdocumentor-description"><p>$filepath full path to the file</p>
 </section>
 
     
@@ -485,7 +599,7 @@ returns <code class="prettyprint">/home/&lt;user&gt;/&lt;laravel-project&gt;/res
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
@@ -512,7 +626,7 @@ With media in <laravel-project>/resources/docs/media/</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>RealtimeCompiler::getSourceFileContentsERR to load stylesheets</p>
+                                                 <section class="phpdocumentor-description"><p>StaticPageBuilder::__construct()</p>
 </section>
 
                                     </dd>
@@ -532,24 +646,23 @@ With media in <laravel-project>/resources/docs/media/</p>
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_validateExistence">
-        validateExistence()
-        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistence" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_validateExistenceOfSlug">
+        validateExistenceOfSlug()
+        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistenceOfSlug" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">validateExistence</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">validateExistenceOfSlug</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -557,8 +670,7 @@ With media in <laravel-project>/resources/docs/media/</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
@@ -566,6 +678,73 @@ With media in <laravel-project>/resources/docs/media/</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_validateSourceFiles">
+        validateSourceFiles()
+        <a href="classes/DeSilva-Laradocgen-Laradocgen.html#method_validateSourceFiles" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Laradocgen.php"><a href="files/src-laradocgen.html"><abbr title="src/Laradocgen.php">Laradocgen.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">154</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if the necessary files to build the site exists.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">validateSourceFiles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">todo</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Automatically generate files based on stubs</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">returns</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>void</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>if a required file is missing</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     

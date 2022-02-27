@@ -98,7 +98,7 @@
     DocumentationController
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\App\Http\Controllers\Controller">Controller</abbr>
+        extends <abbr title="\Illuminate\Routing\Controller">Controller</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -114,11 +114,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DocumentationController.php"><a href="files/src-documentationcontroller.html"><abbr title="src/DocumentationController.php">DocumentationController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Resource controller for the Documentation views</p>
+            <p class="phpdocumentor-summary">Resource Controller for the Documentation views.</p>
 
 
 
@@ -152,9 +152,9 @@
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-DocumentationController.html#method_realtimeAsset">realtimeAsset()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd>Return a file from the resources/docs/media for the realtime viewer</dd>
+<dd>Return a a media file for the realtime viewer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-DocumentationController.html#method_show">show()</a>
@@ -168,7 +168,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Check if the specified slug exists as a page. Else swap the slug out for a 404.</dd>
+<dd>Check if the specified slug exists as a page.</dd>
 
         </dl>
 
@@ -196,15 +196,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DocumentationController.php"><a href="files/src-documentationcontroller.html"><abbr title="src/DocumentationController.php">DocumentationController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Return a file from the resources/docs/media for the realtime viewer</p>
+        <p class="phpdocumentor-summary">Return a a media file for the realtime viewer.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">realtimeAsset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">realtimeAsset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -214,16 +214,36 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>filename relative to the source media path</p>
+</section>
+
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Symfony\Component\HttpKernel\Exception\NotFoundHttpException">NotFoundHttpException</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>if the file could not be found</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>of the file contents</p>
+</section>
+
     
 </article>
                     <article
@@ -239,7 +259,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DocumentationController.php"><a href="files/src-documentationcontroller.html"><abbr title="src/DocumentationController.php">DocumentationController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -257,7 +277,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>of the file to show</p>
+                    <section class="phpdocumentor-description"><p>of the Markdown page to show</p>
 </section>
 
             </dd>
@@ -279,12 +299,12 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">todo</span>
+                    <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>add feature that re-compiles static html when the realtime viewer is active.
-This could work by comparing checksums or file sizes</p>
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>if a required file is missing</p>
 </section>
 
                                     </dd>
@@ -300,9 +320,21 @@ This could work by comparing checksums or file sizes</p>
                     <span class="phpdocumentor-tag__name">uses</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-NavigationLinks.html"><abbr title="\DeSilva\Laradocgen\NavigationLinks">NavigationLinks</abbr></a></span>
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html"><abbr title="\DeSilva\Laradocgen\MarkdownPageCollection">MarkdownPageCollection</abbr></a></span>
                                         
                                              
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">todo</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>add feature that re-compiles static html when the realtime viewer is active.
+This could work by comparing checksums or file sizes.
+The advantage of this is that the preview should match
+the result files to prevent unexpected behavior.</p>
+</section>
+
                                     </dd>
                         </dl>
 
@@ -325,17 +357,19 @@ This could work by comparing checksums or file sizes</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DocumentationController.php"><a href="files/src-documentationcontroller.html"><abbr title="src/DocumentationController.php">DocumentationController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Check if the specified slug exists as a page. Else swap the slug out for a 404.</p>
+        <p class="phpdocumentor-summary">Check if the specified slug exists as a page.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                 <span class="phpdocumentor-signature__name">handle404</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>This way the user's url is preserved and we don't redirect to a 404 page.</p>
+        <section class="phpdocumentor-description"><p>If page is not found, we swap the slug out for a 404.
+This way the user's url is preserved, and we don't redirect
+to a 404 page which can be jarring for the user.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -345,7 +379,9 @@ This could work by comparing checksums or file sizes</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>to validate</p>
+</section>
+
             </dd>
             </dl>
 
@@ -354,7 +390,7 @@ This could work by comparing checksums or file sizes</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>$slug</p>
+            <section class="phpdocumentor-description"><p>$slug the same slug if it exists, else 404</p>
 </section>
 
     

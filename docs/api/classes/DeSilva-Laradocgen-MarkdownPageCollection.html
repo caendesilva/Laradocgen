@@ -95,7 +95,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    NavigationLinks
+    MarkdownPageCollection
 
     
             <div class="phpdocumentor-element__package">
@@ -109,14 +109,18 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Creates a Collection of NavigationLink objects</p>
+            <p class="phpdocumentor-summary">Creates a Collection of MarkdownPage objects</p>
 
+    <section class="phpdocumentor-description"><p>The Collection is used to create the sidebar
+and the Collection of files for the
+StaticPageBuilder to generate.</p>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -125,22 +129,10 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">todo</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>It may make more sense to rename this to MarkdownPageCollection</p>
-<p>The Collection is used to create the sidebar
-and the Collection of files for the
-StaticPageBuilder to generate.</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">uses</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-NavigationLink.html"><abbr title="\DeSilva\Laradocgen\NavigationLink">NavigationLink</abbr></a></span>
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-MarkdownPage.html"><abbr title="\DeSilva\Laradocgen\MarkdownPage">MarkdownPage</abbr></a></span>
                                         
                                              
                                     </dd>
@@ -158,67 +150,46 @@ StaticPageBuilder to generate.</p>
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#property_links">$links</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#property_pages">$pages</a>
     <span>
                         &nbsp;: <abbr title="\Illuminate\Support\Collection">Collection</abbr>            </span>
 </dt>
-<dd>The Collection object</dd>
+<dd>The Collection object.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method___construct">__construct()</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Construct the object by generating the Collection</dd>
+<dd>Construct the object by generating the Collectio.n</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_get">get()</a>
-    <span>
-                                &nbsp;: <a href=""><abbr title=""></abbr></a>    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_get">get()</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_get">get()</a>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\Support\Collection">Collection</abbr>    </span>
 </dt>
-<dd>Get the Collection instance</dd>
+<dd>Get the created Collection instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_order">order()</a>
-    <span>
-                                &nbsp;: <a href=""><abbr title=""></abbr></a>    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_order">order()</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_order">order()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd>Sort the Collection by the order priority set in the NavigationLink object</dd>
+<dd>Sort the Collection.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_withoutRoutes">withoutRoutes()</a>
-    <span>
-                                &nbsp;: <a href=""><abbr title=""></abbr></a>    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_withoutRoutes">withoutRoutes()</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_withoutRoutes">withoutRoutes()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
 <dd>Remove the specified routes from the collection.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_generate">generate()</a>
+    <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_generate">generate()</a>
     <span>
                                 &nbsp;: <abbr title="\Illuminate\Support\Collection">Collection</abbr>    </span>
 </dt>
-<dd>Create a new Collection</dd>
+<dd>Create a new Collection.</dd>
 
         </dl>
 
@@ -230,7 +201,7 @@ StaticPageBuilder to generate.</p>
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -239,25 +210,25 @@ StaticPageBuilder to generate.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_links">
-        $links
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#property_links" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_pages">
+        $pages
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#property_pages" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The Collection object</p>
+        <p class="phpdocumentor-summary">The Collection object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type"><abbr title="\Illuminate\Support\Collection">Collection</abbr></span>
-    <span class="phpdocumentor-signature__name">$links</span>
+    <span class="phpdocumentor-signature__name">$pages</span>
     </code>
 
     
@@ -270,7 +241,7 @@ StaticPageBuilder to generate.</p>
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -280,16 +251,16 @@ StaticPageBuilder to generate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Construct the object by generating the Collection</p>
+        <p class="phpdocumentor-summary">Construct the object by generating the Collectio.n</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -313,50 +284,16 @@ StaticPageBuilder to generate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">0</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span></code>
-
-        <section class="phpdocumentor-description"><p>returns the Collection</p>
-</section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_get">
-        get()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">113</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Get the Collection instance</p>
+        <p class="phpdocumentor-summary">Get the created Collection instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -380,56 +317,24 @@ StaticPageBuilder to generate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_order">
         order()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_order" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_order" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">0</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">order</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span></code>
-
-        <section class="phpdocumentor-description"><p>sort the Collection</p>
-</section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_order">
-        order()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_order" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">94</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Sort the Collection by the order priority set in the NavigationLink object</p>
+        <p class="phpdocumentor-summary">Sort the Collection.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">order</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Uses the order priority set in the MarkdownPage object</p>
+</section>
+
     
     
 
@@ -447,57 +352,12 @@ StaticPageBuilder to generate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_withoutRoutes">
         withoutRoutes()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_withoutRoutes" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_withoutRoutes" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">0</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">withoutRoutes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$routes = []</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span></code>
-
-        <section class="phpdocumentor-description"><p>removes the specified routes</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$routes = []</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href=""><abbr title=""></abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_withoutRoutes">
-        withoutRoutes()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_withoutRoutes" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -539,16 +399,16 @@ StaticPageBuilder to generate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_generate">
         generate()
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#method_generate" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method_generate" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/NavigationLinks.php"><a href="files/src-navigationlinks.html"><abbr title="src/NavigationLinks.php">NavigationLinks.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPageCollection.php"><a href="files/src-markdownpagecollection.html"><abbr title="src/MarkdownPageCollection.php">MarkdownPageCollection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a new Collection</p>
+        <p class="phpdocumentor-summary">Create a new Collection.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
@@ -574,7 +434,7 @@ StaticPageBuilder to generate.</p>
                     <span class="phpdocumentor-tag__name">uses</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-NavigationLink.html"><abbr title="\DeSilva\Laradocgen\NavigationLink">NavigationLink</abbr></a></span>
+                                                                                    <span class="phpdocumentor-tag-link"><abbr title="\DeSilva\Laradocgen\MarkdownPage::class">MarkdownPage::class</abbr></span>
                                         
                                              
                                     </dd>
@@ -583,7 +443,7 @@ StaticPageBuilder to generate.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><abbr title="\Illuminate\Support\Collection">Collection</abbr></span>
             &mdash;
-            <section class="phpdocumentor-description"><p>$links</p>
+            <section class="phpdocumentor-description"><p>$pages</p>
 </section>
 
     
@@ -666,7 +526,7 @@ StaticPageBuilder to generate.</p>
 </section>
             </div>
         </div>
-        <a href="classes/DeSilva-Laradocgen-NavigationLinks.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/DeSilva-Laradocgen-MarkdownPageCollection.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

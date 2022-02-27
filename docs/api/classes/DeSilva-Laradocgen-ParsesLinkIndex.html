@@ -111,12 +111,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">Parse the linkIndex.yml file which is used to determine the order the
-NavigationLinks::class collection for pages in the sidebar.</p>
+MarkdownPageCollection::class collection for pages in the sidebar.</p>
 
 
 
@@ -164,7 +164,7 @@ numerical index and the value is the slug.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-ParsesLinkIndex.html#method_getIndexOfSlug">getIndexOfSlug()</a>
     <span>
-                                &nbsp;: int    </span>
+                                &nbsp;: int|false    </span>
 </dt>
 <dd>Static shorthand to get the index from a slag.</dd>
 
@@ -203,7 +203,7 @@ numerical index and the value is the slug.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -238,7 +238,7 @@ numerical index and the value is the slug.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -276,7 +276,7 @@ numerical index and the value is the slug.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -289,6 +289,22 @@ numerical index and the value is the slug.</p>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>if link index cannot be found</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -309,7 +325,7 @@ numerical index and the value is the slug.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -367,7 +383,7 @@ numerical index and the value is the slug.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -375,7 +391,7 @@ numerical index and the value is the slug.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getIndexOfSlug</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getIndexOfSlug</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$slug</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|false</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -403,7 +419,7 @@ numerical index and the value is the slug.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
+    <span class="phpdocumentor-signature__response_type">int|false</span>
             &mdash;
         
     
@@ -421,7 +437,7 @@ numerical index and the value is the slug.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ParsesLinkIndex.php"><a href="files/src-parseslinkindex.html"><abbr title="src/ParsesLinkIndex.php">ParsesLinkIndex.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 

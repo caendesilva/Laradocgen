@@ -111,12 +111,16 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">The Markdown Page Object</p>
 
+    <section class="phpdocumentor-description"><p>Passed to the app.blade.php view through the DocumentationController,
+the MarkdownPage object contains information about the Page.
+It holds data such as the page title and the Markdown contents.</p>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -125,20 +129,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">todo</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>This class contains similar code as the NavigationLink::class.
-Merging them, or referencing this class in the other one would
-allow for better maintainability.</p>
-<p>Passed to the app.blade.php view through the DocumentationController,
-the MarkdownPage object contains information about the Page.
-It holds data such as the page title and the Markdown contents.</p>
-</section>
-
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -164,7 +154,14 @@ It holds data such as the page title and the Markdown contents.</p>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>The converted HTML</dd>
+<dd>The converted Markdown as HTML</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#property_order">$order</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd>The generated sidebar priority.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#property_slug">$slug</a>
@@ -193,6 +190,13 @@ It holds data such as the page title and the Markdown contents.</p>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Convert the Markdown to HTML</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#method_getOrder">getOrder()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Get the index of the slug.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#method_getTitle">getTitle()</a>
@@ -229,11 +233,11 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The converted HTML</p>
+        <p class="phpdocumentor-summary">The converted Markdown as HTML</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -242,6 +246,41 @@ It holds data such as the page title and the Markdown contents.</p>
     </code>
 
     
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_order">
+        $order
+        <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#property_order" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The generated sidebar priority.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$order</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>Lower values are shown first.</p>
+</section>
+
     
     
 
@@ -262,7 +301,7 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -295,7 +334,7 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -332,7 +371,7 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -386,7 +425,7 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -412,6 +451,58 @@ It holds data such as the page title and the Markdown contents.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getOrder">
+        getOrder()
+        <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#method_getOrder" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the index of the slug.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">getOrder</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"><p>This is used to determine the priority (order) of sidebar links.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">uses</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-ParsesLinkIndex.html#method_getIndexOfSlug"><abbr title="\DeSilva\Laradocgen\ParsesLinkIndex::getIndexOfSlug()">ParsesLinkIndex::getIndexOfSlug()</abbr></a></span>
+                                        
+                                                 <section class="phpdocumentor-description"><p>to get the index.
+If the index is not set in the docs/linkIndex.yml we return priority 999.</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getTitle">
         getTitle()
         <a href="classes/DeSilva-Laradocgen-MarkdownPage.html#method_getTitle" class="headerlink"><i class="fas fa-link"></i></a>
@@ -419,7 +510,7 @@ It holds data such as the page title and the Markdown contents.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MarkdownPage.php"><a href="files/src-markdownpage.html"><abbr title="src/MarkdownPage.php">MarkdownPage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
