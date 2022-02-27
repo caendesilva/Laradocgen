@@ -3,8 +3,8 @@
 namespace DeSilva\Laradocgen;
 
 /**
- * The PreProcessors used by the MarkdownPreProcessor::class
- * @see MarkdownPreProcessor
+ * The PreProcessors used by the MarkdownPreprocessor::class
+ * @see MarkdownPreprocessor
  */
 class PreProcessors
 {
