@@ -46,6 +46,10 @@ sed 's/CONTRIBUTING.md/contributing/g' resources/docs/readme.md -i
 
 echo "Done"
 
+echo "Creating index.md"
+echo -e "<!--\n This is a page required by the generator, though you are free to customize it.\n When generating the static site this will become the index.html file.\n-->\n" > resources/docs/index.md
+cat resources/docs/readme.md >> resources/docs/index.md
+echo "Done"
 
 printf "Building assets. This may take a few seconds."
 
