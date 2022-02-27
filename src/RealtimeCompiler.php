@@ -2,17 +2,23 @@
 
 namespace DeSilva\Laradocgen;
 
-use stdClass;
 use App\Http\Controllers\Controller;
 
 /**
+ * RealtimeCompiler Class
+ * 
  * The realtime compiler runs on each request to the live preview.
- * It takes care of copying assets to the public directory on the fly.
+ * Its most important job is to inject the stylesheets and scripts.
  *
  * Usage
  * ```php
- * new RealtimeCompiler; // Invokes the compiler automatically
+ * $compiler = new RealtimeCompiler; // Create the compiler object
+ * 
+ * $compiler->getStyles(); // Compile and get the styles as an inline string 
+ * $compiler->getScripts(); // Get the scripts as an inline string 
  * ```
+ * 
+ * @uses Laradocgen
  */
 class RealtimeCompiler extends Controller
 {
@@ -25,38 +31,33 @@ class RealtimeCompiler extends Controller
     }
 
     /**
-     * Run the realtime compiler
+     * Run the realtime compiler.
      */
     public function __invoke()
     {
         //
     }
 
-
-
     /**
      * Compile the styles and return them.
-     * Errors are silenced as it is okay if they are null.
      *
-     * @return string
+     * @return string of inline styles
      */
     public function getStyles(): string
     {
-        $styles = @file_get_contents(resource_path('docs/media/app.css'));
-
-        $styles .= @file_get_contents(resource_path('docs/media/custom.css')) ?? null;
+        $styles = Laradocgen::getSourceFileContents('media/app.css');
+        $styles .= Laradocgen::getSourceFileContents('media/custom.css');
 
         return $styles ?? "";
     }
 
     /**
      * Return the scripts.
-     * Errors are silenced as it is okay if they are null.
      *
-     * @return string
+     * @return string of inline scripts
      */
     public function getScripts(): string
     {
-        return @file_get_contents(resource_path('docs/media/app.js')) ?? "";
+        return Laradocgen::getSourceFileContents('media/app.js') ?? "";
     }
 }
