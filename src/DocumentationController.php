@@ -99,6 +99,6 @@ class DocumentationController extends Controller
      */
     private function handle404(string $slug): string
     {
-        return Laradocgen::validateExistence($slug) ? $slug : '404';
+        return Laradocgen::validateExistenceOfSlug($slug) ? $slug : '404';
     }
 }

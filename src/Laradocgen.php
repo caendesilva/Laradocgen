@@ -122,7 +122,7 @@ class Laradocgen
     }
 
     /**
-     * @deprecated
+     * @deprecated use validateExistenceOfSlug instead
      *
      * @param string $slug
      * @return bool
@@ -131,6 +131,16 @@ class Laradocgen
     {
         return file_exists(resource_path() . '/docs/' . $slug . '.md');
     }
+
+    /**
+     * @param string $slug
+     * @return bool
+     */
+    public static function validateExistenceOfSlug(string $slug): bool
+    {
+        return file_exists(resource_path() . '/docs/' . $slug . '.md');
+    }
+
 
     /**
      * Build the static files
