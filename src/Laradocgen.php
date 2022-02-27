@@ -9,13 +9,16 @@ class Laradocgen
 {
     /**
      * Get the name of the documentation site.
+     * Is dynamically generated from the App name unless
+     * overridden in the config.
+     * 
      * @return string
      */
     public static function getSiteName(): string
     {
-        return config('laradocgen.siteName', 'dynamic') === 'dynamic'
-            ? config('app.name') . ' Docs'
-            : config('laradocgen.siteName', 'App Name');
+        return empty(config('laradocgen.siteName'))
+                ? config('app.name', 'Laravel') . ' Docs'
+                : config('laradocgen.siteName', 'App Name');
     }
 
     /**
