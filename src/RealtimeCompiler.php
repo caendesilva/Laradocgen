@@ -16,6 +16,11 @@ use App\Http\Controllers\Controller;
  */
 class RealtimeCompiler extends Controller
 {
+    /**
+     * @deprecated v0.1.0-dev
+     * 
+     * @var stdClass
+     */
     protected stdClass $appmeta;
 
     /**
@@ -33,30 +38,21 @@ class RealtimeCompiler extends Controller
      */
     public function __invoke()
     {
-        // Start debug comment block
-        echo "<!-- Debug output:\n\n";
-        $start = microtime(true);
-        echo "$start: Invoking realtime compiler \n";
 
-        $this->copyAssetsFromResourcesToPublicDirectory();
-
-        $this->buildAppmeta();
-        echo "$start: Finishing compiler and returning the following app metadata";
-        print_r(var_dump($this->appmeta));
-
-        // Close debug comment block
-        $stop = microtime(true);
-        echo "$stop: Done in " . ($stop - $start) * 1000 . "ms. \n";
-        echo "\n-->\n\n";
     }
 
     /**
      * Check what metadata should be included
      * 
+     * @deprecated v0.1.0-dev
+     * 
      * @return void
      */
     public function buildAppmeta(): void
     {
+        trigger_error("Use of deprecated method.", E_USER_DEPRECATED);
+        return;
+
         if (file_exists(resource_path() . "/docs/media/custom.css")) {
             $this->appmeta->customStylesheet = true;
         }
@@ -66,26 +62,41 @@ class RealtimeCompiler extends Controller
      * Return an object with the meta information about the app.
      * For example what stylesheets to use and what the root URI path is.
      * 
+     * @deprecated v0.1.0-dev
+     * 
      * @return \stdClass
      */
     public function getAppmeta(): \stdClass
     {
+        trigger_error("Use of deprecated method.", E_USER_DEPRECATED);
+        
         return $this->appmeta;
     }
 
+    /**
+     * Compile the styles and return them.
+     * Errors are silenced as it is okay if they are null.
+     * 
+     * @return string
+     */
     public function getStyles(): string
     {
-        $styles = file_get_contents(resource_path('docs/media/app.css'));
+        $styles = @file_get_contents(resource_path('docs/media/app.css'));
 
-        $styles .= file_get_contents(resource_path('docs/media/custom.css')) ?? null;
+        $styles .= @file_get_contents(resource_path('docs/media/custom.css')) ?? null;
 
         return $styles ?? "";
     }
 
-    
+    /**
+     * Return the scripts.
+     * Errors are silenced as it is okay if they are null.
+     * 
+     * @return string
+     */
     public function getScripts(): string
     {
-        return file_get_contents(resource_path('docs/media/app.js')) ?? "";
+        return @file_get_contents(resource_path('docs/media/app.js')) ?? "";
     }
 
 
@@ -94,6 +105,9 @@ class RealtimeCompiler extends Controller
      */
     private function copyAssetsFromResourcesToPublicDirectory()
     {
+        trigger_error("Use of deprecated method.", E_USER_DEPRECATED);
+        return;
+
         // Set the source path
         $sourcePath = resource_path() . '/docs/';
         // Set the build path
