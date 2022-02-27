@@ -66,6 +66,8 @@ phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to outp
 ### Testing
 ```bash
 composer test
+
+cd .build && phpcs --standard=ruleset.xml
 ```
 
 ### Building

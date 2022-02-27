@@ -53,9 +53,16 @@ class MarkdownPage
         $this->title = $this->getTitle();
         $this->markdown = $this->getMarkdown();
 
-        // Temporary as it will be done in the preprocessor (or postprocessor) after I restructure and remove the deprecated method.
+        /**
+         * Temporary as it will be done in the preprocessor (or postprocessor)
+         * after I restructure and remove the deprecated method.
+         */
         if ($isRealtimeRequest) {
-            $this->markdown = str_replace('<img src="media/', '<img src="/api/laradocgen/realtime-media-asset/', $this->markdown);
+            $this->markdown = str_replace(
+                '<img src="media/',
+                '<img src="/api/laradocgen/realtime-media-asset/',
+                $this->markdown
+            );
         }
     }
 

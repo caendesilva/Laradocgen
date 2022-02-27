@@ -7,7 +7,7 @@ namespace DeSilva\Laradocgen;
  * Singleton registered in the Service Provider
  *
  * Converts CommonMark-compatible Markdown to HTML.
- * 
+ *
  * @uses MarkdownPreProcessor
  */
 class MarkdownConverter

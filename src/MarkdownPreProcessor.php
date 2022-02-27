@@ -4,26 +4,26 @@ namespace DeSilva\Laradocgen;
 
 /**
  * Markdown preprocessor.
- * 
+ *
  * Runs in the MarkdownConverter::class before generating the markdown.
  * @see MarkdownConverter
- * 
+ *
  * @example usage $processedMarkdown = (new MarkdownPreProcessor($markdown))->get()
- * 
+ *
  * @uses PreProcessors
  */
 class MarkdownPreProcessor extends PreProcessors
 {
-	/**
-	 * The Markdown to preprocess
-	 * @var string $markdown
-	 */
-	protected string $markdown;
+    /**
+     * The Markdown to preprocess
+     * @var string $markdown
+     */
+    protected string $markdown;
 
-	/**
+    /**
      * Construct the class and run the compiler when the class is created.
-     *	
-	 * @param string $markdown to preprocess
+     *
+     * @param string $markdown to preprocess
      */
     public function __construct(string $markdown)
     {
@@ -36,17 +36,17 @@ class MarkdownPreProcessor extends PreProcessors
      * Run the processor
      */
     public function __invoke()
-	{
-		$this->expandFilepathShortcode();
-	}
+    {
+        $this->expandFilepathShortcode();
+    }
 
-	/**
-	 * Get the processed Markdown
-	 * 
-	 * @return string
-	 */
-	public function get(): string
-	{
-		return $this->markdown;
-	}
+    /**
+     * Get the processed Markdown
+     *
+     * @return string
+     */
+    public function get(): string
+    {
+        return $this->markdown;
+    }
 }

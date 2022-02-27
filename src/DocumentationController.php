@@ -74,9 +74,9 @@ class DocumentationController extends Controller
 
     /**
      * Return a file from the resources/docs/media for the realtime viewer
-     * 
+     *
      * @param string $file
-     * @return 
+     * @return
      */
     public function realtimeAsset(string $file)
     {

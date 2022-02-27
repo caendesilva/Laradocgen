@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 /**
  * The realtime compiler runs on each request to the live preview.
  * It takes care of copying assets to the public directory on the fly.
- * 
- * Usage 
+ *
+ * Usage
  * ```php
  * new RealtimeCompiler; // Invokes the compiler automatically
  * ```
@@ -18,7 +18,7 @@ class RealtimeCompiler extends Controller
 {
     /**
      * @deprecated v0.1.0-dev
-     * 
+     *
      * @var stdClass
      */
     protected stdClass $appmeta;
@@ -38,14 +38,13 @@ class RealtimeCompiler extends Controller
      */
     public function __invoke()
     {
-
     }
 
     /**
      * Check what metadata should be included
-     * 
+     *
      * @deprecated v0.1.0-dev
-     * 
+     *
      * @return void
      */
     public function buildAppmeta(): void
@@ -61,9 +60,9 @@ class RealtimeCompiler extends Controller
     /**
      * Return an object with the meta information about the app.
      * For example what stylesheets to use and what the root URI path is.
-     * 
+     *
      * @deprecated v0.1.0-dev
-     * 
+     *
      * @return \stdClass
      */
     public function getAppmeta(): \stdClass
@@ -76,7 +75,7 @@ class RealtimeCompiler extends Controller
     /**
      * Compile the styles and return them.
      * Errors are silenced as it is okay if they are null.
-     * 
+     *
      * @return string
      */
     public function getStyles(): string
@@ -91,7 +90,7 @@ class RealtimeCompiler extends Controller
     /**
      * Return the scripts.
      * Errors are silenced as it is okay if they are null.
-     * 
+     *
      * @return string
      */
     public function getScripts(): string

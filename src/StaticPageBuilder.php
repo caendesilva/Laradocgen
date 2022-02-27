@@ -220,7 +220,7 @@ class StaticPageBuilder
 
     /**
      * Merge the app.css and custom.css
-     * 
+     *
      * @return void
      */
     private function mergeStylesheets(): void
@@ -228,7 +228,13 @@ class StaticPageBuilder
         echo "Merging stylesheets \n";
 
         $customStyles = file_get_contents($this->sourcePath . "media/custom.css");
-        file_put_contents($this->buildPath . "media/app.css", PHP_EOL . PHP_EOL . "/* Custom styles */" . PHP_EOL . PHP_EOL, FILE_APPEND);
+        file_put_contents(
+            $this->buildPath .
+            "media/app.css",
+            PHP_EOL . PHP_EOL .
+            "/* Custom styles */" . PHP_EOL . PHP_EOL,
+            FILE_APPEND
+        );
         file_put_contents($this->buildPath . "media/app.css", $customStyles, FILE_APPEND);
 
         echo "Finished merging stylesheets. \n";
