@@ -76,4 +76,8 @@ echo "Done"
 endTime=$(date +%s);
 totalTime=$(($endTime-$startTime));
 
-echo "Finished in $totalTime seconds"
+echo "Building API Documentation. This may take a while."
+php phpDocumentor.phar  -d ./src -t ./docs/api
+echo "Done"
+
+echo "\nFinished in $totalTime seconds"

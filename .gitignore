@@ -1,3 +1,4 @@
 workspace.code-workspace
 .build/rootdir
 node_modules/
+.phpdoc/cache/
