@@ -65,7 +65,7 @@ class Laradocgen
         return file_get_contents(self::getSourceFilePath($filename));
     }
 
-    
+
 
     /**
      * Get the name of the documentation site.
@@ -79,42 +79,6 @@ class Laradocgen
         return empty(config('laradocgen.siteName'))
                 ? config('app.name', 'Laravel') . ' Docs'
                 : config('laradocgen.siteName', 'App Name');
-    }
-
-    /**
-     * @deprecated and will be renamed as it does not fetch Markdown, but HTML.
-     *      Thus it should be renamed to be more semantic.
-     *
-     * @param string $slug
-     * @return string
-     */
-    public static function getMarkdownFromSlug(string $slug): string|bool
-    {
-        try {
-            return (string) (new MarkdownConverter(
-                file_get_contents(resource_path() . '/docs/' . $slug . '.md')
-            )
-            )->parse();
-        } catch (\Throwable $th) {
-            throw $th;
-            return false;
-        }
-    }
-
-    /**
-     * @deprecated and will be removed as we handle 404s differently,
-     *              and the self::getMarkdownFromSlug() is also deprecated.
-     *
-     * @param string $slug
-     * @return string
-     */
-    public static function getMarkdownFromSlugOrFail(string $slug): string
-    {
-        $markdown = self::getMarkdownFromSlug($slug);
-        if ($markdown) {
-            return $markdown;
-        }
-        abort(404);
     }
 
     public static function getMarkdownFileSlugsArray(): array

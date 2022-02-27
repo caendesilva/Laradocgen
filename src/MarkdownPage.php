@@ -50,7 +50,7 @@ class MarkdownPage
     {
         $this->slug = $slug;
         $this->title = $this->getTitle();
-        $this->markdown = $this->getMarkdown();
+        $this->markdown = $this->getConvertedMarkdown();
 
         /**
          * Temporary as it will be done in the preprocessor (or postprocessor)
@@ -80,8 +80,10 @@ class MarkdownPage
      *
      * @return string
      */
-    private function getMarkdown(): string
+    private function getConvertedMarkdown(): string
     {
-        return Laradocgen::getMarkdownFromSlugOrFail($this->slug);
+        return (new MarkdownConverter(
+            Laradocgen::getSourceFileContents($this->slug . '.md')
+        ))->parse();
     }
 }

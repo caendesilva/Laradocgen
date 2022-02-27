@@ -51,20 +51,30 @@ Search.appendIndex(
             "summary": "Package\u0020Singleton\u0020Class",
             "url": "classes/DeSilva-Laradocgen-Laradocgen.html"
         },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetSourcePath\u0028\u0029",
+            "name": "getSourcePath",
+            "summary": "Get\u0020the\u0020Source\u0020Path",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourcePath"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetBuildPath\u0028\u0029",
+            "name": "getBuildPath",
+            "summary": "Get\u0020the\u0020Build\u0020Path",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getBuildPath"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetSourceFilePath\u0028\u0029",
+            "name": "getSourceFilePath",
+            "summary": "Get\u0020the\u0020path\u0020of\u0020a\u0020file\u0020in\u0020the\u0020source\u0020directory",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFilePath"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetSourceFileContents\u0028\u0029",
+            "name": "getSourceFileContents",
+            "summary": "Get\u0020the\u0020contents\u0020of\u0020a\u0020file\u0020in\u0020the\u0020source\u0020directory",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getSourceFileContents"
+        },                {
             "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetSiteName\u0028\u0029",
             "name": "getSiteName",
             "summary": "Get\u0020the\u0020name\u0020of\u0020the\u0020documentation\u0020site.",
             "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getSiteName"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetMarkdownFromSlug\u0028\u0029",
-            "name": "getMarkdownFromSlug",
-            "summary": "",
-            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getMarkdownFromSlug"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetMarkdownFromSlugOrFail\u0028\u0029",
-            "name": "getMarkdownFromSlugOrFail",
-            "summary": "",
-            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getMarkdownFromSlugOrFail"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AgetMarkdownFileSlugsArray\u0028\u0029",
             "name": "getMarkdownFileSlugsArray",
@@ -141,10 +151,10 @@ Search.appendIndex(
             "summary": "Create\u0020the\u0020title\u0020from\u0020the\u0020slug",
             "url": "classes/DeSilva-Laradocgen-MarkdownPage.html#method_getTitle"
         },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPage\u003A\u003AgetMarkdown\u0028\u0029",
-            "name": "getMarkdown",
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPage\u003A\u003AgetConvertedMarkdown\u0028\u0029",
+            "name": "getConvertedMarkdown",
             "summary": "Convert\u0020the\u0020Markdown\u0020to\u0020HTML",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPage.html#method_getMarkdown"
+            "url": "classes/DeSilva-Laradocgen-MarkdownPage.html#method_getConvertedMarkdown"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPage\u003A\u003A\u0024slug",
             "name": "slug",
