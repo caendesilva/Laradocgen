@@ -11,11 +11,10 @@ use Illuminate\Support\Str;
  *          Merging them, or referencing this class in the other one would
  *          allow for better maintainability.
  *
- * Passed to the view through the DocumentationController,
+ * Passed to the app.blade.php view through the DocumentationController,
  * the MarkdownPage object contains information about the Page.
  * It holds data such as the page title and the Markdown contents.
- *
- * @see resources/app.blade.php
+ * 
  * @see DocumentationController::show()
  */
 class MarkdownPage

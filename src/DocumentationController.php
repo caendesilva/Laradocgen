@@ -24,7 +24,7 @@ class DocumentationController extends Controller
      * @param bool $realtime is it a realtime request for on-the-fly generation?
      * @return \Illuminate\View\View
      */
-    public function show(string $slug, bool $realtime = false)
+    public function show(string $slug, bool $realtime = false): \Illuminate\View\View
     {
         // Validate the slug
         $slug = $this->handle404($slug);
@@ -76,7 +76,6 @@ class DocumentationController extends Controller
      * Return a file from the resources/docs/media for the realtime viewer
      *
      * @param string $file
-     * @return
      */
     public function realtimeAsset(string $file)
     {
