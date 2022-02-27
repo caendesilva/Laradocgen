@@ -32,7 +32,6 @@ class DocumentationController extends Controller
         // Run the realtime compiler
         if ($realtime) {
             $compiler = new RealtimeCompiler;
-            $appmeta = $compiler->getAppmeta();
             $realtimeStyles = $compiler->getStyles();
             $realtimeScripts = $compiler->getScripts();
         }
@@ -66,7 +65,6 @@ class DocumentationController extends Controller
             'siteName' => $siteName,
             'realtime' => $realtime,
             'rootRoute' => $rootRoute,
-            'appmeta' => $appmeta ?? new \stdClass(),
             'realtimeStyles' => $realtimeStyles ?? false,
             'realtimeScripts' => $realtimeScripts ?? false,
         ]);
