@@ -170,7 +170,7 @@ class StaticPageBuilder
      */
     private function getContentsBuilder(string $url): string
     {
-        $html = file_get_contents($string);
+        $html = file_get_contents($url);
 
         return $html;
     }
