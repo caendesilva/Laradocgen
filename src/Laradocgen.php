@@ -8,6 +8,21 @@ namespace DeSilva\Laradocgen;
 class Laradocgen
 {
     /**
+     * Get the name of the documentation site.
+     * 
+     * Is dynamically generated from the App name unless
+     * overridden in the config.
+     *
+     * @return string $siteName
+     */
+    public static function getSiteName(): string
+    {
+        return empty(config('laradocgen.siteName'))
+                ? config('app.name', 'Laravel') . ' Docs'
+                : config('laradocgen.siteName', 'App Name');
+    }
+
+    /**
      * Get the Source Path
      *
      * Returns the directory where the source markdown files are stored
@@ -40,17 +55,39 @@ class Laradocgen
     /**
      * Get the path of a file in the source directory.
      *
-     * Note that the path will be returned regardless if the file exists or not.
-
      * @example Laradocgen::getSourceFilepath('index.md')
      *              returns /home/user/laravel-project/resources/docs/index.md
      *
      * @param string $filename to search for
+     * @param string|null $directory to insert before the filename
      * @return string|false $filepath the full path
      **/
-    public static function getSourceFilepath(string $filename): string
+    public static function getSourceFilepath(string $filename, ?string $directory = null): string
     {
-        return self::getSourcePath() . $filename;
+        if ($directory) {
+            // @todo add validation/sanitation to remove slashes in start and end of string
+            $directory = $directory . DIRECTORY_SEPARATOR;
+        }
+        return self::getSourcePath() . ($directory ?? '') . $filename;
+    }
+
+    /**
+     * Get the path of a file in the build directory.
+     *
+     * @example Laradocgen::getBuildFilepath('index.md')
+     *              returns /home/user/laravel-project/public/docs/index.md
+     *
+     * @param string $filename to search for
+     * @param string|null $directory to insert before the filename
+     * @return string|false $filepath the full path
+     **/
+    public static function getBuildFilepath(string $filename, ?string $directory = null): string
+    {
+        if ($directory) {
+            // @todo add validation/sanitation to remove slashes in start and end of string
+            $directory = $directory . DIRECTORY_SEPARATOR;
+        }
+        return self::getBuildPath() . ($directory ?? '') . $filename;
     }
 
     /**
@@ -71,36 +108,6 @@ class Laradocgen
         return file_get_contents(self::getSourceFilepath($filename));
     }
 
-    /**
-     * Get the path of a file in the build directory.
-     *
-     * Note that the path will be returned regardless if the file exists or not.
-
-     * @example Laradocgen::getBuildFilepath('index.md')
-     *              returns /home/user/laravel-project/public/docs/index.md
-     *
-     * @param string $filename to search for
-     * @return string|false $filepath the full path
-     **/
-    public static function getBuildFilepath(string $filename): string
-    {
-        return self::getBuildPath() . $filename;
-    }
-
-    /**
-     * Get the name of the documentation site.
-     * 
-     * Is dynamically generated from the App name unless
-     * overridden in the config.
-     *
-     * @return string $siteName
-     */
-    public static function getSiteName(): string
-    {
-        return empty(config('laradocgen.siteName'))
-                ? config('app.name', 'Laravel') . ' Docs'
-                : config('laradocgen.siteName', 'App Name');
-    }
 
     public static function getMarkdownFileSlugsArray(): array
     {
