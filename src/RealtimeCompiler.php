@@ -73,6 +73,18 @@ class RealtimeCompiler extends Controller
         return $this->appmeta;
     }
 
+    public function getStyles(): string
+    {
+        $styles = file_get_contents(resource_path('docs/media/app.css'));
+
+        $styles .= file_get_contents(resource_path('docs/media/custom.css')) ?? null;
+
+        return $styles ?? "";
+    }
+
+    /**
+     * @deprecated v0.1.0-dev
+     */
     private function copyAssetsFromResourcesToPublicDirectory()
     {
         // Set the source path

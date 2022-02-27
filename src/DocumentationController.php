@@ -31,14 +31,16 @@ class DocumentationController extends Controller
 
         // Run the realtime compiler
         if ($realtime) {
-            $appmeta = (new RealtimeCompiler)->getAppmeta();
+            $compiler = new RealtimeCompiler;
+            $appmeta = $compiler->getAppmeta();
+            $realtimeStyles = $compiler->getStyles();
         }
 
         /**
          * Create a MarkdownPage object from the slug.
          * The object contains the page content.
          */
-        $page = new MarkdownPage($slug);
+        $page = new MarkdownPage($slug, $realtime);
 
         /**
          * Create the NavigationLinks object which contains the sidebar information
@@ -64,6 +66,8 @@ class DocumentationController extends Controller
             'realtime' => $realtime,
             'rootRoute' => $rootRoute,
             'appmeta' => $appmeta ?? new \stdClass(),
+            'realtimeStyles' => $realtimeStyles ?? false,
+            'realtimeScripts' => $realtimeScripts ?? false,
         ]);
     }
 
