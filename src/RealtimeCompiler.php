@@ -59,5 +59,4 @@ class RealtimeCompiler extends Controller
     {
         return @file_get_contents(resource_path('docs/media/app.js')) ?? "";
     }
-
 }

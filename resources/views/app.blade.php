@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
 	<meta name="theme-color" content="#000000" />
-
 	<link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon" />
 	
 	<title>
@@ -47,7 +47,6 @@
 		}
 	</script>
 
-		
 	{{-- Uncomment the following line to enable the TailwindCSS CDN (for development only) --}}
 	{{-- <script src="https://cdn.tailwindcss.com"></script> <script> tailwind.config = { darkMode: 'class', } </script> --}}
 
@@ -68,9 +67,7 @@
 
 	@if($realtime)
 	<!-- Realtime Scripts -->
-	<script>
-		{!! $realtimeScripts !!}
-	</script>
+	<script> {!! $realtimeScripts !!} </script>
 	@else
 	<script src="media/app.js"></script>
 	@endif

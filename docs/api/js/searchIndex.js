@@ -326,16 +326,6 @@ Search.appendIndex(
             "summary": "Run\u0020the\u0020realtime\u0020compiler",
             "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method___invoke"
         },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003AbuildAppmeta\u0028\u0029",
-            "name": "buildAppmeta",
-            "summary": "Check\u0020what\u0020metadata\u0020should\u0020be\u0020included",
-            "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method_buildAppmeta"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003AgetAppmeta\u0028\u0029",
-            "name": "getAppmeta",
-            "summary": "Return\u0020an\u0020object\u0020with\u0020the\u0020meta\u0020information\u0020about\u0020the\u0020app.",
-            "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method_getAppmeta"
-        },                {
             "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003AgetStyles\u0028\u0029",
             "name": "getStyles",
             "summary": "Compile\u0020the\u0020styles\u0020and\u0020return\u0020them.",
@@ -345,16 +335,6 @@ Search.appendIndex(
             "name": "getScripts",
             "summary": "Return\u0020the\u0020scripts.",
             "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method_getScripts"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003AcopyAssetsFromResourcesToPublicDirectory\u0028\u0029",
-            "name": "copyAssetsFromResourcesToPublicDirectory",
-            "summary": "",
-            "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method_copyAssetsFromResourcesToPublicDirectory"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003A\u0024appmeta",
-            "name": "appmeta",
-            "summary": "",
-            "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#property_appmeta"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\StaticPageBuilder",
             "name": "StaticPageBuilder",

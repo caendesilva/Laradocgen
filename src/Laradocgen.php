@@ -13,7 +13,7 @@ class Laradocgen
      * Returns the directory where the source markdown files are stored
      * Usually in <laravel-project>/resources/docs/
      * With media in <laravel-project>/resources/docs/media/
-     * 
+     *
      * @return string $sourcePath
      **/
     public static function getSourcePath()
@@ -27,7 +27,7 @@ class Laradocgen
      * Returns the directory where the static HTML files are stored once created
      * Usually in <laravel-project>/public/docs/
      * With media in <laravel-project>/public/docs/media/
-     * 
+     *
      * @return string $buildPath
      **/
     public static function getBuildPath()
@@ -41,7 +41,7 @@ class Laradocgen
      * Note that the path will be returned regardless if the file exists or not.
 
      * @example Laradocgen::getSourceFilePath('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md
-     * 
+     *
      * @param string $filename to search for
      * @return string|false $filepath the full path
      **/
@@ -54,8 +54,9 @@ class Laradocgen
      * Get the contents of a file in the source directory
      *
      * Returns false if the file does not exist
-     * 
-     * @example Laradocgen::getSourceFileContents('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md
+     *
+     * @example `Laradocgen::getSourceFileContents('index.md');`
+     *          returns `/home/<user>/<laravel-project>/resources/docs/index.md`
      *
      * @param string $filename to search for
      * @return string|false $filepath the full path if file exists, else false
@@ -71,7 +72,7 @@ class Laradocgen
      * Get the name of the documentation site.
      * Is dynamically generated from the App name unless
      * overridden in the config.
-     * 
+     *
      * @return string $siteName
      */
     public static function getSiteName(): string

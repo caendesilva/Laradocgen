@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
  * Passed to the app.blade.php view through the DocumentationController,
  * the MarkdownPage object contains information about the Page.
  * It holds data such as the page title and the Markdown contents.
- * 
+ *
  * @see DocumentationController::show()
  */
 class MarkdownPage
