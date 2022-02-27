@@ -63,6 +63,9 @@ class Laradocgen
      **/
     public static function getSourceFileContents(string $filename): string|false
     {
+        if (!file_exists(self::getSourceFilePath($filename))) {
+            return false;
+        }
         return file_get_contents(self::getSourceFilePath($filename));
     }
 
