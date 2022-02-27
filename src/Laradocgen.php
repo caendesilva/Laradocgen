@@ -8,11 +8,71 @@ namespace DeSilva\Laradocgen;
 class Laradocgen
 {
     /**
+     * Get the Source Path
+     *
+     * Returns the directory where the source markdown files are stored
+     * Usually in <laravel-project>/resources/docs/
+     * With media in <laravel-project>/resources/docs/media/
+     * 
+     * @return string $sourcePath
+     **/
+    public static function getSourcePath()
+    {
+        return resource_path('docs' . DIRECTORY_SEPARATOR);
+    }
+
+    /**
+     * Get the Build Path
+     *
+     * Returns the directory where the static HTML files are stored once created
+     * Usually in <laravel-project>/public/docs/
+     * With media in <laravel-project>/public/docs/media/
+     * 
+     * @return string $buildPath
+     **/
+    public static function getBuildPath()
+    {
+        return public_path('docs' . DIRECTORY_SEPARATOR);
+    }
+
+    /**
+     * Get the path of a file in the source directory
+     *
+     * Note that the path will be returned regardless if the file exists or not.
+
+     * @example Laradocgen::getSourceFilePath('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md
+     * 
+     * @param string $filename to search for
+     * @return string|false $filepath the full path
+     **/
+    public static function getSourceFilePath(string $filename): string
+    {
+        return self::getSourcePath() . $filename;
+    }
+
+    /**
+     * Get the contents of a file in the source directory
+     *
+     * Returns false if the file does not exist
+     * 
+     * @example Laradocgen::getSourceFileContents('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md
+     *
+     * @param string $filename to search for
+     * @return string|false $filepath the full path if file exists, else false
+     **/
+    public static function getSourceFileContents(string $filename): string|false
+    {
+        return file_get_contents(self::getSourceFilePath($filename));
+    }
+
+    
+
+    /**
      * Get the name of the documentation site.
      * Is dynamically generated from the App name unless
      * overridden in the config.
      * 
-     * @return string
+     * @return string $siteName
      */
     public static function getSiteName(): string
     {
