@@ -313,7 +313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler",
             "name": "RealtimeCompiler",
-            "summary": "The\u0020realtime\u0020compiler\u0020runs\u0020on\u0020each\u0020request\u0020to\u0020the\u0020live\u0020preview.",
+            "summary": "RealtimeCompiler\u0020Class",
             "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003A__construct\u0028\u0029",
@@ -323,7 +323,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003A__invoke\u0028\u0029",
             "name": "__invoke",
-            "summary": "Run\u0020the\u0020realtime\u0020compiler",
+            "summary": "Run\u0020the\u0020realtime\u0020compiler.",
             "url": "classes/DeSilva-Laradocgen-RealtimeCompiler.html#method___invoke"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\RealtimeCompiler\u003A\u003AgetStyles\u0028\u0029",

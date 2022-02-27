@@ -114,19 +114,37 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/RealtimeCompiler.php"><a href="files/src-realtimecompiler.html"><abbr title="src/RealtimeCompiler.php">RealtimeCompiler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">The realtime compiler runs on each request to the live preview.</p>
+            <p class="phpdocumentor-summary">RealtimeCompiler Class</p>
 
-    <section class="phpdocumentor-description"><p>It takes care of copying assets to the public directory on the fly.</p>
+    <section class="phpdocumentor-description"><p>The realtime compiler runs on each request to the live preview.
+Its most important job is to inject the stylesheets and scripts.</p>
 <p>Usage</p>
-<pre class="prettyprint"><code class="language-php">new RealtimeCompiler; // Invokes the compiler automatically
+<pre class="prettyprint"><code class="language-php">$compiler = new RealtimeCompiler; // Create the compiler object
+
+$compiler-&gt;getStyles(); // Compile and get the styles as an inline string
+$compiler-&gt;getScripts(); // Get the scripts as an inline string
 </code></pre>
 </section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">uses</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="classes/DeSilva-Laradocgen-Laradocgen.html"><abbr title="\DeSilva\Laradocgen\Laradocgen">Laradocgen</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 
 
@@ -151,7 +169,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Run the realtime compiler</dd>
+<dd>Run the realtime compiler.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/DeSilva-Laradocgen-RealtimeCompiler.html#method_getScripts">getScripts()</a>
@@ -193,7 +211,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/RealtimeCompiler.php"><a href="files/src-realtimecompiler.html"><abbr title="src/RealtimeCompiler.php">RealtimeCompiler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -226,11 +244,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/RealtimeCompiler.php"><a href="files/src-realtimecompiler.html"><abbr title="src/RealtimeCompiler.php">RealtimeCompiler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Run the realtime compiler</p>
+        <p class="phpdocumentor-summary">Run the realtime compiler.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -259,7 +277,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/RealtimeCompiler.php"><a href="files/src-realtimecompiler.html"><abbr title="src/RealtimeCompiler.php">RealtimeCompiler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -269,16 +287,16 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">getScripts</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>Errors are silenced as it is okay if they are null.</p>
-</section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>of inline scripts</p>
+</section>
+
     
 </article>
                     <article
@@ -294,7 +312,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/RealtimeCompiler.php"><a href="files/src-realtimecompiler.html"><abbr title="src/RealtimeCompiler.php">RealtimeCompiler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -304,16 +322,16 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">getStyles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>Errors are silenced as it is okay if they are null.</p>
-</section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>of inline styles</p>
+</section>
+
     
 </article>
             </section>

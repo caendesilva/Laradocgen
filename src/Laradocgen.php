@@ -36,11 +36,11 @@ class Laradocgen
     }
 
     /**
-     * Get the path of a file in the source directory
+     * Get the path of a file in the source directory.
      *
      * Note that the path will be returned regardless if the file exists or not.
 
-     * @example Laradocgen::getSourceFilePath('index.md') returns /home/<user>/<laravel-project>/resources/docs/index.md
+     * @example Laradocgen::getSourceFilePath('index.md') returns /home/user/laravel-project/resources/docs/index.md
      *
      * @param string $filename to search for
      * @return string|false $filepath the full path
@@ -51,12 +51,11 @@ class Laradocgen
     }
 
     /**
-     * Get the contents of a file in the source directory
+     * Get the contents of a file in the source directory.
      *
      * Returns false if the file does not exist
      *
-     * @example `Laradocgen::getSourceFileContents('index.md');`
-     *          returns `/home/<user>/<laravel-project>/resources/docs/index.md`
+     * @example RealtimeCompiler::getStyles()
      *
      * @param string $filename to search for
      * @return string|false $filepath the full path if file exists, else false
@@ -73,6 +72,7 @@ class Laradocgen
 
     /**
      * Get the name of the documentation site.
+     * 
      * Is dynamically generated from the App name unless
      * overridden in the config.
      *
