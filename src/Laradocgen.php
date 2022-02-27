@@ -14,6 +14,8 @@ class Laradocgen
      * Usually in <laravel-project>/resources/docs/
      * With media in <laravel-project>/resources/docs/media/
      *
+     * @example StaticPageBuilder::__construct()
+     * 
      * @return string $sourcePath
      **/
     public static function getSourcePath()
@@ -40,12 +42,13 @@ class Laradocgen
      *
      * Note that the path will be returned regardless if the file exists or not.
 
-     * @example Laradocgen::getSourceFilePath('index.md') returns /home/user/laravel-project/resources/docs/index.md
+     * @example Laradocgen::getSourceFilepath('index.md')
+     *              returns /home/user/laravel-project/resources/docs/index.md
      *
      * @param string $filename to search for
      * @return string|false $filepath the full path
      **/
-    public static function getSourceFilePath(string $filename): string
+    public static function getSourceFilepath(string $filename): string
     {
         return self::getSourcePath() . $filename;
     }
@@ -62,13 +65,27 @@ class Laradocgen
      **/
     public static function getSourceFileContents(string $filename): string|false
     {
-        if (!file_exists(self::getSourceFilePath($filename))) {
+        if (!file_exists(self::getSourceFilepath($filename))) {
             return false;
         }
-        return file_get_contents(self::getSourceFilePath($filename));
+        return file_get_contents(self::getSourceFilepath($filename));
     }
 
+    /**
+     * Get the path of a file in the build directory.
+     *
+     * Note that the path will be returned regardless if the file exists or not.
 
+     * @example Laradocgen::getBuildFilepath('index.md')
+     *              returns /home/user/laravel-project/public/docs/index.md
+     *
+     * @param string $filename to search for
+     * @return string|false $filepath the full path
+     **/
+    public static function getBuildFilepath(string $filename): string
+    {
+        return self::getBuildPath() . $filename;
+    }
 
     /**
      * Get the name of the documentation site.
