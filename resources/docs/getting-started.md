@@ -185,3 +185,57 @@ return [
     'useTorchlight' => true, # Set this to true // [tl! highlight]
 ];
 ```
+
+## Troubleshooting
+
+This section will attempt to shed light on some "gotchas" and common issues that may occur.
+
+- **The built site has no styles and/or returns 404**
+  - You are probably serving the site through the `php artisan serve`. Visiting http://localhost:8000/docs can't load the assets (nor are the links working) as the built site uses relative URI paths. If you visit http://localhost:8000/docs/index.html it should all work though. You may want to set up a redirect.
+  - If you are still missing styles when not using the Laravel dev-server, please let me know so I can look into it.
+
+- **The sidebar links are in the wrong order**
+  - Have you configured the linkIndex.yml? Remember, indentation matters. You must start each line with two spaces, one dash, one space, and then your slug. Remember to omit the file extension.
+
+    ```yaml
+      - index.md # Valid yaml
+    ^^ ^ # Each caret is a space
+    ```
+
+- **Page is not showing**
+  - Make sure your markdown files are named properly. They should use kebab-case and end in .md. If you want to generate a proper slug you can use the following snippet in Artisan Tinker or similar.
+
+    ```php
+    use Illuminate\Support\Str;
+
+    $myPageTitle = "How to generate markdown files";
+
+    $generatedSlug = Str::slug($myPageTitle);
+    $generatedTitle = str_replace('-', ' ', Str::title($generatedSlug));
+
+    echo "You should name your file `{$generatedSlug}.md`. \n";
+    echo "The title will display as \"{$generatedTitle}\"";
+    ```
+
+    Which outputs
+    ```
+    You should name your file `how-to-generate-markdown-files.md`. 
+    The title will display as "How To Generate Markdown Files"
+    ```
+
+- **Index.md is not visible in the sidebar**
+  - This is default behavior as you can visit the Index page using the sidebar app name. I plan on adding making this customizable though.
+
+- **How do you add the filename to code snippets?**
+  - It's really easy! I created a shortcode just for this.
+   
+    ```markdown
+    <empty line> # Hides the directive when used on other platforms
+    ‎[!!filepath]::path/to/file.php # Everything after the :: will be used as the label.
+    ```
+  - How does it work?
+    - Before parsing the Markdown files the package runs it through a preprocessor. It scans the markdown for directives (the `[!!filepath]::` part). It then extracts the filepath and inserts it to a `<small>` tag. Make sure there are no spaces in front of the directive.
+  
+    - When you load the page a JavaScript snippet (I am still working on injecting this in the backend parser) moves the generated tag into the codeblock.
+  
+    - By the way, having an empty line before the directive hides it from most Markdown parsers so it does not show up if you host a copy of the Markdown on for example GitHub. Huge thanks to https://stackoverflow.com/a/57310297/5700388 for this.
