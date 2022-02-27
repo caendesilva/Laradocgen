@@ -211,6 +211,10 @@ class StaticPageBuilder
             $this->mergeStylesheets();
         }
 
+        echo " > Copying app.js file to the output media directory \n";
+        copy($this->sourcePath . "media/app.js", $this->buildPath . "media/app.js");
+        $count++;
+
         return $count;
     }
 

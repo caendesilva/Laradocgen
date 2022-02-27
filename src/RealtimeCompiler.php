@@ -82,6 +82,13 @@ class RealtimeCompiler extends Controller
         return $styles ?? "";
     }
 
+    
+    public function getScripts(): string
+    {
+        return file_get_contents(resource_path('docs/media/app.js')) ?? "";
+    }
+
+
     /**
      * @deprecated v0.1.0-dev
      */

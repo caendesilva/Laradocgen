@@ -34,6 +34,7 @@ class DocumentationController extends Controller
             $compiler = new RealtimeCompiler;
             $appmeta = $compiler->getAppmeta();
             $realtimeStyles = $compiler->getStyles();
+            $realtimeScripts = $compiler->getScripts();
         }
 
         /**
