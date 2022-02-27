@@ -73,7 +73,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [ ] Add (automatic) versioning support
 - [ ] Allow the specification of source/build directories. This can also be used for versioning.
 - [ ] Allow the package to run standalone from Laravel
-- [ ] Add Blade view customization
+- [ ] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
 - [ ] Add Search feature 
 
 Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a Ticket as I want to allow for more customization down the line.
@@ -102,8 +102,8 @@ This package's scaffolding was generated using the [Laravel Package Boilerplate]
 
 ### Frontend
 
-- The frontend is based on https://github.com/creativetimofficial/tailwind-starter-kit (MIT)
-- The dark-mode switch is based on a component from Flowbite https://flowbite.com/docs/customize/dark-mode/ (MIT)
+- The frontend is based on the [Tailwind Starter Kit](https://github.com/creativetimofficial/tailwind-starter-kit) from Creative Tim (MIT)
+- The dark-mode switch is based on a component from [Flowbite](https://flowbite.com/docs/customize/dark-mode/) (MIT)
 
 ### Packages used and special mentions
 - Frontend is built with [TailwindCSS](https://tailwindcss.com/)

@@ -20,6 +20,12 @@
 	color: #f3f4f6;
 }
 
+@media screen and (max-width: 360px) {
+	.prose :where(h1):not(:where([class~=not-prose] *)) {
+		font-size: 2em;
+	}
+}
+
 .prose blockquote p:first-of-type::before,
 .prose blockquote p:last-of-type::after {
 	content: none;
