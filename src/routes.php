@@ -24,7 +24,7 @@ if (config('app.env') === 'local') {
     Route::get('/api/laradocgen/realtime-media-asset/{file}', function ($file) {
         // API to serve images
         return (new DocumentationController)->realtimeAsset($file);
-    })->name('docs.realtime');
+    })->name('docs.realtime.media-asset');
 
 
     // The routes used by the Static Page Builder when generating the static HTML.
