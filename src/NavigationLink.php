@@ -7,10 +7,7 @@ use Illuminate\Support\Str;
 /**
  * The Navigation Link Object
  *
- * @todo Refactor to work with the MarkdownPage::class.
- *       In case we rename NavigationLink::class to MarkdownPageCollection::class
- *       we may merge this class entirely with the MarkdownPage::class as they
- *       share similar scopes and functions already.
+ * @deprecated will be merged with MarkdownPage
  *
  * Used in generating the sidebar
  *

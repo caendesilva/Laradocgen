@@ -6,26 +6,20 @@ use Illuminate\Support\Collection;
 
 /**
  * Creates a Collection of NavigationLink objects
- *
- * @todo It may make more sense to rename this to MarkdownPageCollection
+ * @deprecated will be renamed to MarkdownPageCollection
  *
  * The Collection is used to create the sidebar
  * and the Collection of files for the
  * StaticPageBuilder to generate.
  *
  * @uses NavigationLink
- *
- * @method $this withoutRoutes(array $routes = []) removes the specified routes
- * @method $this order() sort the Collection
- *
- * @method \Illuminate\Support\Collection get() returns the Collection
  */
 class NavigationLinks
 {
     /**
      * The Collection object
      *
-     * @var \Illuminate\Support\Collection
+     * @var Collection
      */
     protected Collection $links;
 
@@ -80,7 +74,7 @@ class NavigationLinks
              * we return true which instructs the reject method
              * that the entry should be removed.
              */
-            return (bool) in_array($link->slug, $routes);
+            return in_array($link->slug, $routes);
         });
 
         return $this;
