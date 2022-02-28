@@ -143,9 +143,9 @@ class Laradocgen
 
     /**
      * Check if the necessary files to build the site exists
-     * 
+     *
      * @todo Automatically generate files based on stubs
-     * 
+     *
      * @throws \Exception
      **/
     public static function validateSourceFiles()
@@ -171,7 +171,8 @@ class Laradocgen
 
         if (sizeof($missingFilesArray)) {
             throw new \Exception(
-                "Required file". (sizeof($missingFilesArray) > 1 ? "s" : '') ." " . implode(', ', $missingFilesArray) . " could not be found." .
+                "Required file". (sizeof($missingFilesArray) > 1 ? "s" : '') ." " .
+                implode(', ', $missingFilesArray) . " could not be found." .
                 " Did you publish the assets?"
             );
         }

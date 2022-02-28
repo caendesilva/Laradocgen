@@ -18,7 +18,7 @@ class PreProcessors
      *
      * # Will be converted to `<small class="filepath">config/laradocgen.php</small>`
      * ```
-     * 
+     *
      * @todo Could be simplified to see if the first line of the a
      *       code snippet contains // 'path/to/file.php'and intercept that instead.
      *       That way it is more readable in plain markdown files.

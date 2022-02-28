@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon" />
+    
+    <title>How It Works | Laradocgen Docs</title>
+    
+     
+    <link rel="stylesheet" href="media/app.css" />
+     
+    
+    <!-- Prevent FOUC -->
+    <style>
+        .prose .table-of-contents {
+            display: none;
+        }
+    </style>
+    
+     
+    <!-- Torchlight -->
+    <style>
+        /* Unset Tailwind Style */ .prose pre { padding: unset; } /* Margin and rounding are personal preferences, overflow-x-auto is recommended. */ pre { border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; overflow-x: auto; } /* Add some vertical padding and expand the width to fill its container. The horizontal padding comes at the line level so that background colors extend edge to edge. */ pre code.torchlight { display: block; min-width: -webkit-max-content; min-width: -moz-max-content; min-width: max-content; padding-top: 1rem; padding-bottom: 1rem; } /* Horizontal line padding to match the vertical padding from the code block above. */ pre code.torchlight .line { padding-left: 1rem; padding-right: 1rem; } /* Push the code away from the line numbers and summary caret indicators. */ pre code.torchlight .line-number, pre code.torchlight .summary-caret { margin-right: 1rem; } /* Blur and dim the lines that don't have the `.line-focus` class, but are within a code block that contains any focus lines. */ .torchlight.has-focus-lines .line:not(.line-focus) { transition: filter 0.35s, opacity 0.35s; filter: blur(.095rem); opacity: .65; } /* When the code block is hovered, bring all the lines into focus. */ .torchlight.has-focus-lines:hover .line:not(.line-focus) { filter: blur(0px); opacity: 1; } /* Style the filepath */ :not(code)>.filepath { display: none; } pre>code>.filepath { position: relative; top: -.25rem; right: 1rem; float: right; opacity: .5; transition: opacity 0.25s; } pre>code>.filepath:hover { opacity: 1; }
+    </style>
+     
+    
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-gray-900 min-h-screen flex flex-col"> 
+    
+    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
+    <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
+        <div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
+            <a class="md:block text-left text-zinc-600 dark:text-gray-100 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index.html"> Laradocgen Docs </a> <!-- Dark mode switch --> 
+            <button id="theme-toggle" type="button" class="ml-auto md:ml-0 text-gray-500 dark:text-gray-400 dark:hover:text-gray-100 hover:text-gray-700 " title="Toggle Dark Mode">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <button class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" onclick="toggleNavbar('example-collapse-sidebar')">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+        </div>
+        <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden" id="example-collapse-sidebar">
+            <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-zinc-200">
+                <div class="flex flex-wrap">
+                    <div class="w-9/12"> <a class="md:block text-left md:pb-2 text-zinc-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="index.html"> Laradocgen Docs </a> </div>
+                    <div class="w-3/12 flex justify-end">
+                        <button type="button" class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" onclick="toggleNavbar('example-collapse-sidebar')">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <form class="mt-6 mb-4 md:hidden">
+                <div class="mb-3 pt-0"> <input type="text" placeholder="Search" class="px-3 py-2 h-12 border border-solid  border-zinc-500 placeholder-zinc-300 text-zinc-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal" /> </div>
+            </form>
+            <hr class="my-4 md:min-w-full" />
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                  
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="getting-started.html"> Getting Started </a> </li>
+                   
+                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="how-it-works.html"> How It Works </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
+                  
+            </ul>
+            <div class="mt-auto">
+                <hr class="my-3 md:min-w-full" />
+                <h6 class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block py-1 no-underline"> <a href="../api/index.html">API Documentation</a> </h6>
+            </div>
+        </div>
+    </div>
+</nav> 
+    
+    <main class="md:ml-64 lg:ml-72 xl:pl-8 mb-auto">
+        <article class="prose dark:prose-invert max-w-3xl p-6 lg:p-8">
+            <ul class="table-of-contents">
+<li>
+<a href="#the-behind-the-scenes-process-the-simplified-version">The behind the scenes process (the simplified version)</a>
+<ul>
+<li>
+<a href="#and-the-realtime-viewer">And the realtime viewer?</a>
+</li>
+<li>
+<a href="#and-how-about-the-sidebar">And how about the sidebar?</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#a-closer-look-under-the-hood-the-technical-version">A closer look under the hood (the technical version)</a>
+</li>
+</ul>
+<h1>So how the h*ck does it work?</h1>
+<p><strong>It's quite simple actually.</strong> <br>
+I designed the process to be as uncomplicated and straight forward as possible. You don't need to do any configuration or follow strict frontmatter rules or mess with routing.</p>
+<p><strong>Refresher on how to use the package</strong> <br>
+You simply place your markdown files in your project's resources/docs/ directory and run the Artisan laradocgen:build command and the package does the rest.</p>
+<h2>The behind the scenes process (the simplified version)<a id="the-behind-the-scenes-process-the-simplified-version" href="#the-behind-the-scenes-process-the-simplified-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>So what happens under the hood then?</p>
+<ul>
+<li>The package scans the directory containing the Markdown files and puts them all into a collection object</li>
+<li>The static page builder then loops through the collection. In each loop it makes a request to the view controller.</li>
+<li>The controller constructs a MarkdownPage object and passes it to the Blade view.
+<ul>
+<li>The MarkdownPage class converts the Markdown into HTML. It also automatically generates a page title and slug from the markdown filename.</li>
+<li>If you have enabled Torchlight the Torchlight middleware will make inject beautiful syntax highlighting.</li>
+</ul>
+</li>
+<li>The builder then creates an HTML file with the HTML it fetched from the Blade view and stores it in the output directory.</li>
+<li>Finally the builder copies the images in the media directory to the output folder.</li>
+</ul>
+<p>All in all, the entire process takes literally only around 3.4 seconds to generate 8 pages of static HTML. Pretty good if you ask me :)</p>
+<h3>And the realtime viewer?<a id="and-the-realtime-viewer" href="#and-the-realtime-viewer" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The realtime viewer offers a live preview with the Markdown generated on the fly.</p>
+<p>It uses the same view controller as the builder but parses the Markdown before each request. If there is demand for it I may implement a caching system which would make the realtime viewer fast enough to be viable as a host for the actual documentation if you don't want to do the static hosting site.</p>
+<p>By the way, the realtime viewer also includes automatic 404 handling.</p>
+<h3>And how about the sidebar?<a id="and-how-about-the-sidebar" href="#and-how-about-the-sidebar" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The top level headings link to the Markdown pages. They are created using the same collection of MarkdownPage objects.</p>
+<p>By default the generated collection is sorted alphabetically which does not make much sense. So I created a micro-parser for YAML. Yes I know a lot of people hate YAML, but for this application I think you will agree that it is not too bad. In the spirit of keeping things stupidly simple, in order to rearrange the order of the sidebar items you just make write the page slugs in the order you want them</p>
+<p>**The linkIndex.yml file is automatically created when you publish the package assets and looks like this **</p>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #676E95;"># resources/docs/linkIndex.yml</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">Links</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">this-page-is-first</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">next-is-this-one</span></div></code></pre>
+<p>The helper class that reads the YAML assigns a numerical index to each entry. The NavigationLink class stores this index. If a Markdown page is not present in the YAML file they get the priority 999 which puts them last.</p>
+<blockquote>
+<p>Why use YAML and not just have a txt file? This way it makes it easy to expand the linkIndex to add stuff like metadata while in this stage still maintaining the same level of (low) complexity.</p>
+</blockquote>
+<p>The sublevels are the Table of Contents generated by the Markdown parser. When you access the page JavaScript function edits the DOM to move the TOC to the sidebar.</p>
+<ul>
+<li>I am still working on a way to do this during the build process.</li>
+</ul>
+<h2>A closer look under the hood (the technical version)<a id="a-closer-look-under-the-hood-the-technical-version" href="#a-closer-look-under-the-hood-the-technical-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Let's dig deeper into how the package works. This may be extra useful if you are planning on contributing to the package.</p>
+<p>Coming soon...(tm)</p>
+<!-- When you run the Artisan command it starts the Static Page Builder. After validating and configuring the environment it creates   -->
+ 
+        </article>
+    </main>
+    
+    <footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-100 dark:bg-slate-900 dark:text-gray-100">
+		<div class="max-w-3xl mx-4 lg:mx-8 p-2">
+			<small class="mx-2 my-1">
+				This site was generated using the free and open source
+				<a class="text-indigo-700 dark:text-indigo-400" 
+					href="https://github.com/desilva/laradocgen/">Laradocgen package</a>.
+				License MIT.
+			</small>
+			 
+			<small class="mx-2 my-1 whitespace-nowrap opacity-75">
+				Syntax highlighting by
+				<a class="text-indigo-700 dark:text-indigo-400"
+					href="https://torchlight.dev/"
+					rel="noopener noreferrer nofollow">Torchlight.dev</a>
+			</small>
+			 
+		</div>
+	</footer> 
+    
+        <script src="media/app.js"></script>
+    </body>
+
+</html>

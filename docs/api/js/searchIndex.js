@@ -86,6 +86,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistence"
         },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AvalidateExistenceOfSlug\u0028\u0029",
+            "name": "validateExistenceOfSlug",
+            "summary": "",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistenceOfSlug"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AvalidateSourceFiles\u0028\u0029",
+            "name": "validateSourceFiles",
+            "summary": "Check\u0020if\u0020the\u0020necessary\u0020files\u0020to\u0020build\u0020the\u0020site\u0020exists",
+            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_validateSourceFiles"
+        },                {
             "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003Abuild\u0028\u0029",
             "name": "build",
             "summary": "Build\u0020the\u0020static\u0020files",
@@ -170,31 +180,6 @@ Search.appendIndex(
             "name": "markdown",
             "summary": "The\u0020converted\u0020HTML",
             "url": "classes/DeSilva-Laradocgen-MarkdownPage.html#property_markdown"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor",
-            "name": "MarkdownPreprocessor",
-            "summary": "Markdown\u0020preprocessor.",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Construct\u0020the\u0020class\u0020and\u0020run\u0020the\u0020compiler\u0020when\u0020the\u0020class\u0020is\u0020created.",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method___construct"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A__invoke\u0028\u0029",
-            "name": "__invoke",
-            "summary": "Run\u0020the\u0020processor",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method___invoke"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Get\u0020the\u0020processed\u0020Markdown",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method_get"
-        },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A\u0024markdown",
-            "name": "markdown",
-            "summary": "The\u0020Markdown\u0020to\u0020preprocess",
-            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#property_markdown"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\NavigationLink",
             "name": "NavigationLink",
@@ -400,6 +385,31 @@ Search.appendIndex(
             "name": "pageCollection",
             "summary": "The\u0020Collection\u0020of\u0020Pages\u0020to\u0020compile.",
             "url": "classes/DeSilva-Laradocgen-StaticPageBuilder.html#property_pageCollection"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor",
+            "name": "MarkdownPreprocessor",
+            "summary": "Markdown\u0020preprocessor.",
+            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Construct\u0020the\u0020class\u0020and\u0020run\u0020the\u0020compiler\u0020when\u0020the\u0020class\u0020is\u0020created.",
+            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method___construct"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A__invoke\u0028\u0029",
+            "name": "__invoke",
+            "summary": "Run\u0020the\u0020processor",
+            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method___invoke"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020the\u0020processed\u0020Markdown",
+            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#method_get"
+        },                {
+            "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPreprocessor\u003A\u003A\u0024markdown",
+            "name": "markdown",
+            "summary": "The\u0020Markdown\u0020to\u0020preprocess",
+            "url": "classes/DeSilva-Laradocgen-MarkdownPreprocessor.html#property_markdown"
         },                {
             "fqsen": "\\",
             "name": "\\",
