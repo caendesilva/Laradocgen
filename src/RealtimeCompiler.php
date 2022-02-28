@@ -48,7 +48,7 @@ class RealtimeCompiler extends Controller
         $styles = Laradocgen::getSourceFileContents('media/app.css');
         $styles .= Laradocgen::getSourceFileContents('media/custom.css');
 
-        return $styles ?? "";
+        return str_replace("\n", ' ', $styles) ?? "";
     }
 
     /**
@@ -58,6 +58,6 @@ class RealtimeCompiler extends Controller
      */
     public function getScripts(): string
     {
-        return Laradocgen::getSourceFileContents('media/app.js') ?? "";
+        return str_replace("\n", ' ', Laradocgen::getSourceFileContents('media/app.js')) ?? "";
     }
 }
