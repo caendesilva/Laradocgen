@@ -18,6 +18,9 @@ php /mnt/d/dev/Laravel/Sites/LaradocgenTests/artisan vendor:publish --tag="larad
 echo "Building API Documentation. This may take a few seconds."
 php phpDocumentor.phar  -d ./src -t ./docs/api
 
+echo "Analyzing code for PSR2 incmpatabilities"
+phpcs --standard=ruleset.xml
+
 echo "Running tests. This may take a few seconds."
 (
 cd /mnt/d/dev/Laravel/Sites/LaradocgenTests/ && php artisan test
