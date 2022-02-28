@@ -26,6 +26,9 @@ class DocumentationController extends Controller
      */
     public function show(string $slug, bool $realtime = false): \Illuminate\View\View
     {
+        // Validate the resource source files
+        Laradocgen::validateSourceFiles();
+
         // Validate the slug
         $slug = $this->handle404($slug);
 

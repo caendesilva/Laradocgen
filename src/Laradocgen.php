@@ -141,6 +141,41 @@ class Laradocgen
         return file_exists(resource_path() . '/docs/' . $slug . '.md');
     }
 
+    /**
+     * Check if the necessary files to build the site exists
+     * 
+     * @todo Automatically generate files based on stubs
+     * 
+     * @throws \Exception
+     **/
+    public static function validateSourceFiles()
+    {
+        /**
+         * The required files, relative to the getSourcePath DIRECTORY_SEPARATOR
+         */
+        $requiredSourceFilesArray = [
+            'index.md',
+            '404.md',
+            'linkIndex.yml',
+            'media/app.css',
+            'media/app.js',
+        ];
+
+        // Array of the missing files so we can output them all to the error
+        $missingFilesArray = [];
+        foreach ($requiredSourceFilesArray as $relativePath) {
+            if (!file_exists(self::getSourceFilepath($relativePath))) {
+                $missingFilesArray[] = $relativePath;
+            }
+        }
+
+        if (sizeof($missingFilesArray)) {
+            throw new \Exception(
+                "Required file". (sizeof($missingFilesArray) > 1 ? "s" : '') ." " . implode(', ', $missingFilesArray) . " could not be found." .
+                " Did you publish the assets?"
+            );
+        }
+    }
 
     /**
      * Build the static files
