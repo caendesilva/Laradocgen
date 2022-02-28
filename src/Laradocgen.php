@@ -2,6 +2,8 @@
 
 namespace DeSilva\Laradocgen;
 
+use Exception;
+
 /**
  * Package Singleton Class
  */
@@ -60,7 +62,7 @@ class Laradocgen
      *
      * @param  string      $filename  to retrieve
      * @param  string|null $directory optionally specify a subdirectory of the fille
-     * @return string|false $filepath full path to the file
+     * @return string $filepath full path to the file
      **/
     public static function getSourceFilepath(string $filename, ?string $directory = null): string
     {
@@ -79,7 +81,7 @@ class Laradocgen
      *
      * @param  string      $filename  to retrieve
      * @param  string|null $directory optionally specify a subdirectory of the fille
-     * @return string|false $filepath full path to the file
+     * @return string $filepath full path to the file
      **/
     public static function getBuildFilepath(string $filename, ?string $directory = null): string
     {
@@ -108,7 +110,13 @@ class Laradocgen
         return file_get_contents(self::getSourceFilepath($filename));
     }
 
-
+    /**
+     * Get an array of all the markdown files
+     *
+     * Returns the markdown files in the source directory as slugs (without the extension)
+     * 
+     * @return array
+     */
     public static function getMarkdownFileSlugsArray(): array
     {
         $files = [];
@@ -122,17 +130,6 @@ class Laradocgen
     }
 
     /**
-     * @deprecated use validateExistenceOfSlug instead
-     *
-     * @param  string $slug
-     * @return bool
-     */
-    public static function validateExistence(string $slug): bool
-    {
-        return file_exists(resource_path() . '/docs/' . $slug . '.md');
-    }
-
-    /**
      * @param  string $slug
      * @return bool
      */
@@ -142,17 +139,15 @@ class Laradocgen
     }
 
     /**
-     * Check if the necessary files to build the site exists
+     * Check if the necessary files to build the site exists.
      *
      * @todo Automatically generate files based on stubs
      *
-     * @throws \Exception
+     * @throws Exception
      **/
     public static function validateSourceFiles()
     {
-        /**
-         * The required files, relative to the getSourcePath DIRECTORY_SEPARATOR
-         */
+        // The required files, relative to the getSourcePath
         $requiredSourceFilesArray = [
             'index.md',
             '404.md',
@@ -161,7 +156,7 @@ class Laradocgen
             'media/app.js',
         ];
 
-        // Array of the missing files so we can output them all to the error
+        // Array of the missing files, so we can output them all to the error
         $missingFilesArray = [];
         foreach ($requiredSourceFilesArray as $relativePath) {
             if (!file_exists(self::getSourceFilepath($relativePath))) {
@@ -170,7 +165,7 @@ class Laradocgen
         }
 
         if (sizeof($missingFilesArray)) {
-            throw new \Exception(
+            throw new Exception(
                 "Required file". (sizeof($missingFilesArray) > 1 ? "s" : '') ." " .
                 implode(', ', $missingFilesArray) . " could not be found." .
                 " Did you publish the assets?"
@@ -179,11 +174,13 @@ class Laradocgen
     }
 
     /**
-     * Build the static files
+     * Build the static website files.
+     *
+     * Start the build process by invoking the page builder class
      *
      * @return StaticPageBuilder
      */
-    public static function build()
+    public static function build(): StaticPageBuilder
     {
         return new StaticPageBuilder;
     }
