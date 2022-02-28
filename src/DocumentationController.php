@@ -70,6 +70,7 @@ class DocumentationController extends Controller
             'rootRoute' => $rootRoute,
             'realtimeStyles' => $realtimeStyles ?? false,
             'realtimeScripts' => $realtimeScripts ?? false,
+            'pageTitle' => $page->slug === "index" ? $siteName : "{$page->title} | {$siteName}",
         ]);
     }
 
