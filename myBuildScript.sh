@@ -16,7 +16,7 @@ echo "Publishing assets. This may take a few seconds."
 php /mnt/d/dev/Laravel/Sites/LaradocgenTests/artisan vendor:publish --tag="laradocgen" --force
 
 echo "Building API Documentation. This may take a few seconds."
-php phpDocumentor.phar  -d ./src -t ./docs/api
+php phpDocumentor.phar
 
 echo "Analyzing code for PSR2 incompatibilities."
 phpcs --standard=ruleset.xml

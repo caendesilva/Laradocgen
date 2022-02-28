@@ -88,7 +88,7 @@ npx tailwindcss -i ./resources/src/app.css -o ./resources/assets/app.css  --mini
 php /path/to/laravel/artisan vendor:publish --tag="laradocgen" --force
 
 # Build API Documentation
-php phpDocumentor.phar  -d ./src -t ./docs/api
+php phpDocumentor.phar
 ```
 
 Next, run your tests if you have the LaradocgenTests repo set up (recommended)

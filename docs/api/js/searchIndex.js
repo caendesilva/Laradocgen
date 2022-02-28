@@ -81,11 +81,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_getMarkdownFileSlugsArray"
         },                {
-            "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AvalidateExistence\u0028\u0029",
-            "name": "validateExistence",
-            "summary": "",
-            "url": "classes/DeSilva-Laradocgen-Laradocgen.html#method_validateExistence"
-        },                {
             "fqsen": "\\DeSilva\\Laradocgen\\Laradocgen\u003A\u003AvalidateExistenceOfSlug\u0028\u0029",
             "name": "validateExistenceOfSlug",
             "summary": "",

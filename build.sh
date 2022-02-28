@@ -34,4 +34,4 @@ echo "What's next?"
 
 echo "Please build your assets with 'npx tailwindcss -i ./resources/src/app.css -o ./resources/assets/app.css  --minify'"
 echo "Publish the assets to your Laravel test installation with 'php artisan vendor:publish --tag=\"laradocgen\" --force'"
-echo "And build the API Documentation with 'php phpDocumentor.phar  -d ./src -t ./docs/api'"
+echo "And build the API Documentation with 'php phpDocumentor.phar'"
