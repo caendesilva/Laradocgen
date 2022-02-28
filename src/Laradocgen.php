@@ -5,15 +5,20 @@ namespace DeSilva\Laradocgen;
 use Exception;
 
 /**
- * Package Singleton Class
+ * Package Singleton Class.
+ *
+ * Bootstraps the application services and serves as an interface to the configuration
+ *
+ * Accessible through the facade
+ * @see LaradocgenFacade
  */
 class Laradocgen
 {
     /**
      * Get the name of the documentation site.
      *
-     * Is dynamically generated from the App name unless
-     * overridden in the config.
+     * Is dynamically generated from the App name
+     * unless overridden in the config.
      *
      * @return string $siteName
      */
@@ -35,7 +40,7 @@ class Laradocgen
      *
      * @return string $sourcePath
      **/
-    public static function getSourcePath()
+    public static function getSourcePath(): string
     {
         return resource_path('docs' . DIRECTORY_SEPARATOR);
     }
@@ -49,7 +54,7 @@ class Laradocgen
      *
      * @return string $buildPath
      **/
-    public static function getBuildPath()
+    public static function getBuildPath(): string
     {
         return public_path('docs' . DIRECTORY_SEPARATOR);
     }
@@ -61,7 +66,7 @@ class Laradocgen
      *              returns /home/user/laravel-project/resources/docs/index.md
      *
      * @param  string      $filename  to retrieve
-     * @param  string|null $directory optionally specify a subdirectory of the fille
+     * @param  string|null $directory optionally specify a subdirectory of the file
      * @return string $filepath full path to the file
      **/
     public static function getSourceFilepath(string $filename, ?string $directory = null): string
@@ -80,7 +85,7 @@ class Laradocgen
      *              returns /home/user/laravel-project/public/docs/index.md
      *
      * @param  string      $filename  to retrieve
-     * @param  string|null $directory optionally specify a subdirectory of the fille
+     * @param  string|null $directory optionally specify a subdirectory of the file
      * @return string $filepath full path to the file
      **/
     public static function getBuildFilepath(string $filename, ?string $directory = null): string
@@ -114,7 +119,7 @@ class Laradocgen
      * Get an array of all the markdown files
      *
      * Returns the markdown files in the source directory as slugs (without the extension)
-     * 
+     *
      * @return array
      */
     public static function getMarkdownFileSlugsArray(): array
@@ -143,9 +148,10 @@ class Laradocgen
      *
      * @todo Automatically generate files based on stubs
      *
-     * @throws Exception
+     * @returns void
+     * @throws Exception if a required file is missing
      **/
-    public static function validateSourceFiles()
+    public static function validateSourceFiles(): void
     {
         // The required files, relative to the getSourcePath
         $requiredSourceFilesArray = [

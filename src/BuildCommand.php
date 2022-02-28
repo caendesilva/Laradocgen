@@ -3,6 +3,7 @@
 namespace DeSilva\Laradocgen;
 
 use Illuminate\Console\Command;
+use Throwable;
 
 /**
  * Artisan Command to trigger Static Site Build
@@ -36,17 +37,18 @@ class BuildCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return int
+     * @return int exit code
      */
-    public function handle()
+    public function handle(): int
     {
         try {
             Laradocgen::validateSourceFiles();
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             $this->error("Error: " . $th->getMessage());
             return 1;
         }
 
         Laradocgen::build();
+        return 0;
     }
 }

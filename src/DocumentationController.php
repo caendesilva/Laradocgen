@@ -2,10 +2,12 @@
 
 namespace DeSilva\Laradocgen;
 
-use App\Http\Controllers\Controller;
+use Exception;
+use Illuminate\View\View;
+use Illuminate\Routing\Controller;
 
 /**
- * Resource controller for the Documentation views
+ * Resource controller for the Documentation views.
  *
  * @todo add config options
  */
@@ -14,17 +16,19 @@ class DocumentationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @todo add feature that re-compiles static html when the realtime viewer is active.
-     *          This could work by comparing checksums or file sizes
-     *
+     * @param string $slug of the file to show
+     * @param bool $realtime is it a realtime request for on-the-fly generation?
+     * @return View
+     * @throws Exception if a required file is missing
      * @uses MarkdownPage
      * @uses NavigationLinks
      *
-     * @param  string $slug     of the file to show
-     * @param  bool   $realtime is it a realtime request for on-the-fly generation?
-     * @return \Illuminate\View\View
+     * @todo add feature that re-compiles static html when the realtime viewer is active.
+     *          This could work by comparing checksums or file sizes.
+     *          The advantage of this is that the preview should match
+     *          the result files to prevent unexpected behavior.
      */
-    public function show(string $slug, bool $realtime = false): \Illuminate\View\View
+    public function show(string $slug, bool $realtime = false): View
     {
         // Validate the resource source files
         Laradocgen::validateSourceFiles();
@@ -62,7 +66,7 @@ class DocumentationController extends Controller
         $rootRoute =  $realtime ? '/realtime-docs/' : '/docs/';
 
         // Return the view
-        return view('laradocgen::app', [
+        return view('laradocgen::app', data: [
             'page' => $page,
             'links' => $links,
             'siteName' => $siteName,
@@ -70,7 +74,7 @@ class DocumentationController extends Controller
             'rootRoute' => $rootRoute,
             'realtimeStyles' => $realtimeStyles ?? false,
             'realtimeScripts' => $realtimeScripts ?? false,
-            'pageTitle' => $page->slug === "index" ? $siteName : "{$page->title} | {$siteName}",
+            'pageTitle' => ($page->slug === "index") ? $siteName : "$page->title | $siteName",
         ]);
     }
 
@@ -78,8 +82,12 @@ class DocumentationController extends Controller
      * Return a file from the resources/docs/media for the realtime viewer
      *
      * @param string $file
+     * @return string
+     *
+     * @uses \Illuminate\Foundation\Application::abort
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
-    public function realtimeAsset(string $file)
+    public function realtimeAsset(string $file): string
     {
         try {
             $filepath = resource_path('docs/media/' . $file);
@@ -89,14 +97,14 @@ class DocumentationController extends Controller
 
             header('Content-Type: image');
             return readfile($filepath);
-        } catch (\Throwable $th) {
-            return abort(404);
+        } catch (Exception) {
+            abort(404);
         }
     }
 
     /**
      * Check if the specified slug exists as a page. Else swap the slug out for a 404.
-     * This way the user's url is preserved and we don't redirect to a 404 page.
+     * This way the user's url is preserved, and we don't redirect to a 404 page.
      *
      * @param  string $slug
      * @return string $slug

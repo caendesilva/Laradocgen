@@ -2,55 +2,36 @@
 
 namespace DeSilva\Laradocgen;
 
+use Exception;
+use Illuminate\Support\Collection;
+
 /**
  * Compile a Laravel route into static HTML
  *
- * @todo add option to change source and output directories (PRs welcome!)
- *
  * @author Caen De Silva
+ *
+ * @todo add option to change source and output directories (PRs welcome!)
  */
 class StaticPageBuilder
 {
     /**
-     * The directory where the source files are stored.
-     *
-     * Usually [laravel-project]/resources/docs/
-     *
-     * @var string
-     */
-    private string $sourcePath;
-
-    /**
-     * The directory where the compiled static files are stored.
-     *
-     * Usually [laravel-project]/public/docs/
-     * Media files such as images are in [laravel-project]/public/docs/media/
-     *
-     * @var string
-     */
-    private string $buildPath;
-
-    /**
      * The Collection of Pages to compile.
      *
      * @uses NavigationLinks
-     * @var  \Illuminate\Support\Collection
+     * @var  Collection
      */
-    protected \Illuminate\Support\Collection $pageCollection;
+    protected Collection $pageCollection;
 
     /**
-     * Construct the Builder
+     * Construct the Builder.
+     *
+     * @throws Exception if an invalid builder is specified
      */
     public function __construct()
     {
         // Start the build
         $time_start = microtime(true);
         echo "Starting build \n";
-
-        // Set the source path
-        $this->sourcePath = Laradocgen::getSourcePath();
-        // Set the build path
-        $this->buildPath = Laradocgen::getBuildPath();
 
         // Check if the directories exists, otherwise create them
         $this->ensureDirectoryExists();
@@ -72,9 +53,12 @@ class StaticPageBuilder
 
         // Stop the build and format the time
         $time = (float) ((microtime(true) - $time_start));
-        echo "\nDone. Generated " . $count .
-            ' pages and copied ' . $mediaCount
-            . ' files in ' . sprintf('%f', $time) . ' seconds';
+        echo sprintf(
+            "\nDone. Generated %d pages and copied %d files in %s seconds",
+            $count,
+            $mediaCount,
+            sprintf('%f', $time)
+        );
     }
 
     /**
@@ -85,27 +69,29 @@ class StaticPageBuilder
     private function ensureDirectoryExists(): void
     {
         // Does build directory exist else create it
-        is_dir($this->buildPath) || mkdir($this->buildPath);
+        is_dir(Laradocgen::getBuildPath()) || mkdir(Laradocgen::getBuildPath());
         // Does media directory exist else create it
-        is_dir($this->buildPath . 'media') || mkdir($this->buildPath . 'media');
+        is_dir(Laradocgen::getBuildPath() . 'media') || mkdir(Laradocgen::getBuildPath() . 'media');
     }
 
     /**
      * Get the Collection of pages using the NavigationLinks interface.
      *
      * @uses   NavigationLinks
-     * @return \Illuminate\Support\Collection $pageCollection
+     * @return Collection $pageCollection
      */
-    private function getPageCollection(): \Illuminate\Support\Collection
+    private function getPageCollection(): Collection
     {
         return (new NavigationLinks)->get();
     }
 
     /**
-     * Start the Build Loop which iterates through all the pages in the
-     * pageCollection and subsequently builds the pages.
+     * Start the Build Loop.
+     * The loop which iterates through all the pages in
+     * the pageCollection and subsequently builds the pages.
      *
      * @return int $count of files built
+     * @throws Exception if an invalid builder is specified
      */
     private function startBuildLoop(): int
     {
@@ -120,38 +106,36 @@ class StaticPageBuilder
     /**
      * Compile the page and store it to file.
      *
-     * @param  string $slug
+     * @param string $slug of the page to compile
+     * @param string $builder which builder should be used?
      * @return void
+     * @throws Exception if an invalid builder is specified
      */
-    private function buildPage(string $slug): void
+    private function buildPage(string $slug, string $builder = 'curl'): void
     {
-        // Which builder should be used?
-        $builder = 'curl';
-
         // Construct the url
         $url = 'http://localhost:8000/documentation-generator/' . $slug;
 
         // Determine which Builder to use and retrieve the HTML using the builder.
         switch ($builder) {
             case 'getContents':
-                echo " > Building page {$slug}.html with the getContents Builder \n";
+                echo " > Building page $slug.html with the getContents Builder \n";
                 $html = $this->getContentsBuilder($url);
                 break;
 
             case 'curl':
-                echo " > Building page {$slug}.html with the Curl Builder \n";
+                echo " > Building page $slug.html with the Curl Builder \n";
                 $html = $this->curlBuilder($url);
                 break;
 
             default:
-                throw new \Exception("Unknown Builder $builder", 1);
-                break;
+                throw new Exception("Unknown Builder $builder", 1);
         }
 
         // Validate the HTML (Check if it is empty, and send warning that webserver may be down)
 
         // Construct the outputFilepath
-        $outputFilepath = $this->buildPath . $slug . '.html';
+        $outputFilepath = Laradocgen::getBuildPath() . $slug . '.html';
 
         // Save the HTML to the file
         file_put_contents($outputFilepath, $html);
@@ -170,9 +154,7 @@ class StaticPageBuilder
      */
     private function getContentsBuilder(string $url): string
     {
-        $html = file_get_contents($url);
-
-        return $html;
+        return file_get_contents($url);
     }
 
     /**
@@ -240,7 +222,7 @@ class StaticPageBuilder
 
         $customStyles = Laradocgen::getSourceFileContents('media/custom.css');
         file_put_contents(
-            $this->buildPath .
+            Laradocgen::getBuildPath() .
                 "media/app.css",
             PHP_EOL . PHP_EOL .
                 "/* Custom styles */" . PHP_EOL . PHP_EOL,
