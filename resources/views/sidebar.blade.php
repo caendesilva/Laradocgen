@@ -1,4 +1,4 @@
-<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
+<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 sm:py-4 px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         <div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
             <a class="md:block text-left text-zinc-600 dark:text-gray-100 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index{{ $realtime == false ? '.html' : '' }}"> {{ $siteName }} </a> <!-- Dark mode switch --> 

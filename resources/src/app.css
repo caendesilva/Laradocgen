@@ -20,10 +20,8 @@
 	color: #f3f4f6;
 }
 
-@media screen and (max-width: 360px) {
-	.prose :where(h1):not(:where([class~=not-prose] *)) {
-		font-size: 2em;
-	}
+.prose a {
+	overflow-wrap: break-word;
 }
 
 .prose blockquote p:first-of-type::before,
@@ -83,6 +81,8 @@ h6:hover .heading-permalink {
 
 h1, h2, h3, h4, h5, h6 {
 	width: fit-content;
+	max-width: 100vw;
+	word-break: break-word;
 } 
 
 /* Inline Code Style */
