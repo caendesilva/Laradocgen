@@ -106,7 +106,7 @@ This package's scaffolding was generated using the [Laravel Package Boilerplate]
 - The dark-mode switch is based on a component from [Flowbite](https://flowbite.com/docs/customize/dark-mode/) (MIT)
 
 ### Packages used and special mentions
-- Frontend is built with [TailwindCSS](https://tailwindcss.com/)
+- The frontend is built with [TailwindCSS](https://tailwindcss.com/)
 - Syntax highlighting by [Torchlight](https://torchlight.dev/)
 - Markdown is parsed with [League/Commonmark](https://github.com/thephpleague/commonmark)
-- The default favicon was created using [Favicon.io](https://favicon.io/) using the ["Page" Emoji](https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c4.svg) from the amazing open source project [Twemoji](https://twemoji.twitter.com/). The graphics are copyright 2020 Twitter, Inc and other contributors and are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- The default favicon was created using [Favicon.io](https://favicon.io/) using the ["Page" Emoji](https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c4.svg) from the amazing open-source project [Twemoji](https://twemoji.twitter.com/). The graphics are copyright 2020 Twitter, Inc and other contributors and are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).

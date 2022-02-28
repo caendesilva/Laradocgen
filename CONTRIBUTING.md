@@ -14,7 +14,7 @@ Please be considerate towards maintainers when raising issues or presenting pull
 world that developers are civilized and selfless people.
 
 It's the duty of the maintainer to ensure that all submissions to the project are of sufficient
-quality to benefit the project. Many developers have different skillsets, strengths, and weaknesses. Respect the maintainer's decision, and do not be upset or abusive if your submission is not used.
+quality to benefit the project. Many developers have different skill sets, strengths, and weaknesses. Respect the maintainer's decision, and do not be upset or abusive if your submission is not used.
 
 ## Viability
 
@@ -52,7 +52,7 @@ phpcs --standard=ruleset.xml
 **Please add tests!**
 <!-- - **Add tests!** - Your patch won't be accepted if it doesn't have tests. -->
 
-- **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
+- **Document any change in behavior** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
 
 <!-- Will be enabled once we enter GA 
 - **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option. -->

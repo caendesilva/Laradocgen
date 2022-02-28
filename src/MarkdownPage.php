@@ -53,7 +53,7 @@ class MarkdownPage
         $this->markdown = $this->getConvertedMarkdown();
 
         /**
-         * Temporary as it will be done in the preprocessor (or postprocessor)
+         * Temporary as it will be done in the preprocessor (or post-processor)
          * after I restructure and remove the deprecated method.
          */
         if ($isRealtimeRequest) {
