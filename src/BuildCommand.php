@@ -44,7 +44,7 @@ class BuildCommand extends Command
             Laradocgen::validateSourceFiles();
         } catch (\Throwable $th) {
             $this->error("Error: " . $th->getMessage());
-            return;
+            return 1;
         }
 
         Laradocgen::build();
