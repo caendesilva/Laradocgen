@@ -46,8 +46,7 @@ We try to follow the Laravel standards, https://laravel.com/docs/9.x/contributio
 (https://github.com/squizlabs/PHP_CodeSniffer)
 ```bash
 # Example usage
-cd .build
-phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to output to a file instead of your terminal
+phpcs --standard=ruleset.xml
 ```
 
 **Please add tests!**
@@ -63,27 +62,38 @@ phpcs --standard=ruleset.xml [> csout] # Include the bracketed parameter to outp
 - **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
 
 ## Package Development
-### Testing
-```bash
-composer test
 
-cd .build && phpcs --standard=ruleset.xml
+### Testing
+Currently I am using the LaradocgenTests repo to run full feature tests.
+Please follow the readme in that project on how to set up tests.
+```bash
+# If you have CodeSniffer, use the following command to ensure your code follows the PSR2 standard.
+phpcs --standard=ruleset.xml
 ```
 
 ### Building
-I've included a build script to automate the build process. It takes care of copying and modifying the root markdown files into examples shipped in the resources/docs directory. It also compiles the and minifies TailwindCSS and publishes the assets to your development app.
-
-First you need to specify the laravel install directory you are using. You only need to do this once.
-The install directory is specified in `.build/rootdir`
-
-**We can generate the rootdir file quickly using**
-```bash
-bash build.sh "/mnt/d/dev/laradocgen-demo" # Replace the quoted string with your path
-```
+I've included a build script to automate the build process. It takes care of copying and modifying the root markdown files into examples shipped in the resources/docs directory. Run the commands from your package directory.
 
 **Run the build command to copy the markdown files into the resources directory and publish the assets.**
 ```bash
 bash build.sh
+```
+
+**Next, run these commands**
+```bash
+# Build stylesheet
+npx tailwindcss -i ./resources/src/app.css -o ./resources/assets/app.css  --minify
+
+# Replace path with your Laravel test installation
+php /path/to/laravel/artisan vendor:publish --tag="laradocgen" --force
+
+# Build API Documentation
+php phpDocumentor.phar  -d ./src -t ./docs/api
+```
+
+Next, run your tests if you have the LaradocgenTests repo set up (recommended)
+```bash
+php /path/to/laravel/artisan test
 ```
 
 **Happy coding**!
