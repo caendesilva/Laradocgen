@@ -12,9 +12,12 @@
 Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
 
 ### Alpha Stage Software
-This package is still in the alpha stage. Once it becomes stable and tested enough I will release v1.0 and I will adhere to semantic versioning. But until then I will run canary builds and I am sure there will be breaking changes. I will of course do my best to document them all in the upgrade guides, but all in all, at this stage I would not recommend it for production use. Though since it is intended to run on your local server I don't think much can go wrong as long as you have backups and Git. The only area that is really of concern to me is that since we are working with writing files to disk if something goes wrong files could be overwritten, but as it is now the paths are hardcoded to "safe" directories so it should only be able to overwrite files already created by the package.
+Hey! Just a quick heads up that this is a very new package and I expect there to be bugs. If anything goes wrong, do let me know and I'd love to get feedback and PRs!
 
-Please do contribute with PRs and bug reports!
+<small>
+**Disclaimer**
+This package is still in the alpha stage. Once it becomes stable and tested enough I will release v1.0 and I will adhere to semantic versioning. But until then I will run canary builds and I am sure there will be breaking changes. I will of course do my best to document them all in the upgrade guides, but all in all, at this stage I would not recommend it for production use. Though since it is intended to run on your local server I don't think much can go wrong as long as you have backups and Git. The only area that is really of concern to me is that since we are working with writing files to disk if something goes wrong files could be overwritten, but as it is now the paths are hardcoded to "safe" directories so it should only be able to overwrite files already created by the package.
+</small>
 
 ## Installation
 > The package has so far only been tested with Laravel 9
@@ -51,7 +54,7 @@ And store your images in `resources/docs/media/`
 ![My Image](media/image.png "Image Title") # Note the relative path
 ```
 
-### Build static site
+### Build the static site
 ```bash
 php artisan laradocgen:build
 ```
