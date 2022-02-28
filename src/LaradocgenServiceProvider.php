@@ -2,8 +2,6 @@
 
 namespace DeSilva\Laradocgen;
 
-use DeSilva\Laradocgen\BuildCommand;
-
 use Illuminate\Support\ServiceProvider;
 
 use League\CommonMark\MarkdownConverter;
@@ -81,7 +79,7 @@ class LaradocgenServiceProvider extends ServiceProvider
         });
 
         // Register a new Markdown Singleton
-        $this->app->singleton('laradocgen.converter', function ($app) {
+        $this->app->singleton('laradocgen.converter', function () {
             // Create the Commonmark Environment Config
             $config = [
                 'table_of_contents' => [],

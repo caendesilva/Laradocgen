@@ -5,6 +5,7 @@ namespace DeSilva\Laradocgen;
 use Exception;
 use Illuminate\View\View;
 use Illuminate\Routing\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Resource controller for the Documentation views.
@@ -58,7 +59,7 @@ class DocumentationController extends Controller
             ->get();
 
         // Get the name of the site
-        $siteName = LaradocgenFacade::getSiteName();
+        $siteName = Laradocgen::getSiteName();
 
         /**
          * Determine the root path. This is used to prefix the relative URLs.
@@ -84,8 +85,7 @@ class DocumentationController extends Controller
      * @param string $file
      * @return string
      *
-     * @uses \Illuminate\Foundation\Application::abort
-     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws NotFoundHttpException
      */
     public function realtimeAsset(string $file): string
     {

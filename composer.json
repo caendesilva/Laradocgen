@@ -20,7 +20,9 @@
         "illuminate/support": "^8.42|^9.0",
         "league/commonmark": "^2.2",
         "torchlight/torchlight-commonmark": "*",
-        "torchlight/torchlight-laravel": "^0.5.11"
+        "torchlight/torchlight-laravel": "^0.5.11",
+        "ext-fileinfo": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",

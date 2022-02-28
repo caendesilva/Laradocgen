@@ -2,8 +2,6 @@
 
 namespace DeSilva\Laradocgen;
 
-use App\Http\Controllers\Controller;
-
 /**
  * RealtimeCompiler Class
  *
@@ -20,7 +18,7 @@ use App\Http\Controllers\Controller;
  *
  * @uses Laradocgen
  */
-class RealtimeCompiler extends Controller
+class RealtimeCompiler
 {
     /**
      * Construct the class and run the compiler when the class is created.

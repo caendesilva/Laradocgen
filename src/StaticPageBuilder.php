@@ -90,6 +90,7 @@ class StaticPageBuilder
      * The loop which iterates through all the pages in
      * the pageCollection and subsequently builds the pages.
      *
+     * @uses $this->buildPage
      * @return int $count of files built
      * @throws Exception if an invalid builder is specified
      */
@@ -97,7 +98,7 @@ class StaticPageBuilder
     {
         $count = 0;
         foreach ($this->pageCollection as $page) {
-            $this->buildPage($page->slug);
+            $this->buildPage($page->slug, config('laradocgen.builder', 'curl'));
             $count++;
         }
         return $count;
@@ -106,6 +107,7 @@ class StaticPageBuilder
     /**
      * Compile the page and store it to file.
      *
+     * @see $this->startBuildLoop
      * @param string $slug of the page to compile
      * @param string $builder which builder should be used?
      * @return void
@@ -113,7 +115,7 @@ class StaticPageBuilder
      */
     private function buildPage(string $slug, string $builder = 'curl'): void
     {
-        // Construct the url
+        // Construct the source url
         $url = 'http://localhost:8000/documentation-generator/' . $slug;
 
         // Determine which Builder to use and retrieve the HTML using the builder.

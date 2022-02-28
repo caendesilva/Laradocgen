@@ -2,6 +2,8 @@
 
 namespace DeSilva\Laradocgen;
 
+use Exception;
+
 /**
  * Parse the linkIndex.yml file which is used to determine the order the
  * NavigationLinks::class collection for pages in the sidebar.
@@ -30,10 +32,10 @@ class ParsesLinkIndex
     /**
      * Static shorthand to get the index from a slag.
      *
-     * @param string   $slug    to search
+     * @param string $slug to search
      * @param int|bool $default return value if the slug does not exist in the index
      *
-     * @return int
+     * @return int|false
      */
     public static function getIndexOfSlug(string $slug, int|bool $default = false): int|false
     {
@@ -43,6 +45,7 @@ class ParsesLinkIndex
 
     /**
      * Construct the class
+     * @throws Exception if link index cannot be found
      */
     public function __construct()
     {
@@ -51,7 +54,7 @@ class ParsesLinkIndex
 
         // Check if the file exists
         if (!file_exists($this->filePath)) {
-            throw new \Exception("Could not find the link index! Did you create one?", 1);
+            throw new Exception("Could not find the link index! Did you create one?", 1);
         }
 
         // Parse the Yaml and set it to the Index array
@@ -87,8 +90,8 @@ class ParsesLinkIndex
 
         // Loop through the lines
         foreach ($lines as $line) {
-            // Check if the line matches the list format (space space dash space)
-            if (substr($line, 0, 4) == "  - ") {
+            // Check if the line matches the list format (space, space, dash, space)
+            if (str_starts_with($line, "  - ")) {
                 // Remove the list key from the line to just get the slug
                 // and add it to the array. The index will be automatically
                 // assigned by using $array[]

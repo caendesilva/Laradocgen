@@ -1,6 +1,7 @@
 <?php
 
 use DeSilva\Laradocgen\DocumentationController;
+use Illuminate\Support\Facades\Route;
 
 // Register routes only in the local environment
 if (config('app.env') === 'local') {
