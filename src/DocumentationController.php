@@ -20,8 +20,8 @@ class DocumentationController extends Controller
      * @uses MarkdownPage
      * @uses NavigationLinks
      *
-     * @param string $slug of the file to show
-     * @param bool $realtime is it a realtime request for on-the-fly generation?
+     * @param  string $slug     of the file to show
+     * @param  bool   $realtime is it a realtime request for on-the-fly generation?
      * @return \Illuminate\View\View
      */
     public function show(string $slug, bool $realtime = false): \Illuminate\View\View
@@ -98,7 +98,7 @@ class DocumentationController extends Controller
      * Check if the specified slug exists as a page. Else swap the slug out for a 404.
      * This way the user's url is preserved and we don't redirect to a 404 page.
      *
-     * @param string $slug
+     * @param  string $slug
      * @return string $slug
      */
     private function handle404(string $slug): string

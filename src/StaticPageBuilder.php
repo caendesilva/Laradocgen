@@ -34,7 +34,7 @@ class StaticPageBuilder
      * The Collection of Pages to compile.
      *
      * @uses NavigationLinks
-     * @var \Illuminate\Support\Collection
+     * @var  \Illuminate\Support\Collection
      */
     protected \Illuminate\Support\Collection $pageCollection;
 
@@ -93,7 +93,7 @@ class StaticPageBuilder
     /**
      * Get the Collection of pages using the NavigationLinks interface.
      *
-     * @uses NavigationLinks
+     * @uses   NavigationLinks
      * @return \Illuminate\Support\Collection $pageCollection
      */
     private function getPageCollection(): \Illuminate\Support\Collection
@@ -120,7 +120,7 @@ class StaticPageBuilder
     /**
      * Compile the page and store it to file.
      *
-     * @param string $slug
+     * @param  string $slug
      * @return void
      */
     private function buildPage(string $slug): void
@@ -165,7 +165,7 @@ class StaticPageBuilder
      * Has issue with JavaScript needed to render the sidebar,
      * and is thus not recommended for use. Use Curl instead.
      *
-     * @param string $url
+     * @param  string $url
      * @return string $html
      */
     private function getContentsBuilder(string $url): string
@@ -178,7 +178,7 @@ class StaticPageBuilder
     /**
      * Get the HTML using Curl. (Recommended)
      *
-     * @param string $url
+     * @param  string $url
      * @return string $html
      */
     private function curlBuilder(string $url): string

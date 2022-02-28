@@ -43,8 +43,8 @@ class MarkdownPage
     /**
      * Construct the page object
      *
-     * @param string $slug of the page. Defaults to 'index'
-     * @param bool $isRealtimeRequest for on-the-fly generation?
+     * @param string $slug              of the page. Defaults to 'index'
+     * @param bool   $isRealtimeRequest for on-the-fly generation?
      */
     public function __construct(string $slug = 'index', bool $isRealtimeRequest = false)
     {

@@ -30,7 +30,7 @@ class ParsesLinkIndex
     /**
      * Static shorthand to get the index from a slag.
      *
-     * @param string $slug to search
+     * @param string   $slug    to search
      * @param int|bool $default return value if the slug does not exist in the index
      *
      * @return int
@@ -105,8 +105,8 @@ class ParsesLinkIndex
      *
      * Optionally specify the return value if a slug does not exist in the linkIndex.yml
      *
-     * @param string $slug to search
-     * @param int|bool $default return value
+     * @param  string   $slug    to search
+     * @param  int|bool $default return value
      * @return int|false returns found value, or the fallback
      */
     public function findIndexOfSlug(string $slug, int|bool $default = false): int|false

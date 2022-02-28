@@ -58,9 +58,9 @@ class Laradocgen
      * @example Laradocgen::getSourceFilepath('index.md')
      *              returns /home/user/laravel-project/resources/docs/index.md
      *
-     * @param string $filename to search for
-     * @param string|null $directory to insert before the filename
-     * @return string|false $filepath the full path
+     * @param  string      $filename  to retrieve
+     * @param  string|null $directory optionally specify a subdirectory of the fille
+     * @return string|false $filepath full path to the file
      **/
     public static function getSourceFilepath(string $filename, ?string $directory = null): string
     {
@@ -77,9 +77,9 @@ class Laradocgen
      * @example Laradocgen::getBuildFilepath('index.md')
      *              returns /home/user/laravel-project/public/docs/index.md
      *
-     * @param string $filename to search for
-     * @param string|null $directory to insert before the filename
-     * @return string|false $filepath the full path
+     * @param  string      $filename  to retrieve
+     * @param  string|null $directory optionally specify a subdirectory of the fille
+     * @return string|false $filepath full path to the file
      **/
     public static function getBuildFilepath(string $filename, ?string $directory = null): string
     {
@@ -97,7 +97,7 @@ class Laradocgen
      *
      * @example RealtimeCompiler::getStyles()
      *
-     * @param string $filename to search for
+     * @param  string $filename to search for
      * @return string|false $filepath the full path if file exists, else false
      **/
     public static function getSourceFileContents(string $filename): string|false
@@ -124,7 +124,7 @@ class Laradocgen
     /**
      * @deprecated use validateExistenceOfSlug instead
      *
-     * @param string $slug
+     * @param  string $slug
      * @return bool
      */
     public static function validateExistence(string $slug): bool
@@ -133,7 +133,7 @@ class Laradocgen
     }
 
     /**
-     * @param string $slug
+     * @param  string $slug
      * @return bool
      */
     public static function validateExistenceOfSlug(string $slug): bool

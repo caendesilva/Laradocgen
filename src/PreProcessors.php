@@ -4,6 +4,7 @@ namespace DeSilva\Laradocgen;
 
 /**
  * The PreProcessors used by the MarkdownPreprocessor::class
+ *
  * @see MarkdownPreprocessor
  */
 class PreProcessors

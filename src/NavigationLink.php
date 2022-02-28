@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
  * Used in generating the sidebar
  *
  * Is part of the NavigationLinks collection
- * @see NavigationLinks
+ * @see  NavigationLinks
  */
 class NavigationLink
 {

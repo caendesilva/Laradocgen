@@ -6,6 +6,7 @@ namespace DeSilva\Laradocgen;
  * Markdown preprocessor.
  *
  * Runs in the MarkdownConverter::class before generating the markdown.
+ *
  * @see MarkdownConverter
  *
  * @example usage $processedMarkdown = (new MarkdownPreprocessor($markdown))->get()
@@ -16,6 +17,7 @@ class MarkdownPreprocessor extends PreProcessors
 {
     /**
      * The Markdown to preprocess
+     *
      * @var string $markdown
      */
     protected string $markdown;

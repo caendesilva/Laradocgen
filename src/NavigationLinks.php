@@ -64,7 +64,7 @@ class NavigationLinks
      *
      * If the route parameter is not set it defaults to removing the 'index' and '404' routes.
      *
-     * @param array $routes to remove
+     * @param  array $routes to remove
      * @return self
      */
     public function withoutRoutes(array $routes = ['index', '404']): self
@@ -95,6 +95,7 @@ class NavigationLinks
     {
         /**
          * Sort the Collection using the sortBy() method
+         *
          * @see https://laravel.com/docs/9.x/collections#method-sortby
          */
         $this->links = $this->links
