@@ -31,6 +31,9 @@
         "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.5"
     },
+    "suggest": {
+        "laravel/framework": "This package has so far only been tested with Laravel 9.2. Please contribute with more tests!"
+    },
     "autoload": {
         "psr-4": {  
             "DeSilva\\Laradocgen\\": "src"
