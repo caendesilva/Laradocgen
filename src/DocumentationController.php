@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Resource controller for the Documentation views.
+ * Resource Controller for the Documentation views.
  *
  * @todo add config options
  */
@@ -17,12 +17,12 @@ class DocumentationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param string $slug of the file to show
+     * @param string $slug of the Markdown page to show
      * @param bool $realtime is it a realtime request for on-the-fly generation?
      * @return View
      * @throws Exception if a required file is missing
      * @uses MarkdownPage
-     * @uses NavigationLinks
+     * @uses MarkdownPageCollection
      *
      * @todo add feature that re-compiles static html when the realtime viewer is active.
      *          This could work by comparing checksums or file sizes.
@@ -51,9 +51,9 @@ class DocumentationController extends Controller
         $page = new MarkdownPage($slug, $realtime);
 
         /**
-         * Create the NavigationLinks object which contains the sidebar information
+         * Create the MarkdownPageCollection object which contains the sidebar information
          */
-        $links = (new NavigationLinks())
+        $links = (new MarkdownPageCollection())
             ->withoutRoutes(['index', '404'])
             ->order()
             ->get();
@@ -63,6 +63,7 @@ class DocumentationController extends Controller
 
         /**
          * Determine the root path. This is used to prefix the relative URLs.
+         * @deprecated as it is not used
          */
         $rootRoute =  $realtime ? '/realtime-docs/' : '/docs/';
 
@@ -80,12 +81,12 @@ class DocumentationController extends Controller
     }
 
     /**
-     * Return a file from the resources/docs/media for the realtime viewer
+     * Return a media file for the realtime viewer.
      *
-     * @param string $file
-     * @return string
+     * @param string $file filename relative to the source media path
+     * @return string of the file contents
      *
-     * @throws NotFoundHttpException
+     * @throws NotFoundHttpException if the file could not be found
      */
     public function realtimeAsset(string $file): string
     {
@@ -103,11 +104,14 @@ class DocumentationController extends Controller
     }
 
     /**
-     * Check if the specified slug exists as a page. Else swap the slug out for a 404.
-     * This way the user's url is preserved, and we don't redirect to a 404 page.
+     * Check if the specified slug exists as a page.
      *
-     * @param  string $slug
-     * @return string $slug
+     * If page is not found, we swap the slug out for a 404.
+     * This way the user's url is preserved, and we don't redirect
+     * to a 404 page which can be jarring for the user.
+     *
+     * @param  string $slug to validate
+     * @return string $slug the same slug if it exists, else 404
      */
     private function handle404(string $slug): string
     {

@@ -6,7 +6,7 @@ use Exception;
 
 /**
  * Parse the linkIndex.yml file which is used to determine the order the
- * NavigationLinks::class collection for pages in the sidebar.
+ * MarkdownPageCollection::class collection for pages in the sidebar.
  */
 class ParsesLinkIndex
 {

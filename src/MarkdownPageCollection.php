@@ -5,52 +5,51 @@ namespace DeSilva\Laradocgen;
 use Illuminate\Support\Collection;
 
 /**
- * Creates a Collection of NavigationLink objects
- * @deprecated will be renamed to MarkdownPageCollection
+ * Creates a Collection of MarkdownPage objects
  *
  * The Collection is used to create the sidebar
  * and the Collection of files for the
  * StaticPageBuilder to generate.
  *
- * @uses NavigationLink
+ * @uses MarkdownPage
  */
-class NavigationLinks
+class MarkdownPageCollection
 {
     /**
-     * The Collection object
+     * The Collection object.
      *
      * @var Collection
      */
-    protected Collection $links;
+    protected Collection $pages;
 
     /**
-     * Construct the object by generating the Collection
+     * Construct the object by generating the Collection.
      */
     public function __construct()
     {
-        $this->links = $this->generate();
+        $this->pages = $this->generate();
     }
 
     /**
-     * Create a new Collection
+     * Create a new Collection.
      *
      * @uses Laradocgen::getMarkdownFileSlugsArray()
-     * @uses NavigationLink
+     * @uses MarkdownPage::class
      *
-     * @return Collection $links
+     * @return Collection $pages
      */
     private function generate(): Collection
     {
-        $links = new Collection;
+        $pages = new Collection;
 
         // Get the array of Markdown files and loop through it
         foreach (Laradocgen::getMarkdownFileSlugsArray() as $slug) {
-            // Create a new NavigationLink object and push it to the Collection
-            $links->push(new NavigationLink($slug));
+            // Create a new MarkdownPage object and push it to the Collection
+            $pages->push(new MarkdownPage($slug));
         }
 
         // Return the Collection
-        return $links;
+        return $pages;
     }
 
     /**
@@ -68,7 +67,7 @@ class NavigationLinks
          *
          * @see https://laravel.com/docs/9.x/collections#method-reject
          */
-        $this->links = $this->links->reject(function ($link) use ($routes) {
+        $this->pages = $this->pages->reject(function ($link) use ($routes) {
             /**
              * If the slug we are comparing is in the $routes array
              * we return true which instructs the reject method
@@ -81,7 +80,9 @@ class NavigationLinks
     }
 
     /**
-     * Sort the Collection by the order priority set in the NavigationLink object
+     * Sort the Collection.
+     *
+     * Uses the order priority set in the MarkdownPage object
      *
      * @return self
      */
@@ -92,20 +93,20 @@ class NavigationLinks
          *
          * @see https://laravel.com/docs/9.x/collections#method-sortby
          */
-        $this->links = $this->links
-            ->sortBy('order') // Sort by the NavigationLink->order property
+        $this->pages = $this->pages
+            ->sortBy('order') // Sort by the MarkdownPage->order property
             ->values(); // Use values() to reset the Collection keys to consecutively numbered indexes:
 
         return $this;
     }
 
     /**
-     * Get the Collection instance
+     * Get the created Collection instance.
      *
      * @return Collection
      */
     public function get(): Collection
     {
-        return $this->links;
+        return $this->pages;
     }
 }

@@ -7,10 +7,6 @@ use Illuminate\Support\Str;
 /**
  * The Markdown Page Object
  *
- * @todo This class contains similar code as the NavigationLink::class.
- *          Merging them, or referencing this class in the other one would
- *          allow for better maintainability.
- *
  * Passed to the app.blade.php view through the DocumentationController,
  * the MarkdownPage object contains information about the Page.
  * It holds data such as the page title and the Markdown contents.
@@ -34,7 +30,15 @@ class MarkdownPage
     public string $title;
 
     /**
-     * The converted HTML
+     * The generated sidebar priority.
+     * Lower values are shown first.
+     *
+     * @var int
+     */
+    public int $order;
+
+    /**
+     * The converted Markdown as HTML
      *
      * @var string
      */
@@ -50,6 +54,7 @@ class MarkdownPage
     {
         $this->slug = $slug;
         $this->title = $this->getTitle();
+        $this->order = $this->getOrder();
         $this->markdown = $this->getConvertedMarkdown();
 
         /**
@@ -85,5 +90,20 @@ class MarkdownPage
         return (new MarkdownConverter(
             Laradocgen::getSourceFileContents($this->slug . '.md')
         ))->parse();
+    }
+
+    /**
+     * Get the index of the slug.
+     *
+     * This is used to determine the priority (order) of sidebar links.
+     *
+     * @uses ParsesLinkIndex::getIndexOfSlug() to get the index.
+     *       If the index is not set in the docs/linkIndex.yml we return priority 999.
+     *
+     * @return int
+     */
+    private function getOrder(): int
+    {
+        return ParsesLinkIndex::getIndexOfSlug($this->slug, 999);
     }
 }

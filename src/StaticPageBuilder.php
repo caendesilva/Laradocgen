@@ -17,7 +17,7 @@ class StaticPageBuilder
     /**
      * The Collection of Pages to compile.
      *
-     * @uses NavigationLinks
+     * @uses MarkdownPageCollection
      * @var  Collection
      */
     protected Collection $pageCollection;
@@ -75,14 +75,14 @@ class StaticPageBuilder
     }
 
     /**
-     * Get the Collection of pages using the NavigationLinks interface.
+     * Get the Collection of pages using the MarkdownPageCollection interface.
      *
-     * @uses   NavigationLinks
+     * @uses   MarkdownPageCollection
      * @return Collection $pageCollection
      */
     private function getPageCollection(): Collection
     {
-        return (new NavigationLinks)->get();
+        return (new MarkdownPageCollection)->get();
     }
 
     /**
