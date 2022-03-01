@@ -38,7 +38,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\DocumentationController\u003A\u003ArealtimeAsset\u0028\u0029",
             "name": "realtimeAsset",
-            "summary": "Return\u0020a\u0020a\u0020media\u0020file\u0020for\u0020the\u0020realtime\u0020viewer.",
+            "summary": "Return\u0020a\u0020media\u0020file\u0020for\u0020the\u0020realtime\u0020viewer.",
             "url": "classes/DeSilva-Laradocgen-DocumentationController.html#method_realtimeAsset"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\DocumentationController\u003A\u003Ahandle404\u0028\u0029",
@@ -313,7 +313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPageCollection\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Construct\u0020the\u0020object\u0020by\u0020generating\u0020the\u0020Collectio.n",
+            "summary": "Construct\u0020the\u0020object\u0020by\u0020generating\u0020the\u0020Collection.",
             "url": "classes/DeSilva-Laradocgen-MarkdownPageCollection.html#method___construct"
         },                {
             "fqsen": "\\DeSilva\\Laradocgen\\MarkdownPageCollection\u003A\u003Agenerate\u0028\u0029",

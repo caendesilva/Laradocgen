@@ -39,7 +39,7 @@
 
 <body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-gray-900 min-h-screen flex flex-col"> 
     
-    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
+    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 sm:py-4 px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         <div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
             <a class="md:block text-left text-zinc-600 dark:text-gray-100 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index.html"> Laradocgen Docs </a> <!-- Dark mode switch --> 
@@ -78,17 +78,17 @@
             <hr class="my-4 md:min-w-full" />
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
+                   
+                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
                    
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="getting-started.html"> Getting Started </a> </li>
                    
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="how-it-works.html"> How It Works </a> </li>
                    
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
-                   
-                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
-                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
                   
             </ul>
             <div class="mt-auto">
@@ -103,11 +103,20 @@
         <article class="prose dark:prose-invert max-w-3xl p-6 lg:p-8">
             <ul class="table-of-contents">
 <li>
+<a href="#010-pre---2022-02-28">0.1.0-Pre - 2022-02-28</a>
+</li>
+<li>
 <a href="#010---2022-02-23">0.1.0 - 2022-02-23</a>
 </li>
 </ul>
 <h1>Changelog</h1>
 <p>All notable changes to <code>laradocgen</code> will be documented in this file</p>
+<h2>0.1.0-Pre - 2022-02-28<a id="010-pre---2022-02-28" href="#010-pre---2022-02-28" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<ul>
+<li>Version 1 Prerelease</li>
+<li>Contains features I deem acceptable for a Version 1 release, but that I want to be further tested before V1.</li>
+<li>All basic package functionality is implemented and tested (with several features tested through PHPUnit).</li>
+</ul>
 <h2>0.1.0 - 2022-02-23<a id="010---2022-02-23" href="#010---2022-02-23" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <ul>
 <li>Initial Dev/Alpha Release</li>
@@ -118,14 +127,14 @@
     
     <footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-100 dark:bg-slate-900 dark:text-gray-100">
 		<div class="max-w-3xl mx-4 lg:mx-8 p-2">
-			<small class="mx-2 my-1">
-				This site was generated using the free and open source
+			<small class="px-2 my-1">
+				This site was generated using the free and open-source
 				<a class="text-indigo-700 dark:text-indigo-400" 
 					href="https://github.com/desilva/laradocgen/">Laradocgen package</a>.
 				License MIT.
 			</small>
 			 
-			<small class="mx-2 my-1 whitespace-nowrap opacity-75">
+			<small class="px-2 my-1 whitespace-nowrap opacity-75">
 				Syntax highlighting by
 				<a class="text-indigo-700 dark:text-indigo-400"
 					href="https://torchlight.dev/"

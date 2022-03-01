@@ -39,7 +39,7 @@
 
 <body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-gray-900 min-h-screen flex flex-col"> 
     
-    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 py-4 px-6">
+    <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 sm:py-4 px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         <div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
             <a class="md:block text-left text-zinc-600 dark:text-gray-100 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index.html"> Laradocgen Docs </a> <!-- Dark mode switch --> 
@@ -78,17 +78,17 @@
             <hr class="my-4 md:min-w-full" />
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                   
-                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
                    
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="getting-started.html"> Getting Started </a> </li>
                    
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="how-it-works.html"> How It Works </a> </li>
                    
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
-                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
-                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
+                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
                   
             </ul>
             <div class="mt-auto">
@@ -120,7 +120,7 @@
 <a href="#adding-pages">Adding pages</a>
 </li>
 <li>
-<a href="#build-static-site">Build static site</a>
+<a href="#build-the-static-site">Build the static site</a>
 </li>
 </ul>
 </li>
@@ -169,8 +169,11 @@
 <h2>About<a id="about" href="#about" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.</p>
 <h3>Alpha Stage Software<a id="alpha-stage-software" href="#alpha-stage-software" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>This package is still in the alpha stage. Once it becomes stable and tested enough I will release v1.0 and I will adhere to semantic versioning. But until then I will run canary builds and I am sure there will be breaking changes. I will of course do my best to document them all in the upgrade guides, but all in all, at this stage I would not recommend it for production use. Though since it is intended to run on your local server I don't think much can go wrong as long as you have backups and Git. The only area that is really of concern to me is that since we are working with writing files to disk if something goes wrong files could be overwritten, but as it is now the paths are hardcoded to &quot;safe&quot; directories so it should only be able to overwrite files already created by the package.</p>
-<p>Please do contribute with PRs and bug reports!</p>
+<p>Hey! Just a quick heads up that this is a very new package and I expect there to be bugs. If anything goes wrong, do let me know and I'd love to get feedback and PRs!</p>
+<small>
+**Disclaimer**
+This package is still in the alpha stage. Once it becomes stable and tested enough I will release v1.0 and I will adhere to semantic versioning. But until then I will run canary builds and I am sure there will be breaking changes. I will of course do my best to document them all in the upgrade guides, but all in all, at this stage I would not recommend it for production use. Though since it is intended to run on your local server I don't think much can go wrong as long as you have backups and Git. The only area that is really of concern to me is that since we are working with writing files to disk if something goes wrong files could be overwritten, but as it is now the paths are hardcoded to "safe" directories so it should only be able to overwrite files already created by the package.
+</small>
 <h2>Installation<a id="installation" href="#installation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <blockquote>
 <p>The package has so far only been tested with Laravel 9</p>
@@ -189,7 +192,7 @@
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">❌</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">kebab case title.markdown</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Returns 404</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">✔️</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">kebab-case-title.md</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># creates my-page-title.html and renders as &quot;My Page Title&quot; in the frontend</span></div></code></pre>
 <p>And store your images in <code>resources/docs/media/</code></p>
 <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">My Image</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> # Note the relative path</span></div></code></pre>
-<h3>Build static site<a id="build-static-site" href="#build-static-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Build the static site<a id="build-the-static-site" href="#build-the-static-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">artisan</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">laradocgen:build</span></div></code></pre>
 <p>Your static site will be saved in <code>public/docs</code></p>
 <h2>Package Development<a id="package-development" href="#package-development" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
@@ -235,13 +238,13 @@ All vulnerabilities will be promptly addressed.</p>
 </ul>
 <h3>Packages used and special mentions<a id="packages-used-and-special-mentions" href="#packages-used-and-special-mentions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <ul>
-<li>Frontend is built with <a href="https://tailwindcss.com/">TailwindCSS</a>
+<li>The frontend is built with <a href="https://tailwindcss.com/">TailwindCSS</a>
 </li>
 <li>Syntax highlighting by <a href="https://torchlight.dev/">Torchlight</a>
 </li>
 <li>Markdown is parsed with <a href="https://github.com/thephpleague/commonmark">League/Commonmark</a>
 </li>
-<li>The default favicon was created using <a href="https://favicon.io/">Favicon.io</a> using the <a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c4.svg">&quot;Page&quot; Emoji</a> from the amazing open source project <a href="https://twemoji.twitter.com/">Twemoji</a>. The graphics are copyright 2020 Twitter, Inc and other contributors and are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.</li>
+<li>The default favicon was created using <a href="https://favicon.io/">Favicon.io</a> using the <a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c4.svg">&quot;Page&quot; Emoji</a> from the amazing open-source project <a href="https://twemoji.twitter.com/">Twemoji</a>. The graphics are copyright 2020 Twitter, Inc and other contributors and are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.</li>
 </ul>
  
         </article>
@@ -249,14 +252,14 @@ All vulnerabilities will be promptly addressed.</p>
     
     <footer class="md:ml-64 lg:ml-72 xl:pl-8 py-2 bg-slate-100 dark:bg-slate-900 dark:text-gray-100">
 		<div class="max-w-3xl mx-4 lg:mx-8 p-2">
-			<small class="mx-2 my-1">
-				This site was generated using the free and open source
+			<small class="px-2 my-1">
+				This site was generated using the free and open-source
 				<a class="text-indigo-700 dark:text-indigo-400" 
 					href="https://github.com/desilva/laradocgen/">Laradocgen package</a>.
 				License MIT.
 			</small>
 			 
-			<small class="mx-2 my-1 whitespace-nowrap opacity-75">
+			<small class="px-2 my-1 whitespace-nowrap opacity-75">
 				Syntax highlighting by
 				<a class="text-indigo-700 dark:text-indigo-400"
 					href="https://torchlight.dev/"
