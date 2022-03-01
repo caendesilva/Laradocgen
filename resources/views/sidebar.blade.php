@@ -1,6 +1,6 @@
 <nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 sm:py-4 px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
-        <div class="flex flex-row justify-between items-center overflow-visible md:pb-2 py-4 w-full">
+        <div class="flex flex-row justify-between items-start overflow-visible md:pb-2 py-4 w-full">
             <a class="md:block text-left text-zinc-600 dark:text-gray-200 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index{{ $realtime == false ? '.html' : '' }}"> {{ $siteName }} </a> <!-- Dark mode switch --> 
             <button id="theme-toggle" type="button" class="ml-auto md:ml-0 text-gray-500 dark:text-gray-400 dark:hover:text-gray-100 hover:text-gray-700 " title="Toggle Dark Mode">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

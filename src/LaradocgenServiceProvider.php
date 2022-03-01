@@ -34,9 +34,9 @@ class LaradocgenServiceProvider extends ServiceProvider
             ], 'laradocgen');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/laradocgen'),
-            ], 'views');*/
+            ], 'laradocgen-views');
 
             // Publishing the markdown files.
             $this->publishes([

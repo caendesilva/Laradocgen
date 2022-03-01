@@ -66,6 +66,12 @@ php artisan laradocgen:build
 ```
 Your static site will be saved in `public/docs`
 
+### Customization
+You can publish the Blade views using
+```bash
+php artisan publish --tag="laradocgen-views"
+```
+
 ## Package Development
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
@@ -82,7 +88,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [ ] Add (automatic) versioning support
 - [ ] Allow the specification of source/build directories. This can also be used for versioning.
 - [ ] Allow the package to run standalone from Laravel
-- [ ] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
+- [x] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
 - [ ] Add Search feature 
 - [ ] Add Artisan command to create a new Markdown file based on an input title
 
