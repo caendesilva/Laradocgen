@@ -20,19 +20,19 @@
     ],
     "require": {
         "php": "^8.0.2",
+        "ext-curl": "*",
+        "ext-fileinfo": "*",
         "illuminate/support": "^8.42|^9.0",
         "league/commonmark": "^2.2",
-        "torchlight/torchlight-commonmark": "*",
-        "torchlight/torchlight-laravel": "^0.5.11",
-        "ext-fileinfo": "*",
-        "ext-curl": "*"
+        "torchlight/torchlight-commonmark": "^0.5.5",
+        "torchlight/torchlight-laravel": "^0.5.11"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
-        "psr-4": {
+        "psr-4": {  
             "DeSilva\\Laradocgen\\": "src"
         }
     },
