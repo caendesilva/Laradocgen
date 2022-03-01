@@ -1,9 +1,12 @@
 {
     "name": "desilva/laradocgen",
-    "description": "Generates documentation based on Markdown on the fly and can compile it to static HTML",
+    "description": "Generates static HTML documentation for Laravel based on Markdown with a realtime preview.",
     "keywords": [
         "desilva",
-        "laradocgen"
+        "laravel",
+        "laradocgen",
+        "documentation",
+        "static site builder"
     ],
     "homepage": "https://github.com/caendesilva/laradocgen",
     "license": "MIT",

@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to `laradocgen` will be documented in this file
+All notable changes to `laradocgen` will be documented in this file. Once the package is tested to ensure it is stable enough for production semantic versioning (SemVer) will be used. Until then there may be breaking changes on the Master branch.
 
-## 0.1.0-Pre - 2022-02-28
+## 0.1.0-Pre - 2022-03-01
 
 - Version 1 Prerelease
 - Contains features I deem acceptable for a Version 1 release, but that I want to be further tested before V1.
