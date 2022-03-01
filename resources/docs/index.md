@@ -11,6 +11,9 @@
 
 Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
 
+### Full Documentation
+Full documentation is available at https://caendesilva.github.io/laradocgen/. Generated using this package of course!
+
 ### Alpha Stage Software
 Hey! Just a quick heads up that this is a very new package and I expect there to be bugs. If anything goes wrong, do let me know and I'd love to get feedback and PRs!
 
