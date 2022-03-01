@@ -2,8 +2,9 @@
 > Now with Dark Mode Support!
 
 <!-- \BMSTX BUILDMETA -->
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
-[![Total Downloads](https://img.shields.io/packagist/dt/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
+![Latest Version on Packagist (including pre-releases)](https://img.shields.io/packagist/v/desilva/laradocgen?include_prereleases)
+![Total Downloads](https://img.shields.io/packagist/dt/desilva/laradocgen)
+![License](https://img.shields.io/packagist/l/desilva/laradocgen)
 ![GitHub Actions](https://github.com/caendesilva/laradocgen/actions/workflows/php.yml/badge.svg)
 ![GitHub Actions](https://github.com/caendesilva/Laradocgen/actions/workflows/pages/pages-build-deployment/badge.svg)
 <!--  BUILDMETA \BMETX -->
@@ -82,8 +83,9 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 - [ ] Allow the package to run standalone from Laravel
 - [ ] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
 - [ ] Add Search feature 
+- [ ] Add Artisan command to create a new Markdown file based on an input title
 
-Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a Ticket as I want to allow for more customization down the line.
+Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a GitHub Issue as I want to allow for more customization down the line.
 
 
 ## Security

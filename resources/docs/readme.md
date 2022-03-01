@@ -76,8 +76,9 @@ Please see [CONTRIBUTING](contributing) for details.
 - [ ] Allow the package to run standalone from Laravel
 - [ ] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
 - [ ] Add Search feature 
+- [ ] Add Artisan command to create a new Markdown file based on an input title
 
-Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a Ticket as I want to allow for more customization down the line.
+Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a GitHub Issue as I want to allow for more customization down the line.
 
 
 ## Security
