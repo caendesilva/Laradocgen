@@ -90,7 +90,7 @@ class StaticPageBuilder
      * The loop which iterates through all the pages in
      * the pageCollection and subsequently builds the pages.
      *
-     * @uses $this->buildPage
+     * @uses self::buildPage
      * @return int $count of files built
      * @throws Exception if an invalid builder is specified
      */
@@ -107,7 +107,7 @@ class StaticPageBuilder
     /**
      * Compile the page and store it to file.
      *
-     * @see $this->startBuildLoop
+     * @see self::startBuildLoop
      * @param string $slug of the page to compile
      * @param string $builder which builder should be used?
      * @return void
