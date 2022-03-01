@@ -56,6 +56,6 @@ class RealtimeCompiler
      */
     public function getScripts(): string
     {
-        return str_replace("\n", ' ', Laradocgen::getSourceFileContents('media/app.js')) ?? "";
+        return Laradocgen::getSourceFileContents('media/app.js') ?? '';
     }
 }
