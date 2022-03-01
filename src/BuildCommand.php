@@ -22,7 +22,7 @@ class BuildCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Compile all the files to HTML';
+    protected $description = 'Compile the Markdown Documentation to HTML';
 
     /**
      * Create a new command instance.
@@ -41,6 +41,12 @@ class BuildCommand extends Command
      */
     public function handle(): int
     {
+        $this->info("Starting build process.");
+
+        $this->line('Source directory is ' . Laradocgen::getSourcePath());
+        $this->line('Output directory is ' . Laradocgen::getBuildPath());
+
+        $this->line("Validating source files");
         try {
             Laradocgen::validateSourceFiles();
         } catch (Throwable $th) {

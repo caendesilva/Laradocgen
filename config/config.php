@@ -18,10 +18,43 @@ return [
     'siteName' => null,
 
     /**
+     * Should links between pages in the static site end in .html?
+     * 
+     * If true links will be rendered as: <a href="index.html">Home</a>
+     *      This allows the HTML file links work offline 
+     * If false links will be rendered as: <a href="index">Home</a>
+     *      This gives a cleaner URI path, but breaks links offline.
+     *      May or may not work depending on your server configuration.
+     * 
+     * Note that when using the realtime preview this will be 
+     * set to false to be compatible with Laravel routing.
+     */
+    'useDotHtmlInLinks' => true, 
+
+    /**
+     * Document Source Path
+     * 
+     * The directory where the source Markdown files are stored (relative to the Laravel root)
+     * 
+     * The default directory is <laravel-project>/resources/docs/
+     * With media stored in <laravel-project>/resources/docs/media/
+     */
+    'sourcePath' => env('LARADOCGEN_SOURCE_PATH', 'resources/docs'),
+
+    /**
+     * HTML Build Path
+     * 
+     * The directory where the compiled HTML is output (relative to the Laravel root)
+     * 
+     * The default directory is <laravel-project>/public/docs/
+     */
+    'buildPath' => env('LARADOCGEN_BUILD_PATH', 'public/docs'),
+
+    /**
      * Should Torchlight be used?
      *
-     * Is enabled automatically if you have a Torchlight token set in your .env file
-     * Default: false
+     * By default Torchlight is enabled automatically if you have a 
+     * Torchlight token set in your .env file. You can override this here.
      *
      * @see https://torchlight.dev/docs
      *
