@@ -1,9 +1,6 @@
-# Desilva/Laradocgen License
-> This open source software is licensed under the MIT license. See the license text below.
-
 MIT License
 
-Copyright (c) Caen De Silva
+Copyright (c) 2022 Caen De Silva
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
