@@ -4,7 +4,7 @@
 <!-- \BMSTX BUILDMETA -->
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
 [![Total Downloads](https://img.shields.io/packagist/dt/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
-![GitHub Actions](https://github.com/desilva/laradocgen/actions/workflows/main.yml/badge.svg)
+![GitHub Actions](https://github.com/caendesilva/laradocgen/actions/workflows/main.yml/badge.svg)
 <!--  BUILDMETA \BMETX -->
 
 ## About
@@ -89,7 +89,7 @@ All vulnerabilities will be promptly addressed.
 
 ## Credits
 
--   [Caen De Silva](https://github.com/desilva)
+-   [Caen De Silva](https://github.com/caendesilva)
 -   [All Contributors](../../contributors)
 
 ## License
