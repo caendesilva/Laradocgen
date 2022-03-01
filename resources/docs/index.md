@@ -89,7 +89,7 @@ All vulnerabilities will be promptly addressed.
 
 ## Credits
 
--   [Caen De Silva](https://github.com/desilva)
+-   [Caen De Silva](https://github.com/caendesilva)
 -   [All Contributors](../../contributors)
 
 ## License

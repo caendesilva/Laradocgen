@@ -78,22 +78,22 @@
             <hr class="my-4 md:min-w-full" />
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
-                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
-                   
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
                    
                 <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="getting-started.html"> Getting Started </a> </li>
                    
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="how-it-works.html"> How It Works </a> </li>
                    
-                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="readme.html"> Readme </a> </li>
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="contributing.html"> Contributing </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="changelog.html"> Changelog </a> </li>
+                   
+                <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="license.html"> License </a> </li>
                   
             </ul>
             <div class="mt-auto">
                 <hr class="my-3 md:min-w-full" />
-                <h6 class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block py-1 no-underline"> <a href="../api/index.html">API Documentation</a> </h6>
+                <h6 class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block py-1 no-underline"> <a href="api/index.html">API Documentation</a> </h6>
             </div>
         </div>
     </div>
@@ -264,8 +264,7 @@ Click on the link, and you should now see your beautifully formatted Markdown!
 <pre><code data-theme="material-theme-palenight" data-lang="env" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">TORCHLIGHT_TOKEN</span><span style="color: #89DDFF;">=</span><span style="color: #C3E88D;">torch_ </span><span style="color: #676E95;"># Replace with your token</span></div></code></pre>
 <p>And enable the feature in the <code>config/laradocgen.php</code></p>
 <p><small class="filepath" title="Filepath relative to your Laravel installation">config/laradocgen.php</small></p>
-<p><small class="filepath">config/laradocgen.php
-</small></p>
+<p><small class="filepath">config/laradocgen.php</small></p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight has-highlight-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;?</span><span style="color: #A6ACCD;">php</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #676E95;">/** Should Torchlight be used? Default: false */</span></div><div class='line line-highlight line-has-background' style='background-color: #00000050'><span style="color:#676E95; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">useTorchlight</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Set this to true // </span></div><div class='line'><span style="color:#a6accd40; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">];</span></div></code></pre>
 <h2>Troubleshooting<a id="troubleshooting" href="#troubleshooting" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>This section will attempt to shed light on some &quot;gotchas&quot; and common issues that may occur.</p>

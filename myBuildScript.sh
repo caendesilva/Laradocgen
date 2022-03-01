@@ -32,17 +32,17 @@ cd /mnt/d/dev/Laravel/Sites/LaradocgenTests/ && php artisan test
 
 
 echo "Copying static site to docs/package/"
-cp -r /mnt/d/dev/Laravel/Sites/LaradocgenTests/public/docs/. /mnt/d/Dev/Laravel/Packages/Laradocgen/docs/package
+cp -r /mnt/d/dev/Laravel/Sites/LaradocgenTests/public/docs/. /mnt/d/Dev/Laravel/Packages/Laradocgen/docs
 
 echo "Modifying sidebar footer link to link to API Docs"
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/404.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/contributing.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/getting-started.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/index.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/changelog.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/how-it-works.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/license.html -i
-sed 's/href="\/">Back to App/href="..\/api\/index.html">API Documentation/g' docs/package/readme.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/404.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/contributing.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/getting-started.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/index.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/changelog.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/how-it-works.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/license.html -i
+sed 's/href="\/">Back to App/href="api\/index.html">API Documentation/g' docs/readme.html -i
 
 
 endTime=$(date +%s);
