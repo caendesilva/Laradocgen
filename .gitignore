@@ -3,3 +3,14 @@ workspace.code-workspace
 node_modules/
 .phpdoc/cache/
 vendor/
+
+vendor/
+# Package development files, do not need to be included in the general package.
+# Instead are available as a download for package developers. 
+.idea/
+.vscode/
+.build/
+.phpdoc/
+phpDocumentor.phar
+build.sh
+myBuildScript.sh
