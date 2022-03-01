@@ -1,6 +1,14 @@
 # Laravel Static Documentation Sites, Blazingly Fast and Stupidly Simple
-> Now with Dark Mode Support!
 
+<p>
+	<img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/desilva/laradocgen?include_prereleases" alt="Latest Version on Packagist (including pre-releases)">
+	<img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/dt/desilva/laradocgen" alt="Total Downloads">
+	<img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/l/desilva/laradocgen" alt="License">
+	<img style="display: inline; margin: 4px 2px;" src="https://github.com/caendesilva/laradocgen/actions/workflows/php.yml/badge.svg" alt="GitHub Actions">
+	<img style="display: inline; margin: 4px 2px;" src="https://github.com/caendesilva/Laradocgen/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Actions">
+</p>
+
+> Now with Dark Mode Support!
 
 ## About
 
