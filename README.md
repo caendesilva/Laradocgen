@@ -5,7 +5,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
 [![Total Downloads](https://img.shields.io/packagist/dt/desilva/laradocgen.svg?style=flat-square)](https://packagist.org/packages/desilva/laradocgen)
 ![GitHub Actions](https://github.com/caendesilva/laradocgen/actions/workflows/php.yml/badge.svg)
-![GitHub Actions](https://github.com/caendesilva/laradocgen/actions/workflows/pages-build-deployment.yml/badge.svg)
+![GitHub Actions](https://github.com/caendesilva/laradocgen/actions/workflows/pages/pages-build-deployment.yml/badge.svg)
 <!--  BUILDMETA \BMETX -->
 
 ## About
