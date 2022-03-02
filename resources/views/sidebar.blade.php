@@ -36,11 +36,30 @@
             </form>
             <hr class="my-4 md:min-w-full" /> --}}
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                @foreach ($links as $link) @if($link->slug == $page->slug) 
-                <li id="sidebar-active" class="items-center"> <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="{{ $link->slug }}{{ $useDotHtml ? '.html' : '' }}"> {{ $link->title }} </a> </li>
+                @if(count($links))
+                @foreach ($links as $link)
+                @if($link->slug == $page->slug) 
+                <li id="sidebar-active" class="items-center">
+                    <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="{{ $link->slug }}{{ $useDotHtml ? '.html' : '' }}">
+                        {{ $link->title }}
+                    </a>
+                </li>
                 @else 
                 <li class="items-center"> <a class="text-zinc-700 dark:text-gray-200 hover:text-zinc-500 text-xs uppercase py-3 font-bold block" href="{{ $link->slug }}{{ $useDotHtml ? '.html' : '' }}"> {{ $link->title }} </a> </li>
-                @endif @endforeach 
+                @endif
+                @endforeach 
+                @else
+                <li id="sidebar-active" class="items-center">
+                    <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block" href="index{{ $useDotHtml ? '.html' : '' }}">
+                        Index
+                    </a>
+                </li>
+                @if($realtime)
+                <li class="items-center text-sm">
+                    Links will be automatically added to the sidebar as you create your Markdown pages
+                </li>
+                @endif
+                @endif
             </ul>
             <div class="mt-auto">
                 <hr class="my-3 md:min-w-full" />
