@@ -2,8 +2,10 @@
 
 namespace DeSilva\Laradocgen;
 
+use Illuminate\Support\Facades\Log;
+
 /**
- * Handles, validates, and assembles the paths used for I/O
+ * Handles, validates, and assembles the paths used for I/O.
  */
 class PathController
 {
@@ -30,6 +32,10 @@ class PathController
     {
         $this->sourcePath = $this->getSourcePath();
         $this->buildPath = $this->getBuildPath();
+
+        if (config('laradocgen.enableAbsolutePathOverride', false) === true) {
+            $this->resolveAbsolutePaths();
+        }
     }
 
     /**
@@ -99,6 +105,19 @@ class PathController
     private function assembleAbsolutePath(string $sanitizedPath): string
     {
         return base_path() . DIRECTORY_SEPARATOR . $sanitizedPath . DIRECTORY_SEPARATOR;
+    }
+
+    /**
+     * Set the paths to absolute paths, if enabled in config.
+     *
+     * @return void
+     */
+    private function resolveAbsolutePaths(): void
+    {
+        Log::warning('Using absolute paths to build documentation. I hope you know what you are doing!');
+
+        $this->sourcePath = config('laradocgen.absoluteSourcePath');
+        $this->buildPath = config('laradocgen.absoluteBuildPath');
     }
 
 }

@@ -61,4 +61,26 @@ return [
      * Remember to add your API token in your .env file
      */
     'useTorchlight' => (env('TORCHLIGHT_TOKEN') !== null) ? true : false,
+
+    /**
+     * DANGER ZONE:
+     * 
+     * The following features are experimental and may be dangerous.
+     * Use at your own risk. Report any issues on GitHub!
+     */
+
+    /**
+     * Absolute Source and Build Paths
+     * 
+     * WARNING: This feature is experimental and may override files you do not want to override.
+     * Only enable this if you know what you are doing!
+     * 
+     * By default the source and build paths are relative to your Laravel installation.
+     * You can uncomment the following to use absolute paths (to use paths outside your Laravel installation)
+     * This may not work if you don't have permission to access the files.
+     */
+    // 'enableAbsolutePathOverride' => false,
+    // 'absoluteSourcePath' => '/ubuntu/example/path/output/',
+    // 'absoluteBuildPath' => 'C:\Windows\Example\Path\Output\\',
+    
 ];
