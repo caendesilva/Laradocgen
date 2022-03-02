@@ -5,7 +5,7 @@
  */
 return [
     /**
-     * Site name override
+     * Site Name Override.
      * 
      * The name of the documentation page shown in the sidebar and page title.
      *
@@ -27,12 +27,12 @@ return [
      *      May or may not work depending on your server configuration.
      * 
      * Note that when using the realtime preview this will be 
-     * set to false to be compatible with Laravel routing.
+     * set to false, so it is compatible with Laravel routing.
      */
     'useDotHtmlInLinks' => true, 
 
     /**
-     * Document Source Path
+     * Document Source Path.
      * 
      * The directory where the source Markdown files are stored (relative to the Laravel root)
      * 
@@ -42,7 +42,7 @@ return [
     'sourcePath' => env('LARADOCGEN_SOURCE_PATH', 'resources/docs'),
 
     /**
-     * HTML Build Path
+     * HTML Build Path.
      * 
      * The directory where the compiled HTML is output (relative to the Laravel root)
      * 
@@ -51,16 +51,25 @@ return [
     'buildPath' => env('LARADOCGEN_BUILD_PATH', 'public/docs'),
 
     /**
+     * The webserver to fetch contents from
+     *
+     * The static site builder compiles Blade by fetching the HTML from your web-server.
+     * By default, it uses `http://localhost:8000/`, but you can change it if you for example
+     * are serving the site through docker or WSL or are using a different port.
+     */
+    'serverHost' => 'http://localhost:8000/',
+
+    /**
      * Should Torchlight be used?
      *
-     * By default Torchlight is enabled automatically if you have a 
+     * By default, Torchlight is enabled automatically if you have a
      * Torchlight token set in your .env file. You can override this here.
      *
      * @see https://torchlight.dev/docs
      *
      * Remember to add your API token in your .env file
      */
-    'useTorchlight' => (env('TORCHLIGHT_TOKEN') !== null) ? true : false,
+    'useTorchlight' => env('TORCHLIGHT_TOKEN') !== null,
 
     /**
      * DANGER ZONE:
