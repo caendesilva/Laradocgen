@@ -135,3 +135,12 @@ This package's scaffolding was generated using the [Laravel Package Boilerplate]
 - Syntax highlighting by [Torchlight](https://torchlight.dev/)
 - Markdown is parsed with [League/Commonmark](https://github.com/thephpleague/commonmark)
 - The default favicon was created using [Favicon.io](https://favicon.io/) using the ["Page" Emoji](https://github.com/twitter/twemoji/blob/master/assets/svg/1f4c4.svg) from the amazing open-source project [Twemoji](https://twemoji.twitter.com/). The graphics are copyright 2020 Twitter, Inc and other contributors and are licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+
+## More Badges
+
+<p>
+	<img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/desilva/laradocgen" alt="Latest Version on Packagist">
+	<img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/desilva/laradocgen?include_prereleases" alt="Latest Version on Packagist (including pre-releases)">
+	<img style="display: inline; margin: 4px 2px;" src="https://github.com/caendesilva/Laradocgen/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Actions">
+</p>
