@@ -49,9 +49,9 @@ class LaradocgenServiceProvider extends ServiceProvider
             // ], 'laradocgen');
 
             // Publishing the stylesheet
-            $this->publishes([
+            /*$this->publishes([
                 __DIR__ . '/../resources/assets' => resource_path('docs/media'),
-            ], 'laradocgen');
+            ], 'laradocgen');*/
 
             // Publishing the translation files.
             /*$this->publishes([

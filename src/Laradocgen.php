@@ -30,33 +30,28 @@ class Laradocgen
     }
 
     /**
-     * Get the Source Path
+     * Get the Source Path.
      *
-     * Returns the directory where the source markdown files are stored
-     * Usually in <laravel-project>/resources/docs/
-     * With media in <laravel-project>/resources/docs/media/
-     *
-     * @example StaticPageBuilder::__construct()
-     *
+     * @see PathController::getSourcePath()
      * @return string $sourcePath
      **/
     public static function getSourcePath(): string
     {
-        return resource_path('docs' . DIRECTORY_SEPARATOR);
+        return (new PathController())->sourcePath;
     }
 
     /**
-     * Get the Build Path
+     * Get the Build Path.
      *
      * Returns the directory where the static HTML files are stored once created
      * Usually in <laravel-project>/public/docs/
-     * With media in <laravel-project>/public/docs/media/
      *
+     * @see PathController::getBuildPath()
      * @return string $buildPath
      **/
     public static function getBuildPath(): string
     {
-        return public_path('docs' . DIRECTORY_SEPARATOR);
+        return (new PathController())->buildPath;
     }
 
     /**
@@ -125,8 +120,7 @@ class Laradocgen
     public static function getMarkdownFileSlugsArray(): array
     {
         $files = [];
-
-        foreach (glob(resource_path() . '/docs/*.md') as $filepath) {
+        foreach (glob(self::getSourceFilepath('*.md')) as $filepath) {
             $slug = basename($filepath, '.md');
             $files[] = $slug;
         }
@@ -140,7 +134,7 @@ class Laradocgen
      */
     public static function validateExistenceOfSlug(string $slug): bool
     {
-        return file_exists(resource_path() . '/docs/' . $slug . '.md');
+        return file_exists(self::getSourceFilepath($slug . '.md'));
     }
 
     /**
