@@ -26,6 +26,6 @@ jobs:
       run: cd tests/laravel && chmod -R 777 storage bootstrap/cache
    
     - name: Start the server
-      run:  php tests/laravel/artisan serve
+      run:  php tests/laravel/artisan serve &
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run:  php tests/laravel/artisan test
