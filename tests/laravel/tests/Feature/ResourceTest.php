@@ -52,7 +52,6 @@ class ResourceTest extends TestCase
     public function test_that_visiting_site_after_publishing_assets_returns_successful_response()
     {
         $response = $this->get('/realtime-docs/index');
-        $response->assertStatus(200)
-                    ->assertSeeText("Laravel Static Documentation Sites, Blazingly Fast and Stupidly Simple");
+        $response->assertStatus(200);
     }
 }
