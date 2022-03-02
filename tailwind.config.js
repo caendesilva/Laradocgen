@@ -9,4 +9,4 @@ module.exports = {
   ],
 }
 
-// Run with npx tailwindcss -i ./resources/src/app.css -o ./resources/assets/app.css [--watch] [--minify]
+// Run with npx tailwindcss -i ./resources/assets/app.css -o ./resources/docs/media/app.css [--watch] [--minify]

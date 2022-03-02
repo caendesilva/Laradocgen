@@ -6,10 +6,14 @@ Until then there may be breaking changes on the Master branch.
 
 ## 1.1.X
 
+New features:
 - You can now specify the source and build directories in the config.
   - You can also, while not recommended, use absolute paths.
 - You can now publish the Blade views.
   - Note that if you have previously published these assets you will have to merge the changes manually.
+
+Breaking changes:
+  - Stylesheet and script files have been moved. Source files are in the assets folder, and compiled files are in the media folder. **This only affects package developers.** 
 
 ## 1.0.0-Pre - 2022-03-01
 
