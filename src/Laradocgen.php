@@ -120,8 +120,7 @@ class Laradocgen
     public static function getMarkdownFileSlugsArray(): array
     {
         $files = [];
-
-        foreach (glob(resource_path() . '/docs/*.md') as $filepath) {
+        foreach (glob(self::getSourceFilepath('*.md')) as $filepath) {
             $slug = basename($filepath, '.md');
             $files[] = $slug;
         }
@@ -135,7 +134,7 @@ class Laradocgen
      */
     public static function validateExistenceOfSlug(string $slug): bool
     {
-        return file_exists(resource_path() . '/docs/' . $slug . '.md');
+        return file_exists(self::getSourceFilepath($slug . '.md'));
     }
 
     /**
