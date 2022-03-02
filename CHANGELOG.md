@@ -11,6 +11,7 @@ New features:
   - You can also, while not recommended, use absolute paths.
 - You can now publish the Blade views.
   - Note that if you have previously published these assets you will have to merge the changes manually.
+- The Curl builder now validates the response and sends a warning if a non-200 HTTP code is returned.
 
 Breaking changes:
   - Stylesheet and script files have been moved. Source files are in the assets folder, and compiled files are in the media folder. **This only affects package developers.** 

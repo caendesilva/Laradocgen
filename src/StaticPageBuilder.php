@@ -167,6 +167,7 @@ class StaticPageBuilder
      */
     private function curlBuilder(string $url): string
     {
+        // Run the Curl builder
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -174,6 +175,17 @@ class StaticPageBuilder
         $html = curl_exec($curl);
         curl_close($curl);
 
+        // Validate response
+        $code = (curl_getinfo($curl)['http_code']);
+        if ($code !== 200) {
+            if ($code === 0) {
+                echo "\033[33mWarning\033[0m: Received a status code of 0 (No Content). Is the webserver down? \n";
+            } else {
+                echo "\033[33mWarning\033[0m: Received a non-200 ($code) status code from server. \n";
+            }
+        }
+
+        // Run the HTML
         return $html;
     }
 
