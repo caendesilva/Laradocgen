@@ -28,4 +28,4 @@ jobs:
     - name: Start the server
       run:  php tests/laravel/artisan serve &
     - name: Execute tests (Unit and Feature tests) via PHPUnit
-      run:  php tests/laravel/artisan test
+      run: cd tests/laravel && vendor/bin/phpunit
