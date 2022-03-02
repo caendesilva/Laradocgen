@@ -77,6 +77,7 @@ class DocumentationController extends Controller
             'realtimeStyles' => $realtimeStyles ?? false,
             'realtimeScripts' => $realtimeScripts ?? false,
             'pageTitle' => ($page->slug === "index") ? $siteName : "$page->title | $siteName",
+            'useDotHtml' => $realtime ? true : config('laradocgen.useDotHtmlInLinks', true),
         ]);
     }
 
