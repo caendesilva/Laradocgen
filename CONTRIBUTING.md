@@ -64,8 +64,15 @@ phpcs --standard=ruleset.xml
 ## Package Development
 
 ### Testing
-Currently I am using the LaradocgenTests repo to run full feature tests.
-Please follow the readme in that project on how to set up tests.
+#### Testing the app
+I am currently using an actual (stripped down) Laravel installation to run the tests. To run the tests, first make sure the server is running then start the tests. If it is your first time running the tests you need to install the composer dependencies from the tests/laravel directory.
+
+```bash
+php tests/laravel/artisan serve
+php tests/laravel/artisan test
+```
+
+#### Validating the code
 ```bash
 # If you have CodeSniffer, use the following command to ensure your code follows the PSR2 standard.
 phpcs --standard=ruleset.xml
