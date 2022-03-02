@@ -116,7 +116,9 @@ class StaticPageBuilder
     private function buildPage(string $slug, string $builder = 'curl'): void
     {
         // Construct the source url
-        $url = 'http://localhost:8000/documentation-generator/' . $slug;
+        $url = sprintf("%s/documentation-generator/%s",
+            rtrim(config('laradocgen.serverHost', 'http://localhost:8000'), "/"),
+            $slug);
 
         // Determine which Builder to use and retrieve the HTML using the builder.
         switch ($builder) {

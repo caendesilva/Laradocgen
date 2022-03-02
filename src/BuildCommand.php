@@ -45,6 +45,7 @@ class BuildCommand extends Command
 
         $this->line('Source directory is ' . Laradocgen::getSourcePath());
         $this->line('Output directory is ' . Laradocgen::getBuildPath());
+        $this->line('Server host is ' . config('laradocgen.serverHost', 'http://localhost:8000'));
 
         $this->line("Validating source files");
         try {
