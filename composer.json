@@ -52,6 +52,9 @@
     "config": {
         "sort-packages": true
     },
+    "archive": {
+        "exclude": ["/tests"]
+    },
     "extra": {
         "laravel": {
             "providers": [
