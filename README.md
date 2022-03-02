@@ -67,10 +67,17 @@ php artisan laradocgen:build
 Your static site will be saved in `public/docs`
 
 ### Customization
+The package strives to follow [Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration).
+Everything is preconfigured so you can get started quickly. However, if you wish you can customize the package.
+
 You can publish the Blade views using
 ```bash
 php artisan publish --tag="laradocgen-views"
 ```
+And customize them to your liking. Note that you will need to re-publish the views when updating!
+
+You can customize the source and output directory in the config file.
+You can use this to create multiple documentation versions.
 
 ## Package Development
 
@@ -86,13 +93,15 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Roadmap
 - [ ] Add (automatic) versioning support
-- [ ] Allow the specification of source/build directories. This can also be used for versioning.
+- [x] Allow the specification of source/build directories. This can also be used for versioning.
 - [ ] Allow the package to run standalone from Laravel
 - [x] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
 - [ ] Add Search feature 
 - [ ] Add Artisan command to create a new Markdown file based on an input title
+- [ ] Add CLI options to the Artisan build command to override config settings on a per-build basis
 
-Right now there are not very many customization options as I wanted to keep things dead simple. If you have a configuration idea please do make a PR or open a GitHub Issue as I want to allow for more customization down the line.
+Right now there are not very many customization options as I wanted to keep things dead simple.
+If you have a configuration idea please do make a PR or open a GitHub Issue as I want to allow for more customization down the line.
 
 
 ## Security

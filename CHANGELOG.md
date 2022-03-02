@@ -1,6 +1,15 @@
 # Changelog
 
-All notable changes to `laradocgen` will be documented in this file. Once the package is tested to ensure it is stable enough for production semantic versioning (SemVer) will be used. Until then there may be breaking changes on the Master branch.
+All notable changes to `laradocgen` will be documented in this file.
+Once the package is tested to ensure it is stable enough for production semantic versioning (SemVer) will be used.
+Until then there may be breaking changes on the Master branch.
+
+## 1.1.X
+
+- You can now specify the source and build directories in the config.
+  - You can also, while not recommended, use absolute paths.
+- You can now publish the Blade views.
+  - Note that if you have previously published these assets you will have to merge the changes manually.
 
 ## 1.0.0-Pre - 2022-03-01
 
