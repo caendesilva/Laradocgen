@@ -12,7 +12,7 @@
     @if($realtime) 
     <!-- Realtime Styles -->
     <style>
-        {{ $realtimeStyles }} 
+        {!! $realtimeStyles !!}
     </style>
     @else 
     <link rel="stylesheet" href="media/app.css" />
