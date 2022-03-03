@@ -60,16 +60,42 @@ return [
     'serverHost' => 'http://localhost:8000/',
 
     /**
-     * Should Torchlight be used?
-     *
-     * By default, Torchlight is enabled automatically if you have a
-     * Torchlight token set in your .env file. You can override this here.
-     *
-     * @see https://torchlight.dev/docs
-     *
-     * Remember to add your API token in your .env file
+     * Search feature. (Experimental)
+     * 
+     * Should the search feature be enabled?
+     * Generates a searchIndex.json file that a simple
+     * vanilla JavaScript uses to filter search results.
+     * 
+     * Note, the search index is generated using the laradocgen:build Artisan command.
+     * The realtime viewer does at this point not generate it automatically.
+     * 
+     * Disable this if you are using a "smarter" service such as Algolia 
      */
-    'useTorchlight' => env('TORCHLIGHT_TOKEN') !== null,
+    'search' => true,
+
+    /**
+     * Copyright text.
+     * 
+     * Should the footer display a copyright license for the documentation text?
+     */
+    'copyright' => [
+        'enabled' => false,
+        'licenseName' => 'CC BY-SA 4.0',
+        'licenseUri' => 'https://creativecommons.org/licenses/by-sa/4.0/',
+    ],
+
+    /**
+     * Should Algolia be used?
+     *
+     * Laradocgen supports Algolia indirectly by providing the layout scaffolding.
+     * To use Algolia, first name sure that the built in search feature is disabled.
+     * Then publish the laradocgen views and update the components/algolia-scripts
+     * Blade file with your project details.
+     *
+     * @see https://docsearch.algolia.com/docs/DocSearch-v3
+     */
+    'useAlgolia' => false,
+
 
     /**
      * DANGER ZONE:
