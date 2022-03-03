@@ -62,6 +62,10 @@
     @else
     <script src="media/app.js"></script>
     @endif
+
+    @if(config('laradocgen.useAlgolia', false))
+        @include('laradocgen::components.algolia-scripts')
+    @endif
 </body>
 
 </html>
