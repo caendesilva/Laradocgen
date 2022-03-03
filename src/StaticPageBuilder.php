@@ -4,6 +4,7 @@ namespace DeSilva\Laradocgen;
 
 use Exception;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 /**
  * Compile a Laravel route into static HTML
@@ -50,6 +51,8 @@ class StaticPageBuilder
         echo "Finished copying media assets \n";
 
         // Add directory checksum to checksums.json
+
+        $this->createSearchIndex();
 
         // Stop the build and format the time
         $time = (float) ((microtime(true) - $time_start));
@@ -251,5 +254,24 @@ class StaticPageBuilder
         );
 
         echo "Finished merging stylesheets. \n";
+    }
+
+    private function createSearchIndex()
+    {
+        echo "Generating search index. \n";
+        $searchIndex = [];
+        foreach (Laradocgen::getMarkdownFileSlugsArray() as $slug) {
+            $searchIndex[] = [
+                'slug' => $slug,
+                'title' => str_replace('-', ' ', Str::title($slug)),
+                'url' => $slug . '.html',
+                'body' => Laradocgen::getSourceFileContents($slug . '.md'),
+            ];
+        }
+        file_put_contents(
+            Laradocgen::getBuildPath() . "searchIndex.json",
+            json_encode($searchIndex, JSON_PRETTY_PRINT)
+        );
+        echo "Finished generating search index. \n";
     }
 }
