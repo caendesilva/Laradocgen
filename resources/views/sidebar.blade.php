@@ -26,7 +26,11 @@
                     </div>
                 </div>
             </div>
+            
+            @if(config('laradocgen.search', true))
             @include('laradocgen::search') 
+            @endif
+
             <hr class="my-4 md:min-w-full opacity-50 md:my-2" /> 
             
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
@@ -55,8 +59,8 @@
                 @endif
                 @endif
             </ul>
-            <div class="mt-auto">
-                <hr class="my-3 md:min-w-full" />
+            <div class="mt-auto pb-3">
+                <hr class="my-3 md:min-w-full opacity-50" />
                 <h6 class="md:min-w-full text-zinc-600 dark:text-gray-300 text-xs uppercase font-bold block py-1 no-underline"> <a href="/">Back to App</a> </h6>
             </div>
         </div>

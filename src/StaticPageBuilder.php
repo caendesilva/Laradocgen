@@ -52,7 +52,9 @@ class StaticPageBuilder
 
         // Add directory checksum to checksums.json
 
-        $this->createSearchIndex();
+        if (config('laradocgen.search', true)) {
+            $this->createSearchIndex();
+        }
 
         // Stop the build and format the time
         $time = (float) ((microtime(true) - $time_start));

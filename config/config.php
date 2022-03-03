@@ -70,8 +70,21 @@ return [
      * Remember to add your API token in your .env file
      */
     'useTorchlight' => env('TORCHLIGHT_TOKEN') !== null,
-
     
+    /**
+     * Search feature. (Experimental)
+     * 
+     * Should the search feature be enabled?
+     * Generates a searchIndex.json file that a simple
+     * vanilla JavaScript uses to filter search results.
+     * 
+     * Note, the search index is generated using the laradocgen:build Artisan command.
+     * The realtime viewer does at this point not generate it automatically.
+     * 
+     * Disable this if you are using a "smarter" service such as Algolia 
+     */
+    'search' => true,
+
     /**
      * Copyright text.
      * 

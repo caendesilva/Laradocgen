@@ -1,10 +1,3 @@
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-	darkMode: 'class',
-  }
-</script>
-
 <style>
 	#searchresult a {
 		margin: 0.25rem 0;
