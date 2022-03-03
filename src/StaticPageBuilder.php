@@ -261,6 +261,9 @@ class StaticPageBuilder
         echo "Generating search index. \n";
         $searchIndex = [];
         foreach (Laradocgen::getMarkdownFileSlugsArray() as $slug) {
+            if ($slug == "404") {
+                continue;
+            }
             $searchIndex[] = [
                 'slug' => $slug,
                 'title' => str_replace('-', ' ', Str::title($slug)),

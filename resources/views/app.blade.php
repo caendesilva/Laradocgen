@@ -45,9 +45,6 @@
 <body class="text-zinc-700 dark:text-gray-300 antialiased bg-white dark:bg-gray-900 min-h-screen flex flex-col"> 
     
     @include('laradocgen::sidebar')
-
-    {{-- Has the search form and version selector --}}
-    @include('laradocgen::navmenu') 
     
     <main class="md:ml-64 lg:ml-72 xl:pl-8 mb-auto">
         <article class="prose dark:prose-invert max-w-3xl p-6 lg:p-8">

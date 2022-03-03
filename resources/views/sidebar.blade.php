@@ -1,6 +1,6 @@
-<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10 sm:py-4 px-6">
+<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white dark:bg-gray-900 flex flex-wrap items-center justify-between relative md:w-64 lg:w-72 z-10  px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
-        <div class="flex flex-row items-center justify-between overflow-visible md:pb-2 md:py-4 w-full">
+        <div class="flex flex-row items-center justify-between overflow-visible md:pb-2 py-4 md:mt-2 w-full">
             <a class="md:block text-left text-zinc-600 dark:text-gray-200 mr-0 inline-block  text-sm uppercase font-bold px-0 w-fit" href="index{{ $useDotHtml ? '.html' : '' }}"> {{ $siteName }} </a> <!-- Dark mode switch -->
             
             @include('laradocgen::components.theme-button') 
@@ -13,7 +13,7 @@
             </button>
         </div>
         <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden" id="example-collapse-sidebar">
-            <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-zinc-200">
+            <div class="md:min-w-full md:hidden block">
                 <div class="flex flex-wrap">
                     <div class="w-9/12"> <a class="md:block text-left md:pb-2 text-zinc-600 dark:text-zinc-300 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="index{{ $useDotHtml ? '.html' : '' }}"> {{ $siteName }} </a> </div>
                     <div class="w-3/12 flex justify-end">
@@ -26,10 +26,9 @@
                     </div>
                 </div>
             </div>
-            {{-- <form class="mt-6 mb-4 md:hidden">
-                <div class="mb-3 pt-0"> <input type="text" placeholder="Search" class="px-3 py-2 h-12 border border-solid  border-zinc-500 placeholder-zinc-300 text-zinc-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal" /> </div>
-            </form>
-            <hr class="my-4 md:min-w-full" /> --}}
+            @include('laradocgen::search') 
+            <hr class="my-4 md:min-w-full opacity-50 md:my-2" /> 
+            
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 @if(count($links))
                 @foreach ($links as $link)
