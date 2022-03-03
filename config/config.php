@@ -71,6 +71,19 @@ return [
      */
     'useTorchlight' => env('TORCHLIGHT_TOKEN') !== null,
 
+    
+    /**
+     * Copyright text.
+     * 
+     * Should the footer display a copyright license for the documentation text?
+     */
+    'copyright' => [
+        'enabled' => false,
+        'licenseName' => 'CC BY-SA 4.0',
+        'licenseUri' => 'https://creativecommons.org/licenses/by-sa/4.0/',
+    ],
+
+
     /**
      * DANGER ZONE:
      * 

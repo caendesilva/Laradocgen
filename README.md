@@ -92,10 +92,10 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Roadmap
-- [ ] Add (automatic) versioning support
 - [x] Allow the specification of source/build directories. This can also be used for versioning.
-- [ ] Allow the package to run standalone from Laravel
 - [x] Document Blade [view customization](https://laravel.com/docs/9.x/packages#views)
+- [ ] Add (automatic) versioning support
+- [ ] Allow the package to run standalone from Laravel
 - [ ] Add Search feature 
 - [ ] Add Artisan command to create a new Markdown file based on an input title
 - [ ] Add CLI options to the Artisan build command to override config settings on a per-build basis
