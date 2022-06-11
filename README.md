@@ -10,6 +10,10 @@
 
 > Now with Dark Mode Support!
 
+## Not activly maintained
+This project is currently not receiving new features as I am focusing on [HydePHP](https://github.com/hydephp/hyde), however,
+the project will continue to get security fixes indefinitely. Open source contributions are welcome!
+
 ## About
 
 Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
