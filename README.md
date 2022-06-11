@@ -14,6 +14,14 @@
 This project is currently not receiving new features as I am focusing on [HydePHP](https://github.com/hydephp/hyde), however,
 the project will continue to get security fixes indefinitely. Open source contributions are welcome!
 
+### Alternatives 
+This project is a hybrid static site generator and live server package. 
+I have created two other packages that I think are much better suited than this one.
+
+If you want static documentation sites, try out [HydePHP](http://hydephp.com/) which features a significantly faster rendering engine, and is much more refined and easy to get started with.
+
+If you want documentation sites for a Laravel project, try [Lagrafo](https://github.com/caendesilva/lagrafo), which started out as Laradocgen v2.0.
+
 ## About
 
 Hey! I'm Caen! I created this package to practice package development. It is still very much in beta, but please do send me any feedback you have! I'd love to get some PRs as well.
